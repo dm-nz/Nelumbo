@@ -87,13 +87,13 @@ add_action( 'after_setup_theme', 'nelumbo_content_width', 0 );
  */
 function nelumbo_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'nelumbo' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'nelumbo' ),
+		'name'					=> esc_html__( 'Sidebar', 'nelumbo' ),
+		'id'						=> 'sidebar-1',
+		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	 => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'nelumbo_widgets_init' );
@@ -102,7 +102,11 @@ add_action( 'widgets_init', 'nelumbo_widgets_init' );
  * Enqueue scripts and styles.
  */
 function nelumbo_scripts() {
+	wp_register_style( 'foundation-style', get_template_directory_uri() . '/css/app.css', array(), '20160710', 'all' );
+
 	wp_enqueue_style( 'nelumbo-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'foundation-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'nelumbo-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -111,6 +115,10 @@ function nelumbo_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/bower_components/jquery/src/jquery.js', array(), '20160710', true );
+
+	wp_enqueue_script( 'foundation-core', get_template_directory_uri() . '/bower_components/foundation-sites/js/foundation.core.js', array(), '20160710', true );
 }
 add_action( 'wp_enqueue_scripts', 'nelumbo_scripts' );
 
@@ -138,3 +146,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+class Foundation_Top_Bar extends Walker_Nav_Menu {
+	function start_lvl(&$output, $depth) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"menu\">\n";
+	}
+}

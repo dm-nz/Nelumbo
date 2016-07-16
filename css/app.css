@@ -395,11 +395,11 @@ img {
 textarea {
   height: auto;
   min-height: 50px;
-  border-radius: 0; }
+  border-radius: 4px; }
 
 select {
   width: 100%;
-  border-radius: 0; }
+  border-radius: 4px; }
 
 #map_canvas img,
 #map_canvas embed,
@@ -418,7 +418,7 @@ button {
   background: transparent;
   padding: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: 4px;
   line-height: 1; }
 
 .row {
@@ -1377,7 +1377,7 @@ kbd {
   transition: all 0.25s ease-out;
   vertical-align: middle;
   border: 1px solid transparent;
-  border-radius: 0;
+  border-radius: 4px;
   padding: 0.85em 1em;
   margin: 0 1rem 1rem 0;
   font-size: 0.9rem;
@@ -1503,7 +1503,7 @@ textarea {
   color: #8a8a8a;
   background-color: #fefefe;
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
-  border-radius: 0;
+  border-radius: 4px;
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
   -webkit-appearance: none;
   -moz-appearance: none; }
@@ -1528,7 +1528,7 @@ textarea[readonly] {
 
 [type="submit"],
 [type="button"] {
-  border-radius: 0;
+  border-radius: 4px;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -1624,14 +1624,14 @@ select {
   height: 2.4375rem;
   padding: 0.5rem;
   border: 1px solid #cacaca;
-  border-radius: 0;
+  border-radius: 4px;
   margin: 0 0 1rem;
   font-size: 1rem;
   font-family: inherit;
   line-height: normal;
   color: #8a8a8a;
   background-color: #fafafa;
-  border-radius: 0;
+  border-radius: 4px;
   -webkit-appearance: none;
   -moz-appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb(51, 51, 51)"></polygon></svg>');
@@ -1773,7 +1773,7 @@ select {
   list-style-type: none;
   background: #fefefe;
   border: 1px solid #e6e6e6;
-  border-radius: 0;
+  border-radius: 4px;
   margin-left: 0; }
 
 .accordion-title {
@@ -1930,7 +1930,7 @@ select {
   margin: 0 0 1rem 0;
   padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.25);
-  border-radius: 0;
+  border-radius: 4px;
   position: relative;
   background-color: white; }
   .callout > :first-child {
@@ -2049,7 +2049,7 @@ select {
   visibility: hidden;
   width: 300px;
   z-index: 10;
-  border-radius: 0; }
+  border-radius: 4px; }
   .dropdown-pane.is-open {
     visibility: visible; }
 
@@ -2173,7 +2173,7 @@ select {
   line-height: 1;
   white-space: nowrap;
   cursor: default;
-  border-radius: 0;
+  border-radius: 4px;
   background: #2199e8;
   color: #fefefe; }
   .label.secondary {
@@ -2470,7 +2470,7 @@ body {
     font-size: 0.875rem;
     margin-right: 0.0625rem;
     display: none;
-    border-radius: 0; }
+    border-radius: 4px; }
     .pagination li:last-child, .pagination li:first-child {
       display: inline-block; }
     @media screen and (min-width: 40em) {
@@ -2481,7 +2481,7 @@ body {
     color: #0a0a0a;
     display: block;
     padding: 0.1875rem 0.625rem;
-    border-radius: 0; }
+    border-radius: 4px; }
     .pagination a:hover,
     .pagination button:hover {
       background: #e6e6e6; }
@@ -2513,7 +2513,7 @@ body {
   background-color: #cacaca;
   height: 1rem;
   margin-bottom: 1rem;
-  border-radius: 0; }
+  border-radius: 4px; }
   .progress.primary .progress-meter {
     background-color: #2199e8; }
   .progress.secondary .progress-meter {
@@ -2531,7 +2531,7 @@ body {
   width: 0%;
   height: 100%;
   background-color: #2199e8;
-  border-radius: 0; }
+  border-radius: 4px; }
   .progress-meter .progress-meter-text {
     position: absolute;
     top: 50%;
@@ -2587,7 +2587,7 @@ body {
   transition: all 0.2s ease-in-out;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
-  border-radius: 0; }
+  border-radius: 4px; }
   [data-whatinput="mouse"] .slider-handle {
     outline: 0; }
   .slider-handle:hover {
@@ -2664,7 +2664,7 @@ body {
   border: 1px solid #cacaca;
   margin: 100px auto 0 auto;
   background-color: #fefefe;
-  border-radius: 0;
+  border-radius: 4px;
   position: absolute;
   overflow-y: auto; }
   [data-whatinput="mouse"] .reveal {
@@ -2734,7 +2734,7 @@ body {
   width: 4rem;
   height: 2rem;
   transition: all 0.25s ease-out;
-  border-radius: 0;
+  border-radius: 4px;
   color: inherit;
   font-weight: inherit; }
   input + .switch-paddle {
@@ -2814,7 +2814,7 @@ body {
 
 table {
   margin-bottom: 1rem;
-  border-radius: 0; }
+  border-radius: 4px; }
   thead,
   tbody,
   tfoot {
@@ -2924,7 +2924,7 @@ table.hover tr:nth-of-type(even):hover {
   line-height: 0;
   max-width: 100%;
   transition: box-shadow 200ms ease-out;
-  border-radius: 0;
+  border-radius: 4px;
   margin-bottom: 1rem; }
   .thumbnail:hover, .thumbnail:focus {
     box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5); }
@@ -3013,7 +3013,7 @@ table.hover tr:nth-of-type(even):hover {
   z-index: 10;
   top: calc(100% + 0.6495rem);
   max-width: 10rem !important;
-  border-radius: 0; }
+  border-radius: 4px; }
   .tooltip::before {
     content: '';
     display: block;
