@@ -28,29 +28,28 @@
 		<div class="row">
 			<div class="column">
 				<div class="top-bar-title">
-				<ul class="menu">
-					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<li class="site-name"><h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1></li>
-					<?php else : ?>
-						<li class="site-name><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-					<?php
-					endif;
+					<ul class="menu">
+						<?php
+						if ( is_front_page() && is_home() ) : ?>
+							<li class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><strong><?php bloginfo( 'name' ); ?></strong></a></li>
+						<?php else : ?>
+							<li class="site-name><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+						<?php
+						endif;
 
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<li class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></li>
-					<?php
-					endif; ?>
-				</ul><!-- .site-branding -->
+						$description = get_bloginfo( 'description', 'display' );
+						if ( $description || is_customize_preview() ) : ?>
+							<li class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></li>
+						<?php
+						endif; ?>
+					</ul><!-- .site-branding -->
 				</div>
 
-				<nav id="site-navigation" class="responsive-menu" role="navigation">
-					<div class="top-bar-right">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'nelumbo' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'dropdown menu', 'walker' => new Foundation_Top_Bar, 'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>', 'container' => '' ) ); ?>
-					</div>
-				</nav><!-- #site-navigation -->
+				<div class="top-bar-right">
+					<nav id="site-navigation" role="navigation">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'dropdown menu', 'walker' => new Foundation_Top_Bar, 'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>', 'container' => '' ) ); ?>
+					</nav><!-- #site-navigation -->
+				</div>
 			</div>
 		</div>
 	</header><!-- #masthead -->

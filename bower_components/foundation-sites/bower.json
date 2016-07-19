@@ -1,9 +1,9 @@
 {
   "name": "foundation-sites",
-  "version": "6.0.3",
+  "version": "6.2.3",
   "main": [
     "scss/foundation.scss",
-    "js/foundation.js"
+    "dist/foundation.js"
   ],
   "ignore": [
     "config",
@@ -17,10 +17,16 @@
     "meteor-README.md",
     "package.js",
     "package.json",
-    "sache.json"
+    "sache.json",
+    ".editorconfig",
+    ".npm",
+    ".gitignore",
+    ".npmignore",
+    ".versions",
+    ".babelrc"
   ],
   "dependencies": {
-    "jquery": "~2.1.0",
-    "what-input": "~1.1.2"
+    "jquery": "~2.2.0",
+    "what-input": "~2.0.0"
   }
 }

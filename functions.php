@@ -147,9 +147,13 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+define( 'AUTOSAVE_INTERVAL', 9000 ); // Seconds
+
+define( 'WP_POST_REVISIONS', false );
+
 class Foundation_Top_Bar extends Walker_Nav_Menu {
-	function start_lvl(&$output, $depth) {
-		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class=\"menu\">\n";
-	}
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+ 		$indent = str_repeat("\t", $depth);
+    	$output .= "\n$indent<ul class=\"dropdown menu vertical\" data-toggle>\n";
+ 	}
 }
