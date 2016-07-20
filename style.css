@@ -45,7 +45,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 /*--------------------------------------------------------------
 # Normalize
---------------------------------------------------------------*/
+--------------------------------------------------------------
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -259,7 +259,7 @@ th {
 
 /*--------------------------------------------------------------
 # Typography
---------------------------------------------------------------*/
+--------------------------------------------------------------
 body,
 button,
 input,
@@ -339,19 +339,19 @@ big {
 
 /*--------------------------------------------------------------
 # Elements
---------------------------------------------------------------*/
+--------------------------------------------------------------
 html {
 	box-sizing: border-box;
 }
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ 
 	box-sizing: inherit;
 }
 
 body {
-	background: #fff; /* Fallback for when there is no custom background color defined. */
+	background: #fff; /* Fallback for when there is no custom background color defined. 
 }
 
 blockquote:before,
@@ -401,8 +401,8 @@ dd {
 }
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
+	height: auto; /* Make sure images are scaled correctly. 
+	max-width: 100%; /* Adhere to container width. 
 }
 
 table {
@@ -412,7 +412,7 @@ table {
 
 /*--------------------------------------------------------------
 # Forms
---------------------------------------------------------------*/
+--------------------------------------------------------------
 button,
 input[type="button"],
 input[type="reset"],
@@ -504,7 +504,7 @@ textarea {
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Links
---------------------------------------------------------------*/
+--------------------------------------------------------------
 a {
 	color: royalblue;
 }
@@ -530,7 +530,7 @@ a:active {
 
 /*--------------------------------------------------------------
 ## Menus
---------------------------------------------------------------*/
+--------------------------------------------------------------
 .main-navigation {
 	clear: both;
 	display: block;
@@ -605,7 +605,7 @@ a:active {
 .main-navigation .current-menu-ancestor > a {
 }
 
-/* Small menu. */
+/* Small menu. 
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -703,7 +703,7 @@ a:active {
 
 /*--------------------------------------------------------------
 # Clearings
---------------------------------------------------------------*/
+--------------------------------------------------------------
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -747,7 +747,7 @@ a:active {
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Posts and pages
---------------------------------------------------------------*/
+--------------------------------------------------------------
 .sticky {
 	display: block;
 }

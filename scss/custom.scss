@@ -1,0 +1,24 @@
+/* TOP BAR */
+
+.top-bar {
+	border-bottom: 1px solid #ddd;
+}
+
+.top-bar-title .site-name a {
+	padding-left: 0;
+}
+
+.top-bar-right .menu > li > a {
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+}
+
+.top-bar-right .menu > li > a:last-of-type {
+	padding-right: 0;
+}
+
+/* FOOTER */
+
+#footer-wrapper {
+	background: #eee;
+}
