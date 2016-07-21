@@ -153,3 +153,29 @@ class Foundation_Top_Bar extends Walker_Nav_Menu {
     	$output .= "\n$indent<ul class=\"dropdown menu vertical\" data-toggle>\n";
  	}
 }
+
+function as_adapt_search_form( $form ) {
+    // $forms contains the rendered HTML output of the standard search form
+    // the exact output is changed if your theme has declared HTML5 support
+    // with the following minimum settings:
+    //
+    // add_theme_support( 'html5', array( 'search-form' ) );
+    //
+    // see http://codex.wordpress.org/Function_Reference/add_theme_support
+    // add Foundation classes to the button class
+    //
+    // we do a string replace and search for 'search-submit', which is the one
+    // class that is already defined for the HTML5 search form
+    //
+    // if HTML5 search-form support has not been defined, this will leave the
+    // HTML output unchanged
+    $form = str_replace(
+        'search-submit',
+        'search-submit small radius button',
+        $form
+    );
+    // return the modified string
+    return $form;
+}
+// run the search form HTML output through the newly defined filter
+add_filter( 'get_search_form', 'as_adapt_search_form' );

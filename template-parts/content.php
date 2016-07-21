@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('margin-bottom-triple'); ?>>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -19,7 +19,7 @@
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
+		<div class="entry-meta margin-bottom-normal">
 			<?php nelumbo_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php

@@ -1,7 +1,11 @@
-/* TOP BAR */
+/*** TOP BAR ***/
 
 .top-bar {
 	border-bottom: 1px solid #ddd;
+}
+
+.admin-bar .top-bar.scrolled {
+	margin-top: 32px;
 }
 
 .top-bar-title .site-name a {
@@ -17,8 +21,71 @@
 	padding-right: 0;
 }
 
+/*** CONTENT ***/
+
+.posted-on {
+	border-right: 1px solid #ddd;
+}
+
+.home .edit-link,
+.archive .edit-link,
+.search .edit-link {
+	margin-left: 0.625rem;
+	padding-left: 0.625rem;
+	border-left: 1px solid #ddd;
+}
+
+.nav-links a {
+	display: inline-block;
+	padding: 0.5rem 1rem 0.75rem;
+	color: $primary-color;
+	background: none;
+	border: 1px solid $primary-color;
+	border-radius: $global-radius;
+	box-shadow: none;
+}
+
+.nav-links a:hover {
+	border-color: scale-color($button-background, $lightness: -15%);
+}
+
+/*** SIDEBAR ***/
+
+.widget {
+	margin-bottom: 0.9375rem;
+	padding-bottom: 0.625rem;
+	border-bottom: 1px solid #ddd;
+}
+
+h2.widget-title {
+	font-size: 1.5rem;
+}
+
+/* SEARCH FORM */
+
+.search-form label {
+	width: 65%;
+	float: left;
+	margin-right: 2%;
+}
+
+.search-form .button {
+	width: 33%;
+	height: 2.4375rem;
+	text-transform: uppercase;
+}
+
 /* FOOTER */
 
 #footer-wrapper {
 	background: #eee;
+}
+
+/* BUTTONS */
+
+.ghost.button {
+	color: $primary-color;
+	background: none;
+	border: 1px solid $primary-color;
+	box-shadow: none;
 }
