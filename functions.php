@@ -104,9 +104,17 @@ add_action( 'widgets_init', 'nelumbo_widgets_init' );
 function nelumbo_scripts() {
 	wp_register_style( 'foundation-style', get_template_directory_uri() . '/css/app.css', array(), '20160710', 'all' );
 
+	wp_register_style( 'icons-style', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css', array(), '20160721', 'all' );
+
+	wp_register_style( 'font-style', get_template_directory_uri() . '/fonts/opensans/opensans.css', array(), '20160721', 'all' );
+
 	wp_enqueue_style( 'nelumbo-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'foundation-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'icons-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'font-style', get_stylesheet_uri() );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -149,33 +157,7 @@ define( 'WP_POST_REVISIONS', false );
 
 class Foundation_Top_Bar extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
- 		$indent = str_repeat("\t", $depth);
-    	$output .= "\n$indent<ul class=\"dropdown menu vertical\" data-toggle>\n";
- 	}
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"dropdown menu vertical\" data-toggle>\n";
+	}
 }
-
-function as_adapt_search_form( $form ) {
-    // $forms contains the rendered HTML output of the standard search form
-    // the exact output is changed if your theme has declared HTML5 support
-    // with the following minimum settings:
-    //
-    // add_theme_support( 'html5', array( 'search-form' ) );
-    //
-    // see http://codex.wordpress.org/Function_Reference/add_theme_support
-    // add Foundation classes to the button class
-    //
-    // we do a string replace and search for 'search-submit', which is the one
-    // class that is already defined for the HTML5 search form
-    //
-    // if HTML5 search-form support has not been defined, this will leave the
-    // HTML output unchanged
-    $form = str_replace(
-        'search-submit',
-        'search-submit small radius button',
-        $form
-    );
-    // return the modified string
-    return $form;
-}
-// run the search form HTML output through the newly defined filter
-add_filter( 'get_search_form', 'as_adapt_search_form' );

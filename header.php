@@ -41,16 +41,23 @@
 
 								$description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
-									<li class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></li>
+									<li class="site-description show-for-large"><?php echo $description; /* WPCS: xss ok. */ ?></li>
 								<?php
 								endif; ?>
 							</ul><!-- .site-branding -->
 						</div>
+						<div class="menu-hamburger hide-for-large" data-responsive-toggle="responsive-menu" data-hide-for="medium">
+							<ul class="menu">
+							<li><a><i class="fa fa-bars padding-top" data-toggle></i></a></li>
+							</ul>
+						</div>
 
-						<div class="top-bar-right">
-							<nav id="site-navigation" role="navigation">
-								<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'dropdown menu', 'walker' => new Foundation_Top_Bar, 'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>', 'container' => '' ) ); ?>
-							</nav><!-- #site-navigation -->
+						<div id="responsive-menu">
+							<div class="top-bar-right">
+								<nav id="site-navigation" role="navigation">
+									<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'dropdown menu', 'walker' => new Foundation_Top_Bar, 'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>', 'container' => '' ) ); ?>
+								</nav><!-- #site-navigation -->
+							</div>
 						</div>
 					</div>
 				</div>
@@ -58,4 +65,4 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content margin-top-double">
+	<div id="content" class="site-content">

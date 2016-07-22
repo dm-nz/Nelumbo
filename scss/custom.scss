@@ -4,8 +4,12 @@
 	border-bottom: 1px solid #ddd;
 }
 
-.admin-bar .top-bar.scrolled {
-	margin-top: 32px;
+.admin-bar .is-stuck {
+	margin-top: 32px !important;
+}
+
+.top-bar-title {
+	margin-top: -3px;
 }
 
 .top-bar-title .site-name a {
@@ -21,18 +25,34 @@
 	padding-right: 0;
 }
 
-/*** CONTENT ***/
-
-.posted-on {
-	border-right: 1px solid #ddd;
+.menu-hamburger ul.menu {
+	float: right;
 }
 
-.home .edit-link,
-.archive .edit-link,
-.search .edit-link {
-	margin-left: 0.625rem;
-	padding-left: 0.625rem;
-	border-left: 1px solid #ddd;
+.menu-hamburger a {
+	padding-right: 0 !important;
+}
+
+@media screen and (max-width: 40em) {
+	.top-bar {
+		padding: 0.5rem !important;
+	}
+}
+
+/*** CONTENT ***/
+
+#content {
+	margin-top: 1.25rem;
+}
+
+@media screen and (max-width: 40em) {
+	#content {
+		margin-top: 0.625rem;
+	}
+}
+
+.byline {
+	margin-left: -3px;
 }
 
 .nav-links a {
@@ -47,6 +67,70 @@
 
 .nav-links a:hover {
 	border-color: scale-color($button-background, $lightness: -15%);
+}
+
+/*** COMMENTS ***/
+
+#comments {
+	margin-top: 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid #ddd;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+	width: 31.6%;
+	margin-right: 2%;
+	display: inline-block;
+}
+
+.comment-form-url {
+	margin-right: 0;
+}
+
+ol.comment-list {
+	margin-left: 45px;
+}
+
+ol.comment-list li {
+	list-style: none;
+}
+
+ol ol.children {
+	margin-left: 45px;
+}
+
+.comment img.avatar {
+	position: absolute;
+	margin-left: -45px;
+	margin-top: 7px;
+	border-radius: $global-radius;
+}
+
+.comment .comment-author {
+	display: inline-block;
+}
+
+.comment .comment-metadata {
+	display: inline-block;
+	margin-left: 0.625rem;
+	font-size: 0.75em;
+}
+
+.comment .edit-link {
+	margin-left: 0.3125rem;
+	padding-left: 0.5rem;
+	border-left: 1px solid #ddd;
+}
+
+.comment .reply {
+	margin-top: -0.625rem;
+	font-size: 0.75em;
+}
+
+.comment .comment-body {
+	margin-bottom: 0.9375rem;
 }
 
 /*** SIDEBAR ***/
@@ -69,23 +153,28 @@ h2.widget-title {
 	margin-right: 2%;
 }
 
-.search-form .button {
+.search-form .search-submit {
 	width: 33%;
 	height: 2.4375rem;
 	text-transform: uppercase;
 }
 
-/* FOOTER */
+/*** FOOTER ***/
 
 #footer-wrapper {
-	background: #eee;
+	background: $light-gray;
 }
 
-/* BUTTONS */
+/*** BUTTONS ***/
 
-.ghost.button {
-	color: $primary-color;
-	background: none;
-	border: 1px solid $primary-color;
-	box-shadow: none;
+.submit { @include button; }
+
+.search-submit { @include button; font-size: 0.75rem; }
+
+/*** MISC ***/
+
+.divider {
+	border-left: 1px solid #ddd;
+	margin-left: 0.625rem;
+	margin-right: 0.625rem;
 }

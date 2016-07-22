@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('margin-bottom-triple'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('margin-bottom-large'); ?>>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
