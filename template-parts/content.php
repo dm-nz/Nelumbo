@@ -9,16 +9,26 @@
 
 ?>
 
+<?php if ( has_post_thumbnail() )  {
+	$imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'cover' ); //change thumbnail to whatever size you are using
+	$imgwidth = $imgdata[1]; // thumbnail's width
+	if ($imgwidth >= 1920) {
+		$cover = true;
+	} else $cover = false;
+} ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('margin-bottom-large'); ?>>
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				if ( $cover == false ) {
+					the_title( '<h1 class="entry-title">', '</h1>' );
+				}
 			} else {
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
-		if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() && $cover == false ) : ?>
 		<div class="entry-meta margin-bottom-normal">
 			<?php nelumbo_posted_on(); ?>
 		</div><!-- .entry-meta -->

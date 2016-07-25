@@ -33,7 +33,7 @@
 							<ul class="menu">
 								<?php
 								if ( is_front_page() && is_home() ) : ?>
-									<li class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><strong><?php bloginfo( 'name' ); ?></strong></a></li>
+									<li class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1><strong><?php bloginfo( 'name' ); ?></strong></h1></a></li>
 								<?php else : ?>
 									<li class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><strong><?php bloginfo( 'name' ); ?></strong></a></li>
 								<?php

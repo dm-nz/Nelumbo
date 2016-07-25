@@ -32,20 +32,21 @@ gulp.task('scripts', function() {
             'bower_components/what-input/what-input.js',
             'bower_components/foundation-sites/dist/foundation.min.js',
             'bower_components/foundation-sites/dist/plugins/*.js',
-            'js/*.js'
+            'js/custom.js',
+            'js/customizer.js',
+            'js/navigation.js',
+            'js/skip-link-focus-fix.js'
           ]
         )
       // here i concat all the files i read
       .pipe(concat('app.js'))
-      .pipe(rename({suffix: '.min'}))
+      //.pipe(rename({suffix: '.min'}))
       //.pipe(uglify())
       // then i save it in the scripts folder
-      .pipe(gulp.dest('scripts'));
+      .pipe(gulp.dest('js'));
 });
-
-
 
 gulp.task('default', ['sass', 'scripts'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
-  gulp.watch(['js/**/*.js'], ['scripts']);
+  gulp.watch(['js/custom.js'], ['scripts']);
 });

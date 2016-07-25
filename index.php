@@ -15,7 +15,11 @@
 get_header(); ?>
 
 	<div class="row">
+		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
+		<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
+		<?php } else { ?>
 		<div id="primary" class="content-area medium-8 columns">
+		<?php } ?>
 			<main id="main" class="site-main" role="main">
 
 			<?php

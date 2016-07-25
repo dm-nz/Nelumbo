@@ -1,5 +1,9 @@
 /*** TOP BAR ***/
 
+header#masthead {
+	z-index: 2;
+}
+
 .top-bar {
 	border-bottom: 1px solid #ddd;
 }
@@ -8,8 +12,16 @@
 	margin-top: 32px !important;
 }
 
-.top-bar-title {
-	margin-top: -3px;
+@media screen and (min-width: 40.063em) {
+	.top-bar-title {
+		margin-top: -3px;
+	}
+}
+
+.top-bar-title .site-name h1 {
+	margin-bottom: 0;
+	font-size: inherit;
+	line-height: 1;
 }
 
 .top-bar-title .site-name a {
@@ -33,21 +45,42 @@
 	padding-right: 0 !important;
 }
 
+.is-drilldown {
+	border-top: 1px solid #ddd;
+}
+
+.is-drilldown .menu > li > a {
+	padding: 1rem 0;
+}
+
 @media screen and (max-width: 40em) {
 	.top-bar {
-		padding: 0.5rem !important;
+		padding: 0.5rem 0 !important;
 	}
 }
 
 /*** CONTENT ***/
 
 #content {
+	margin-bottom: 1.25rem;
+}
+
+#primary {
 	margin-top: 1.25rem;
 }
 
+#secondary {
+	margin-top: 1.5rem;
+}
+
 @media screen and (max-width: 40em) {
-	#content {
+	#primary,
+	#secondary {
 		margin-top: 0.625rem;
+	}
+	.entry-meta,
+	.entry-footer {
+		font-size: 0.875em;
 	}
 }
 
@@ -63,10 +96,50 @@
 	border: 1px solid $primary-color;
 	border-radius: $global-radius;
 	box-shadow: none;
+	font-size: 0.875rem;
 }
 
 .nav-links a:hover {
 	border-color: scale-color($button-background, $lightness: -15%);
+}
+
+/* COVER */
+
+#cover {
+	position: relative;
+	height: 400px;
+	overflow: hidden;
+	background: $black;
+	background-position: center;
+	background-size: cover;
+	text-shadow: 0 0 1.5rem black;
+}
+
+#cover .column {
+	height: 400px;
+}
+
+#cover .filter {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.25);
+}
+
+@media screen and (min-width: 40.063em) and (max-width: 64em) {
+	#cover,
+	#cover .column {
+		height: 325px;
+	}
+}
+
+@media screen and (max-width: 40em) {
+	#cover,
+	#cover .column {
+		height: 250px;
+	}
 }
 
 /*** COMMENTS ***/
@@ -77,12 +150,14 @@
 	border-top: 1px solid #ddd;
 }
 
-.comment-form-author,
-.comment-form-email,
-.comment-form-url {
-	width: 31.6%;
-	margin-right: 2%;
-	display: inline-block;
+@media screen and (min-width: 40.063em) {
+	.comment-form-author,
+	.comment-form-email,
+	.comment-form-url {
+		width: 31.5%;
+		margin-right: 2%;
+		display: inline-block;
+	}
 }
 
 .comment-form-url {
@@ -141,8 +216,10 @@ ol ol.children {
 	border-bottom: 1px solid #ddd;
 }
 
-h2.widget-title {
-	font-size: 1.5rem;
+@media screen and (min-width: 40.063em) {
+	h2.widget-title {
+		font-size: 1.5rem;
+	}
 }
 
 /* SEARCH FORM */
@@ -177,4 +254,44 @@ h2.widget-title {
 	border-left: 1px solid #ddd;
 	margin-left: 0.625rem;
 	margin-right: 0.625rem;
+}
+
+.absolute-center {
+	width: 99%;
+	height: auto;
+	overflow: auto;
+	margin: auto;
+	top: 50%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: table;
+	position: relative;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.inverse {
+	color: white !important;
+}
+
+.inverse a {
+	color: white;
+	text-decoration: underline;
+}
+
+.inverse a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.row-absolute {
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.semi-transparent {
+	opacity: 0.6;
 }

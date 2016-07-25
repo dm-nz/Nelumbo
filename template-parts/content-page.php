@@ -10,9 +10,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+
+	<?php if ( has_post_thumbnail() )  {
+		$imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'cover' ); //change thumbnail to whatever size you are using
+		$imgwidth = $imgdata[1]; // thumbnail's width
+		if ($imgwidth >= 1920) {
+			$cover = true;
+		} else $cover = false;
+	} ?>
+
+	<?php if ( $cover == false ) { ?>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		</header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php

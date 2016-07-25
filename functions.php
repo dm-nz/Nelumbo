@@ -122,7 +122,7 @@ function nelumbo_scripts() {
 
 	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array(), '20160710', true );
 
-	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/scripts/app.min.js', array(), '20160720', true );
+	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/js/app.js', array(), '20160720', true );
 }
 add_action( 'wp_enqueue_scripts', 'nelumbo_scripts' );
 
@@ -161,3 +161,5 @@ class Foundation_Top_Bar extends Walker_Nav_Menu {
 		$output .= "\n$indent<ul class=\"dropdown menu vertical\" data-toggle>\n";
 	}
 }
+
+add_image_size( 'cover', 1920, 400, true );
