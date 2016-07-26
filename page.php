@@ -14,8 +14,9 @@
 
 get_header(); ?>
 
+	<!-- Checking if thumbnail size is big enough for cover -->
 	<?php if ( has_post_thumbnail() )  {
-		$imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'cover' ); //change thumbnail to whatever size you are using
+		$imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'cover' );
 		$imgwidth = $imgdata[1]; // thumbnail's width
 		if ($imgwidth >= 1920) {
 			$cover = true;

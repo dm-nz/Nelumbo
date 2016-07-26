@@ -52,10 +52,22 @@
 							</ul>
 						</div>
 
+						
 						<div id="responsive-menu">
 							<div class="top-bar-right">
 								<nav id="site-navigation" role="navigation">
-									<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'menu_class' => 'dropdown menu', 'walker' => new Foundation_Top_Bar, 'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>', 'container' => '' ) ); ?>
+									<?php if ( has_nav_menu( 'primary' )) { ?>
+									<?php wp_nav_menu( array(
+										'theme_location' => 'primary',
+										'menu_id' => 'primary-menu',
+										'menu_class' => 'dropdown menu',
+										'walker' => new Foundation_Top_Bar,
+										'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>',
+										'container' => '' ) );
+									?>
+									<?php } else {
+										wp_nav_menu( array('depth' => 1) );
+									} ?>
 								</nav><!-- #site-navigation -->
 							</div>
 						</div>

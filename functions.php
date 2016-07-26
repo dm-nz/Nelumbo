@@ -120,7 +120,7 @@ function nelumbo_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/bower_components/jquery/dist/jquery.min.js', array(), '20160710', true );
+	wp_enqueue_script( 'foundation-jquery', 'https://code.jquery.com/jquery-2.2.0.min.js', array(), '20160726', true );
 
 	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/js/app.js', array(), '20160720', true );
 }
@@ -151,10 +151,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-define( 'AUTOSAVE_INTERVAL', 9000 ); // Seconds
-
-define( 'WP_POST_REVISIONS', false );
-
+/**
+* Foundation top bar walker
+*/
 class Foundation_Top_Bar extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
@@ -162,4 +161,7 @@ class Foundation_Top_Bar extends Walker_Nav_Menu {
 	}
 }
 
+/**
+* Cover thumbnail
+*/
 add_image_size( 'cover', 1920, 400, true );

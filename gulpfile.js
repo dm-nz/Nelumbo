@@ -38,11 +38,9 @@ gulp.task('scripts', function() {
             'js/skip-link-focus-fix.js'
           ]
         )
-      // here i concat all the files i read
       .pipe(concat('app.js'))
       //.pipe(rename({suffix: '.min'}))
       //.pipe(uglify())
-      // then i save it in the scripts folder
       .pipe(gulp.dest('js'));
 });
 

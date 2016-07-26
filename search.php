@@ -10,7 +10,11 @@
 get_header(); ?>
 
 	<div class="row">
-		<section id="primary" class="content-area large-8 medium-10 medium-centered columns">
+		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
+		<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
+		<?php } else { ?>
+		<div id="primary" class="content-area medium-8 columns">
+		<?php } ?>
 			<main id="main" class="site-main" role="main">
 
 			<?php
@@ -42,7 +46,7 @@ get_header(); ?>
 			endif; ?>
 
 			</main><!-- #main -->
-		</section><!-- #primary -->
+		</div><!-- #primary -->
 
 		<?php get_sidebar(); ?>
 	</div>
