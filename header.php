@@ -41,7 +41,7 @@
 
 								$description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
-									<li class="site-description show-for-large"><?php echo $description; /* WPCS: xss ok. */ ?></li>
+									<li class="site-description show-for-large"><span><?php echo $description; /* WPCS: xss ok. */ ?></span></li>
 								<?php
 								endif; ?>
 							</ul><!-- .site-branding -->
@@ -56,16 +56,15 @@
 						<div id="responsive-menu">
 							<div class="top-bar-right">
 								<nav id="site-navigation" role="navigation">
-									<?php if ( has_nav_menu( 'primary' )) { ?>
-									<?php wp_nav_menu( array(
-										'theme_location' => 'primary',
-										'menu_id' => 'primary-menu',
-										'menu_class' => 'dropdown menu',
-										'walker' => new Foundation_Top_Bar,
-										'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>',
-										'container' => '' ) );
-									?>
-									<?php } else {
+									<?php if ( has_nav_menu( 'primary' )) {
+										wp_nav_menu( array(
+											'theme_location' => 'primary',
+											'menu_id' => 'primary-menu',
+											'menu_class' => 'dropdown menu',
+											'walker' => new Foundation_Top_Bar,
+											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>',
+											'container' => '' ) );
+									} else {
 										wp_nav_menu( array('depth' => 1) );
 									} ?>
 								</nav><!-- #site-navigation -->

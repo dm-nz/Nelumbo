@@ -25,6 +25,10 @@ Open theme's folder in your command line, and install the needed dependencies:
 
 ```bash
 npm install
+npm install gulp-concat
+npm install gulp-uglify
+npm install gulp-rename
+npm install gulp-cache
 bower install
 ```
 
@@ -38,7 +42,7 @@ While inside of theme's folder, use the `watch` command to compile all scss and 
 foundation watch
 ```
 
-### Build
+#### Build
 
 To build customized theme for production, use `foundation build`.
 

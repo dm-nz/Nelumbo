@@ -40,7 +40,7 @@ gulp.task('scripts', function() {
         )
       .pipe(concat('app.js'))
       //.pipe(rename({suffix: '.min'}))
-      //.pipe(uglify())
+      .pipe(uglify())
       .pipe(gulp.dest('js'));
 });
 
