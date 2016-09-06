@@ -1,6 +1,17 @@
-/* TYPOGRAPHY */
+// Table of conents
+//
+// 1. Typography
+// 2. Inverse
+// 3. Margins
+// 4. Paddings
+// 5. Positioning
+// 6. Misc
+
+// 1. Typography
+// -------------
 
 .h0-size { font-size: 3.25em; }
+
 	@media screen and (max-width: 40.063em) and (min-width: 64em) {
 		.h0-size { font-size: 2.9em; }
 	}
@@ -16,7 +27,8 @@
 	.small-only-text-center { text-align: center; }
 }
 
-/* INVERSE */
+// 2. Inverse
+// ----------
 
 .inverse { color: white !important; }
 
@@ -45,9 +57,10 @@
 	color: white;
 }
 
-/* MARGINS */
+// 3. Margins
+// ----------
 
-.margin-bottom-none { margin-bottom: 0; }
+.margin-bottom-none { margin-bottom: 0 !important; }
 .margin-bottom-half { margin-bottom: 0.3125rem; }
 .margin-bottom-normal { margin-bottom: 0.625rem; }
 .margin-bottom-bigger { margin-bottom: 0.9375rem; }
@@ -55,7 +68,7 @@
 .margin-bottom-triple { margin-bottom: 1.875rem }
 .margin-bottom-large { margin-bottom: 2.5rem; }
 
-.margin-top-none { margin-top: 0; }
+.margin-top-none { margin-top: 0 !important; }
 .margin-top-half { margin-top: 0.3125rem; }
 .margin-top-normal { margin-top: 0.625rem; }
 .margin-top-bigger { margin-top: 0.9375rem; }
@@ -63,23 +76,28 @@
 .margin-top-triple { margin-top: 1.875rem }
 .margin-top-large { margin-top: 2.5rem; }
 
-.margin-left-none { margin-left: 0; }
+.margin-left-none { margin-left: 0 !important; }
 .margin-left-half { margin-left: 0.3125rem; }
 .margin-left-normal { margin-left: 0.625rem; }
 .margin-left-bigger { margin-left: 0.9375rem; }
 .margin-left-double { margin-left: 1.25rem; }
 .margin-left-triple { margin-left: 1.875rem; }
 
-.margin-right-none { margin-right: 0; }
+.margin-right-none { margin-right: 0 !important; }
 .margin-right-half { margin-right: 0.3125rem; }
 .margin-right-normal { margin-right: 0.625rem; }
 .margin-right-bigger { margin-right: 0.9375rem; }
 .margin-right-double { margin-right: 1.25rem; }
 .margin-right-triple { margin-right: 1.875rem; }
 
-/* PADDINGS */
+@media screen and (max-width: 40em) {
+	h2.section-title.margin-bottom-double { margin-bottom: 0.625rem; }
+}
 
-.padding-bottom-none { padding-right: 0; }
+// 4. Paddings
+// -----------
+
+.padding-bottom-none { padding-right: 0 !important; }
 .padding-bottom-half { padding-bottom: 0.3125rem; }
 .padding-bottom-normal { padding-bottom: 0.625rem; }
 .padding-bottom-bigger { padding-bottom: 0.9375rem; }
@@ -87,7 +105,7 @@
 .padding-bottom-triple { padding-bottom: 1.875rem; }
 .padding-bottom-large { padding-bottom: 2.5rem; }
 
-.padding-top-none { padding-top: 0; }
+.padding-top-none { padding-top: 0 !important; }
 .padding-top-half { padding-top: 0.3125rem; }
 .padding-top-normal { padding-top: 0.625rem; }
 .padding-top-bigger { padding-top: 0.9375rem; }
@@ -95,14 +113,14 @@
 .padding-top-triple { padding-top: 1.875rem; }
 .padding-top-large { padding-top: 2.5rem; }
 
-.padding-left-none { padding-left: 0; }
+.padding-left-none { padding-left: 0 !important; }
 .padding-left-half { padding-left: 0.3125rem; }
 .padding-left-normal { padding-left: 0.625rem; }
 .padding-left-bigger { padding-left: 0.9375rem; }
 .padding-left-double { padding-left: 1.25rem; }
 .padding-left-triple { padding-left: 1.875rem }
 
-.padding-right-none { padding-right: 0; }
+.padding-right-none { padding-right: 0 !important; }
 .padding-right-half { padding-right: 0.3125rem; }
 .padding-right-normal { padding-right: 0.625rem; }
 .padding-right-bigger { padding-right: 0.9375rem; }
@@ -125,7 +143,8 @@
 		}
 	}
 
-/* POSITIONS */
+// 5. Positioning
+// --------------
 
 .row-absolute {
 	position: absolute;
@@ -154,7 +173,8 @@
 	-webkit-transform: translateY(-49%);
 }
 
-/* MISC */
+// 6. Misc
+// -------
 
 .black { background-color: #222; }
 .semi.black { background-color: rgba(0,0,0,0.75)}

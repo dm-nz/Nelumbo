@@ -1,4 +1,30 @@
-/*** POSTS & COMMENTS NAVIGATION ***/
+// Table of contents
+//
+// 1. Global
+	// 1.1. Posts & Comments Navigation
+	// 1.2. Accessibility
+	// 1.3. Alignments
+	// 1.4. Infinite Scroll
+	// 1.5. Media
+	// 1.6. Captions
+	// 1.7. Galleries
+	// 1.8. Forms
+	// 1.9. Buttons
+// 2. Tob Bar
+// 3. Content
+	// 3.1. Misc
+	// 3.2. Cover
+// 4. Comments
+// 5. Sidebar
+	// 5.1. Widgets
+	// 5.2. Search Form
+// 6. Footer
+
+// 1. Global
+// ---------
+
+// 1.1 Posts & Comments Navigation
+// -------------------------------
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
@@ -22,7 +48,21 @@
 	width: 50%;
 }
 
-/*** ACCESSIBILITY ***/
+.nav-links a {
+	display: inline-block;
+	padding: 0.5rem 1rem 0.75rem;
+	color: $primary-color;
+	background: none;
+	border: 1px solid $primary-color;
+	border-radius: $global-radius;
+	box-shadow: none;
+	font-size: 0.875rem;
+}
+
+.nav-links a:hover { border-color: scale-color($button-background, $lightness: -15%); }
+
+// 1.2. Accessibility
+// ------------------
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -56,7 +96,8 @@
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus { outline: 0; }
 
-/*** ALIGNMENTS ***/
+// 1.3. Alignments
+// ---------------
 
 .alignleft {
 	display: inline;
@@ -77,7 +118,8 @@
 	margin-right: auto;
 }
 
-/*** INFINITE SCROLL ***/
+// 1.4. Infinite Scroll
+// --------------------
 
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
@@ -88,7 +130,8 @@
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer { display: block; }
 
-/*** MEDIA ***/
+// 1.5. Media
+// ----------
 
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -104,7 +147,8 @@ embed,
 iframe,
 object { max-width: 100%; }
 
-/*** CAPTIONS ***/
+// 1.6. Captions
+// -------------
 
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -121,7 +165,8 @@ object { max-width: 100%; }
 
 .wp-caption-text { text-align: center; }
 
-/*** GALLERIES ***/
+// 1.7. Galleries
+// --------------
 
 .gallery { margin-bottom: 1.5em; }
 
@@ -143,7 +188,64 @@ object { max-width: 100%; }
 
 .gallery-caption { display: block; }
 
-/*** TOP BAR ***/
+// 1.8 Forms
+// ---------
+
+form textarea[rows] { height: 8rem; }
+
+.input-wrapper input[type="text"],
+.input-wrapper input[type="tel"],
+.input-wrapper input[type="email"] { padding-left: 40px; }
+
+.input-wrapper::before {
+	font-family: FontAwesome;
+	color: $medium-gray;
+	position: absolute;
+	line-height: 1.25;
+	margin-top: 9px;
+	margin-left: 12px;
+	width: 25px;
+	z-index: 1;
+}
+
+.input-wrapper.name::before { content: "\f007"; }
+.input-wrapper.phone::before { content: "\f095"; }
+.input-wrapper.email::before { content: "\f0e0"; }
+
+.form-wrapper.semi input[type="text"],
+.form-wrapper.semi input[type="tel"],
+.form-wrapper.semi input[type="email"],
+.form-wrapper.semi textarea { background-color: rgba(255,255,255,0.75); }
+
+.form-wrapper.semi .input-wrapper::before { color: #888; }
+
+.wpcf7-not-valid-tip {
+	margin-top: -1rem;
+	margin-bottom: 0.5rem;
+}
+
+div.wpcf7-response-output {
+	margin: 0 !important;
+	border-radius: $global-radius;
+}
+
+div.wpcf7 img.ajax-loader {
+	position: absolute;
+	margin-top: 0.75em;
+}
+
+// 1.9. Buttons
+// ------------
+
+.submit { @include button; }
+
+.search-submit {
+	@include button;
+	font-size: 0.75rem;
+}
+
+// 2. Tob Bar
+// ----------
 
 .fixed {
 	position: fixed;
@@ -151,9 +253,9 @@ object { max-width: 100%; }
 	z-index: 2;
 }
 
-@media screen and (max-width: 40em) {
-	.fixed { position: absolute; }
-}
+	@media screen and (max-width: 40em) {
+		.fixed { position: absolute; }
+	}
 
 header#masthead { z-index: 2; }
 
@@ -161,6 +263,10 @@ header#masthead { z-index: 2; }
 	border-bottom: 1px solid #ddd;
 	transition: 1s;
 }
+
+	@media screen and (max-width: 40em) {
+		.top-bar { padding: 0.5rem 0 !important; }
+	}
 
 .admin-bar .is-stuck { margin-top: 32px !important; }
 
@@ -213,62 +319,13 @@ header#masthead { z-index: 2; }
 
 .is-drilldown .menu > li > a { padding: 1rem 0; }
 
-@media screen and (max-width: 40em) {
-	.top-bar { padding: 0.5rem 0 !important; }
-}
-
 .site-name h1 { font-weight: 300; }
 
-/*** ABOUT ***/
+// 3. Content
+// ----------
 
-#about p { font-size: 1.125em; }
-
-/*** FORMS ***/
-
-form textarea[rows] { height: 8rem; }
-
-.input-wrapper input[type="text"],
-.input-wrapper input[type="tel"],
-.input-wrapper input[type="email"] { padding-left: 40px; }
-
-.input-wrapper::before {
-	font-family: FontAwesome;
-	color: $medium-gray;
-	position: absolute;
-	line-height: 1.25;
-	margin-top: 9px;
-	margin-left: 12px;
-	width: 25px;
-	z-index: 1;
-}
-
-.input-wrapper.name::before { content: "\f007"; }
-.input-wrapper.phone::before { content: "\f095"; }
-.input-wrapper.email::before { content: "\f0e0"; }
-
-.form-wrapper.semi input[type="text"],
-.form-wrapper.semi input[type="tel"],
-.form-wrapper.semi input[type="email"],
-.form-wrapper.semi textarea { background-color: rgba(255,255,255,0.75); }
-
-.form-wrapper.semi .input-wrapper::before { color: #888; }
-
-.wpcf7-not-valid-tip {
-	margin-top: -1rem;
-	margin-bottom: 0.5rem;
-}
-
-div.wpcf7-response-output {
-	margin: 0 !important;
-	border-radius: $global-radius;
-}
-
-div.wpcf7 img.ajax-loader {
-	position: absolute;
-	margin-top: 0.75em;
-}
-
-/*** CONTENT ***/
+// 3.1. Misc
+// ---------
 
 #primary { margin-top: 1.25rem; }
 
@@ -284,22 +341,8 @@ div.wpcf7 img.ajax-loader {
 
 .byline { margin-left: -3px; }
 
-.nav-links a {
-	display: inline-block;
-	padding: 0.5rem 1rem 0.75rem;
-	color: $primary-color;
-	background: none;
-	border: 1px solid $primary-color;
-	border-radius: $global-radius;
-	box-shadow: none;
-	font-size: 0.875rem;
-}
-
-.nav-links a:hover {
-	border-color: scale-color($button-background, $lightness: -15%);
-}
-
-/* COVER */
+// 3.2. Cover
+// ----------
 
 #cover {
 	position: relative;
@@ -332,7 +375,8 @@ div.wpcf7 img.ajax-loader {
 	#cover .column { height: 250px;	}
 }
 
-/*** COMMENTS ***/
+// 4. Comments
+// -----------
 
 .comment-content a { word-wrap: break-word; }
 
@@ -390,7 +434,11 @@ ol ol.children { margin-left: 45px; }
 
 .comment .comment-body { margin-bottom: 0.9375rem; }
 
-/*** SIDEBAR ***/
+// 5. Sidebar
+// ----------
+
+// 5.1. Widgets
+// ------------
 
 .widget {
 	margin-bottom: 0.9375rem;
@@ -402,7 +450,8 @@ ol ol.children { margin-left: 45px; }
 	h2.widget-title { font-size: 1.5rem; }
 }
 
-/* SEARCH FORM */
+// 5.2 Search Form
+// ---------------
 
 .search-form label {
 	width: 65%;
@@ -416,20 +465,7 @@ ol ol.children { margin-left: 45px; }
 	text-transform: uppercase;
 }
 
-/*** FOOTER ***/
+// 6. Footer
+// ---------
 
-#footer-wrapper {
-	background: $light-gray;
-}
-
-/*** BUTTONS ***/
-
-.submit { @include button; }
-
-.search-submit { @include button; font-size: 0.75rem; }
-
-/*** MISC ***/
-
-@media screen and (max-width: 40em) {
-	h2.margin-bottom-double { margin-bottom: 0.625rem; }
-}
+#footer-wrapper { background: $light-gray; }
