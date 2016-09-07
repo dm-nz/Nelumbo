@@ -26,18 +26,18 @@ function nelumbo_posted_on() {
 
 	$posted_on = sprintf(
 		esc_html_x( '%s', 'post date', 'nelumbo' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<i class="fa fa-calendar"></i><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
 		esc_html_x( '%s', 'post author', 'nelumbo' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<i class="fa fa-user"></i><span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="divider"></span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="divider"></span><span class="comments-link">';
+		echo '<span class="divider"></span><span class="comments-link"><i class="fa fa-comment"></i>';
 		/* translators: %s: post title */
 		comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'nelumbo' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 		echo '</span>';
@@ -66,13 +66,13 @@ function nelumbo_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'nelumbo' ) );
 		if ( $categories_list && nelumbo_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'nelumbo' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links"><i class="fa fa-bookmark"></i>' . esc_html__( 'Posted in %1$s', 'nelumbo' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'nelumbo' ) );
 		if ( $tags_list ) {
-			printf( '<span class="divider"></span><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'nelumbo' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="divider"></span><i class="fa fa-tag"></i><span class="tags-links">' . esc_html__( 'Tagged %1$s', 'nelumbo' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 }

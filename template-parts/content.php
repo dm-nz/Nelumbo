@@ -29,7 +29,7 @@
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
-		if ( 'post' === get_post_type() && $cover == false ) : ?>
+		if ( !is_single() && $cover == true || $cover == false ) : ?>
 		<div class="entry-meta margin-bottom-normal">
 			<?php nelumbo_posted_on(); ?>
 		</div><!-- .entry-meta -->

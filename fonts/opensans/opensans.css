@@ -1,10 +1,10 @@
-@font-face {
+/*@font-face {
     font-family: 'Open Sans';
     src: local('Open Sans Light'), local('OpenSans-Light'), url('opensanslight.woff2') format('woff2'), url('opensanslight.woff') format('woff'), url('opensanslight.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
-/*@font-face {
+@font-face {
     font-family: 'Open Sans';
     src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url('opensanslightitalic.woff2') format('woff2'), url('opensanslightitalic.woff') format('woff'), url('opensanslightitalic.ttf') format('truetype');
     font-weight: 300;

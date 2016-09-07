@@ -50,6 +50,7 @@
 
 .nav-links a {
 	display: inline-block;
+	margin-bottom: 0.9375rem;
 	padding: 0.5rem 1rem 0.75rem;
 	color: $primary-color;
 	background: none;
@@ -339,7 +340,21 @@ header#masthead { z-index: 2; }
 	.entry-footer { font-size: 0.875em; }
 }
 
+.entry-title {
+	font-weight: bold;
+	letter-spacing: -1px; }
+
+.entry-title a { color: $body-font-color; }
+
 .byline { margin-left: -3px; }
+
+a { transition: 0.5s; }
+
+.entry-meta i.fa,
+.entry-footer i.fa {
+	margin-right: 0.625rem;
+	color: $medium-gray;
+}
 
 // 3.2. Cover
 // ----------
@@ -365,6 +380,8 @@ header#masthead { z-index: 2; }
 	background-color: rgba(0,0,0,0.25);
 }
 
+#cover .entry-meta { color: white; }
+
 @media screen and (min-width: 40.063em) and (max-width: 64em) {
 	#cover,
 	#cover .column { height: 325px; }
@@ -383,7 +400,6 @@ header#masthead { z-index: 2; }
 .bypostauthor {	display: block; }
 
 #comments {
-	margin-top: 2rem;
 	padding-top: 1.5rem;
 	border-top: 1px solid #ddd;
 }
@@ -440,15 +456,22 @@ ol ol.children { margin-left: 45px; }
 // 5.1. Widgets
 // ------------
 
-.widget {
-	margin-bottom: 0.9375rem;
-	padding-bottom: 0.625rem;
-	border-bottom: 1px solid #ddd;
+.widget { margin-bottom: 1.875rem; }
+
+.widget.widget_search { margin-bottom: 0; }
+
+.widget ul {
+	list-style-type: none;
+	margin-left: 0;
 }
 
-@media screen and (min-width: 40.063em) {
-	h2.widget-title { font-size: 1.5rem; }
-}
+.widget ul li {	margin-bottom: 0.3125rem; }
+
+h2.widget-title { margin-bottom: 0.9375rem; }
+
+	@media screen and (min-width: 40.063em) {
+		h2.widget-title { font-size: 1.25rem; }
+	}
 
 // 5.2 Search Form
 // ---------------
@@ -468,4 +491,4 @@ ol ol.children { margin-left: 45px; }
 // 6. Footer
 // ---------
 
-#footer-wrapper { background: $light-gray; }
+#footer-wrapper { background: #333; }

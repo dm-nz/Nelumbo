@@ -176,7 +176,7 @@
 // 6. Misc
 // -------
 
-.black { background-color: #222; }
+.black { background-color: #222 !important; }
 .semi.black { background-color: rgba(0,0,0,0.75)}
 
 .grey { background-color: $light-gray; }
@@ -191,8 +191,8 @@
 
 .divider {
 	border-left: 1px solid #ddd;
-	margin-left: 0.625rem;
-	margin-right: 0.625rem;
+	margin-left: 0.9375rem;
+	margin-right: 0.9375rem;
 }
 
 .full-height { height: 100%; }
