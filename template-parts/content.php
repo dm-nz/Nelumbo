@@ -18,24 +18,34 @@
 	} else $cover = false;
 } ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('margin-bottom-large'); ?>>
-	<header class="entry-header">
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php if ( !is_single() || is_single() && $cover == false ) { ?>
+	<header class="entry-header margin-bottom-large">
 		<?php
 			if ( is_single() ) {
-				if ( $cover == false ) {
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				}
-			} else {
+				the_title( '<h1 class="entry-title">', '</h1>' );
+			} else { ?>
+
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="entry-featured-img margin-bottom-large">
+			    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			        <?php the_post_thumbnail('entry-featured-img'); ?>
+				</a>
+			</div>
+		<?php endif; ?>
+
+			<?php
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
 		if ( !is_single() && $cover == true || $cover == false ) : ?>
-		<div class="entry-meta margin-bottom-normal">
+		<div class="entry-meta">
 			<?php nelumbo_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php

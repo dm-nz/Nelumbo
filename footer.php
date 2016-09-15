@@ -13,10 +13,10 @@
 
 	</div><!-- #content -->
 
-	<div id="footer-wrapper" class="inverse padding-top-triple padding-bottom-triple">
+	<div id="footer-wrapper" class="inverse padding-top-xlarge padding-bottom-xlarge">
 		<footer id="colophon" class="site-footer row" role="contentinfo">
 			<div class="site-info column text-right">
-				Theme: Nelumbo by <a href="http://lotus.kg">Lotus</a>.
+				Nelumbo theme by <a href="http://lotus.kg">Lotus</a>.
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div>

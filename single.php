@@ -19,7 +19,7 @@ get_header(); ?>
 	} ?>
 
 	<?php if ($cover == true) { ?>
-		<div id="cover" class="inverse margin-bottom-normal" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
+		<div id="cover" class="inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
 			<div class="row row-absolute">
 				<div class="large-8 medium-10 medium-centered columns">
 					<header class="entry-header vertical-middle text-center">
@@ -40,7 +40,7 @@ get_header(); ?>
 		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
 		<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
 		<?php } else { ?>
-		<div id="primary" class="content-area medium-8 columns">
+		<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 		<?php } ?>
 			<main id="main" class="site-main" role="main">
 

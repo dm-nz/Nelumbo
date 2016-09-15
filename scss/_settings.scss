@@ -45,7 +45,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 87.5%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -58,7 +58,7 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
+$black: #333;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
@@ -80,7 +80,7 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 641px,
+  medium: 640px,
   large: 1024px,
   xlarge: 1200px,
   xxlarge: 1440px,
@@ -116,11 +116,11 @@ $header-sizes: (
     'h6': 16,
   ),
   medium: (
-    'h1': 42,
-    'h2': 34,
-    'h3': 28,
-    'h4': 23,
-    'h5': 19,
+    'h1': 36,
+    'h2': 28,
+    'h3': 24,
+    'h4': 21,
+    'h5': 18,
     'h6': 16,
   ),
 );
@@ -348,10 +348,10 @@ $input-font-size: rem-calc(16);
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: 1px solid $medium-gray;
-$input-border-focus: 1px solid $dark-gray;
-$input-shadow: inset 0 1px 2px rgba($black, 0.1);
-$input-shadow-focus: 0 0 5px $medium-gray;
+$input-border: 0px solid $medium-gray;
+$input-border-focus: 0px solid $dark-gray;
+$input-shadow: inset 0 0 1px rgba($black, 0.9);
+$input-shadow-focus: 0 0 5px $dark-gray;
 $input-cursor-disabled: default;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
@@ -378,7 +378,7 @@ $mediaobject-image-width-stacked: 100%;
 
 $menu-margin: 0;
 $menu-margin-nested: 1rem;
-$menu-item-padding: 0.7rem 1rem;
+$menu-item-padding: 0.7rem 1.5rem;
 $menu-item-color-active: $white;
 $menu-item-background-active: map-get($foundation-palette, primary);
 $menu-icon-spacing: 0.25rem;
@@ -558,7 +558,7 @@ $tooltip-radius: $global-radius;
 // 36. Top Bar
 // -----------
 
-$topbar-padding: 1.5rem 0;
+$topbar-padding: 1.75rem 0;
 $topbar-background: $white;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;

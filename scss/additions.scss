@@ -1,4 +1,4 @@
-// Table of conents
+// Table of contents
 //
 // 1. Typography
 // 2. Inverse
@@ -61,71 +61,51 @@
 // ----------
 
 .margin-bottom-none { margin-bottom: 0 !important; }
-.margin-bottom-half { margin-bottom: 0.3125rem; }
-.margin-bottom-normal { margin-bottom: 0.625rem; }
-.margin-bottom-bigger { margin-bottom: 0.9375rem; }
-.margin-bottom-double { margin-bottom: 1.25rem; }
-.margin-bottom-triple { margin-bottom: 1.875rem }
-.margin-bottom-large { margin-bottom: 2.5rem; }
+.margin-bottom-small { margin-bottom: 0.5em; }
+.margin-bottom-normal { margin-bottom: 1em; }
+.margin-bottom-large { margin-bottom: 1.5em }
+.margin-bottom-xlarge { margin-bottom: 2.5em; }
 
 .margin-top-none { margin-top: 0 !important; }
-.margin-top-half { margin-top: 0.3125rem; }
-.margin-top-normal { margin-top: 0.625rem; }
-.margin-top-bigger { margin-top: 0.9375rem; }
-.margin-top-double { margin-top: 1.25rem; }
-.margin-top-triple { margin-top: 1.875rem }
-.margin-top-large { margin-top: 2.5rem; }
+.margin-top-small { margin-top: 0.5em; }
+.margin-top-normal { margin-top: 1em; }
+.margin-top-large { margin-top: 1.5em }
+.margin-top-xlarge { margin-top: 2.5em; }
 
 .margin-left-none { margin-left: 0 !important; }
-.margin-left-half { margin-left: 0.3125rem; }
-.margin-left-normal { margin-left: 0.625rem; }
-.margin-left-bigger { margin-left: 0.9375rem; }
-.margin-left-double { margin-left: 1.25rem; }
-.margin-left-triple { margin-left: 1.875rem; }
+.margin-left-small { margin-left: 0.5rem; }
+.margin-left-normal { margin-left: 1rem; }
+.margin-left-large { margin-left: 1.5rem; }
 
 .margin-right-none { margin-right: 0 !important; }
-.margin-right-half { margin-right: 0.3125rem; }
-.margin-right-normal { margin-right: 0.625rem; }
-.margin-right-bigger { margin-right: 0.9375rem; }
-.margin-right-double { margin-right: 1.25rem; }
-.margin-right-triple { margin-right: 1.875rem; }
-
-@media screen and (max-width: 40em) {
-	h2.section-title.margin-bottom-double { margin-bottom: 0.625rem; }
-}
+.margin-right-small { margin-right: 0.5rem; }
+.margin-right-normal { margin-right: 1rem; }
+.margin-right-large { margin-right: 1.5rem; }
 
 // 4. Paddings
 // -----------
 
 .padding-bottom-none { padding-right: 0 !important; }
-.padding-bottom-half { padding-bottom: 0.3125rem; }
-.padding-bottom-normal { padding-bottom: 0.625rem; }
-.padding-bottom-bigger { padding-bottom: 0.9375rem; }
-.padding-bottom-double { padding-bottom: 1.25rem; }
-.padding-bottom-triple { padding-bottom: 1.875rem; }
-.padding-bottom-large { padding-bottom: 2.5rem; }
+.padding-bottom-small { padding-bottom: 0.5em; }
+.padding-bottom-normal { padding-bottom: 1em; }
+.padding-bottom-large { padding-bottom: 1.5em; }
+.padding-bottom-xlarge { padding-bottom: 2.5em; }
 
 .padding-top-none { padding-top: 0 !important; }
-.padding-top-half { padding-top: 0.3125rem; }
-.padding-top-normal { padding-top: 0.625rem; }
-.padding-top-bigger { padding-top: 0.9375rem; }
-.padding-top-double { padding-top: 1.25rem; }
-.padding-top-triple { padding-top: 1.875rem; }
-.padding-top-large { padding-top: 2.5rem; }
+.padding-top-small { padding-top: 0.5em; }
+.padding-top-normal { padding-top: 1em; }
+.padding-top-large { padding-top: 1.5em; }
+.padding-top-xlarge { padding-top: 2.5em; }
 
 .padding-left-none { padding-left: 0 !important; }
-.padding-left-half { padding-left: 0.3125rem; }
-.padding-left-normal { padding-left: 0.625rem; }
-.padding-left-bigger { padding-left: 0.9375rem; }
-.padding-left-double { padding-left: 1.25rem; }
-.padding-left-triple { padding-left: 1.875rem }
+.padding-left-small { padding-left: 0.5rem; }
+.padding-left-normal { padding-left: 1rem; }
+.padding-left-large { padding-left: 1.5rem; }
 
 .padding-right-none { padding-right: 0 !important; }
-.padding-right-half { padding-right: 0.3125rem; }
-.padding-right-normal { padding-right: 0.625rem; }
-.padding-right-bigger { padding-right: 0.9375rem; }
-.padding-right-double { padding-right: 1.25rem; }
-.padding-right-triple { padding-right: 1.875rem }
+.padding-right-small { padding-right: 0.5rem; }
+.padding-right-normal { padding-right: 1rem; }
+.padding-right-large { padding-right: 1.5rem; }
 
 .section-padding {
 	padding-top: 2.6rem;
@@ -134,7 +114,8 @@
 	@media screen and (min-width: 40.063em) and (max-width: 64em) {
 		.section-padding {
 			padding-top: 1.9rem;
-			padding-bottom: 1.75rem }
+			padding-bottom: 1.75rem;
+		}
 	}
 	@media screen and (max-width: 40em) {
 		.section-padding {
@@ -155,7 +136,7 @@
 
 .floor {
 	position: absolute;
-	bottom: 1.275rem;
+	bottom: 1.25rem;
 }
 
 .vertical-middle {
@@ -176,7 +157,7 @@
 // 6. Misc
 // -------
 
-.black { background-color: #222 !important; }
+.black { background-color: $black !important; }
 .semi.black { background-color: rgba(0,0,0,0.75)}
 
 .grey { background-color: $light-gray; }
@@ -191,8 +172,8 @@
 
 .divider {
 	border-left: 1px solid #ddd;
-	margin-left: 0.9375rem;
-	margin-right: 0.9375rem;
+	margin-left: 1em;
+	margin-right: 1em;
 }
 
 .full-height { height: 100%; }
@@ -202,3 +183,8 @@
 .semi-transparent {	opacity: 0.6; }
 
 .reveal p .button { margin-bottom: 0; }
+
+@media screen and (min-width: 64em) {
+	.large-collapse-right { padding-right: 0 !important; }
+	.large-collapse-left { padding-left: 0 !important; }
+}
