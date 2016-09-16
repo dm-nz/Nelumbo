@@ -120,7 +120,7 @@ function nelumbo_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'foundation-jquery', 'https://code.jquery.com/jquery-2.2.0.min.js', array(), '20160726', true );
+	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '20160726', true );
 
 	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/js/app.js', array(), '20160720', true );
 }

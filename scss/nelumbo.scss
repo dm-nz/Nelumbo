@@ -31,8 +31,12 @@
 // -------------------------------
 
 .site-main .comment-navigation,
-.site-main .posts-navigation,
 .site-main .post-navigation {
+	margin: 0 0 1em;
+	overflow: hidden;
+}
+
+.site-main .posts-navigation {
 	margin: 0 0 2em;
 	overflow: hidden;
 }
@@ -368,7 +372,7 @@ a { transition: 0.4s; }
 	#primary { border-bottom: 1px solid $light-gray; }
 }
 
-.post { margin-bottom: 3rem; }
+.post { margin-bottom: 2rem; }
 
 .entry-title a { color: $body-font-color; }
 
@@ -378,6 +382,8 @@ a { transition: 0.4s; }
 	.entry-header.margin-bottom-large { margin-bottom: 0.5em; }
 	.entry-meta { margin-bottom: 0; }
 }
+
+.entry-footer { margin-bottom: 1rem; }
 
 .entry-meta a,
 .entry-footer,
