@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<div class="large-offset-1 large-collapse-left medium-4 columns margin-top-normal">
+<div class="large-offset-1 large-collapse-left medium-4 columns">
 	<aside id="secondary" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</aside><!-- #secondary -->

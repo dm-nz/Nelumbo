@@ -31,13 +31,9 @@
 // -------------------------------
 
 .site-main .comment-navigation,
-.site-main .post-navigation {
-	margin: 0 0 1em;
-	overflow: hidden;
-}
-
+.site-main .post-navigation,
 .site-main .posts-navigation {
-	margin: 0 0 2em;
+	margin: 0 0 1em;
 	overflow: hidden;
 }
 
@@ -262,7 +258,7 @@ header#masthead { z-index: 2; }
 
 .top-bar {
 	border-bottom: 1px solid $light-gray;
-	transition: 1s;
+	transition: 0.3s;
 }
 
 	@media screen and (max-width: 40em) {
@@ -274,6 +270,8 @@ header#masthead { z-index: 2; }
 .top-bar .dropdown.menu > li.is-dropdown-submenu-parent > a::after { border-color: $body-font-color transparent transparent; }
 
 .admin-bar .is-stuck { margin-top: 32px !important; }
+
+.menu > li.site-logo > a { padding: 0 0.75rem 0 0 }
 
 // 2.2 Top Bar Title
 // -----------------
@@ -335,7 +333,7 @@ header#masthead { z-index: 2; }
 .menu-hamburger a {	padding-right: 0 !important; }
 
 .is-drilldown {
-	margin-top: 0.55rem;
+	margin-top: 0.5rem;
 	padding-top: 0.25rem;
 	border-top: 1px solid $light-gray;
 }
@@ -354,15 +352,9 @@ header#masthead { z-index: 2; }
 
 a { transition: 0.4s; }
 
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4,
-.entry-content h5,
-.entry-content h6 { margin-top: 2rem; }
+#content { margin-bottom: 1rem; }
 
-#primary { margin-top: 2.25rem; }
-
+#primary,
 #secondary { margin-top: 1.75rem; }
 
 @media screen and (max-width: 40em) {
@@ -372,18 +364,26 @@ a { transition: 0.4s; }
 	#primary { border-bottom: 1px solid $light-gray; }
 }
 
-.post { margin-bottom: 2rem; }
+article { margin-bottom: 1.5rem; }
+
+.page-title,
+.entry-title { line-height: 1; }
 
 .entry-title a { color: $body-font-color; }
 
-.entry-meta { margin-bottom: 1em; }
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 { margin-top: 2rem; }
 
 @media screen and (max-width: 40em) {
 	.entry-header.margin-bottom-large { margin-bottom: 0.5em; }
 	.entry-meta { margin-bottom: 0; }
 }
 
-.entry-footer { margin-bottom: 1rem; }
+.entry-footer { margin-bottom: 1.5rem; }
 
 .entry-meta a,
 .entry-footer,
@@ -393,7 +393,7 @@ a { transition: 0.4s; }
 
 .entry-meta i.fa,
 .entry-footer i.fa {
-	margin-right: 0.5em;
+	margin-right: 0.75em;
 	color: $medium-gray;
 }
 
@@ -405,7 +405,11 @@ a { transition: 0.4s; }
 }
 
 .archive .page-title,
-.search .page-title { margin-bottom: 1em; }
+.search .page-title {
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid $light-gray;
+}
 
 // 3.2 Cover
 // ---------
@@ -441,10 +445,14 @@ a { transition: 0.4s; }
 @media screen and (max-width: 40em) {
 	#cover,
 	#cover .column { height: 280px;	}
+
+	#cover .entry-header { margin-top: 1rem; }
 }
 
 // 4. Comments
 // -----------
+
+#comments { margin-top: 2rem; }
 
 .comment-content a { word-wrap: break-word; }
 
@@ -464,22 +472,15 @@ a { transition: 0.4s; }
 	.comment-form-author,
 	.comment-form-email,
 	.comment-form-url {
-		width: 31.7%;
-		margin-right: 1.4%;
-		display: inline-block;
-	}
-}
-
-@media screen and (min-width: 64.063em) {
-	.comment-form-author,
-	.comment-form-email,
-	.comment-form-url {
-		width: 31.7%;
-		margin-right: 1.7%;
+		width: 32.2%;
+		margin-right: 1.5%;
+		float: left;
 	}
 }
 
 .comment-form-url {	margin-right: 0; }
+
+#comments .form-submit { clear: left; }
 
 ol.comment-list { margin-left: 45px; }
 

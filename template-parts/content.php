@@ -20,7 +20,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( !is_single() || is_single() && $cover == false ) { ?>
-	<header class="entry-header margin-bottom-large">
+	<header class="entry-header margin-bottom-normal">
 		<?php
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );
@@ -35,7 +35,7 @@
 		<?php endif; ?>
 
 			<?php
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h2 class="entry-title margin-bottom-small"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
 		if ( !is_single() && $cover == true || $cover == false ) : ?>
@@ -65,4 +65,5 @@
 	<footer class="entry-footer">
 		<?php nelumbo_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<div class="clear"></div>
 </article><!-- #post-## -->

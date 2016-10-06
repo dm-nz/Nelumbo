@@ -166,7 +166,6 @@ class Foundation_Top_Bar extends Walker_Nav_Menu {
 */
 add_image_size( 'cover', 1920, 450, true );
 
-
 /**
 * Entry featured image
 */
@@ -175,7 +174,13 @@ add_image_size( 'entry-featured-img', 685, 685, false );
 
 /**
 * Disable post revions and autosave
-*/
+*
 define( 'AUTOSAVE_INTERVAL', 9000 ); // Seconds
 
-define( 'WP_POST_REVISIONS', false );
+define( 'WP_POST_REVISIONS', false );*/
+
+add_theme_support('custom-logo', array(
+	'width'			=> 36,
+	'height'		=> 36,
+	'flex-height'	=> true
+));

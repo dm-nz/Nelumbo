@@ -1,8 +1,8 @@
-#Nelumbo
+# Nelumbo
 
 Nelumbo is a clean and simple WordPress theme based on Foundation 6 and Underscores.
 
-##Customizing
+## Customizing
 
 ### Requirements
 

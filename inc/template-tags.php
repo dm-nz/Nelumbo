@@ -120,3 +120,9 @@ function nelumbo_category_transient_flusher() {
 }
 add_action( 'edit_category', 'nelumbo_category_transient_flusher' );
 add_action( 'save_post',     'nelumbo_category_transient_flusher' );
+
+function nelumbo_the_custom_logo() {
+	if (function_exists('the_custom_logo')) {
+		the_custom_logo();
+	}
+}

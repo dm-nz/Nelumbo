@@ -25,7 +25,7 @@ get_header(); ?>
 					<header class="entry-header vertical-middle text-center">
 						<?php the_title( '<h1 class="entry-title">', '</h1>' );
 							if ( 'post' === get_post_type() ) : ?>
-								<div class="entry-meta margin-bottom-normal semi-transparent">
+								<div class="entry-meta margin-bottom-none semi-transparent">
 								<?php echo get_the_date(); ?>
 								</div><!-- .entry-meta -->
 							<?php endif; ?>

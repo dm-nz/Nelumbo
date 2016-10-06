@@ -30,12 +30,17 @@
 				<div class="row">
 					<div class="column">
 						<div class="top-bar-title">
-							<ul class="menu">
+							<ul class="menu site-branding">
+								<?php
+								if ( function_exists( 'the_custom_logo' ) ) : ?>
+									<li class="site-logo"><?php nelumbo_the_custom_logo(); ?></li>
+								<?php
+								endif; ?>
 								<?php
 								if ( is_front_page() && is_home() ) : ?>
-									<li class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1><?php bloginfo( 'name' ); ?></h1></a></li>
+									<li class="site-name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1><?php bloginfo( 'name' ); ?></h1></a></li>
 								<?php else : ?>
-									<li class="site-name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+									<li class="site-name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
 								<?php
 								endif;
 
@@ -46,12 +51,12 @@
 								endif; ?>
 							</ul><!-- .site-branding -->
 						</div>
+
 						<div class="menu-hamburger hide-for-large" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 							<ul class="menu">
 							<li><a><i class="fa fa-bars padding-top" data-toggle></i></a></li>
 							</ul>
 						</div>
-
 						
 						<div id="responsive-menu">
 							<div class="top-bar-right">
@@ -69,7 +74,7 @@
 									} ?>
 								</nav><!-- #site-navigation -->
 							</div>
-						</div>
+						</div><!-- #responsive-menu -->
 					</div>
 				</div>
 			</div>
