@@ -1,63 +1,30 @@
 // Table of contents
 //
 // 1. Typography
-// 2. Inverse
-// 3. Margins
-// 4. Paddings
-// 5. Positioning
-// 6. Misc
+// 2. Margins
+// 3. Paddings
+// 4. Positioning
+// 5. Misc
 
 // 1. Typography
 // -------------
 
 .h0-size { font-size: 3.25em; }
 
-	@media screen and (max-width: 40.063em) and (min-width: 64em) {
+	@media #{$medium-only} {
 		.h0-size { font-size: 2.9em; }
 	}
-	@media screen and (max-width: 40em) {
+	@media #{$small-only} {
 		.h0-size { font-size: 2.3em; }
 	}
 
-.bigger { font-size: 1.25em; }
-
 .strong { font-weight: bold; }
 
-@media screen and (max-width: 40em) {
+@media #{$small-only} {
 	.small-only-text-center { text-align: center; }
 }
 
-// 2. Inverse
-// ----------
-
-.inverse { color: white !important; }
-
-.inverse a {
-	color: white;
-	text-decoration: underline;
-}
-
-.inverse a:hover {
-	color: white;
-	text-decoration: none;
-}
-
-.inverse a.button {	text-decoration: none; }
-
-.top-bar.inverse {
-	border-color: rgba(255,255,255,0.08);
-}
-
-.inverse .top-bar-title .site-description span { border-color: rgba(255,255,255,0.1) }
-
-.inverse .menu > li > a { color: $white; text-decoration: none; }
-
-.inverse .button.hollow {
-	border: 1px solid white;
-	color: white;
-}
-
-// 3. Margins
+// 2. Margins
 // ----------
 
 .margin-bottom-none { margin-bottom: 0 !important; }
@@ -82,7 +49,7 @@
 .margin-right-normal { margin-right: 1rem; }
 .margin-right-large { margin-right: 1.5rem; }
 
-// 4. Paddings
+// 3. Paddings
 // -----------
 
 .padding-bottom-none { padding-right: 0 !important; }
@@ -111,21 +78,23 @@
 	padding-top: 2.6rem;
 	padding-bottom: 2.5rem;
 }
-	@media screen and (min-width: 40.063em) and (max-width: 64em) {
+	@media #{$medium-only} {
 		.section-padding {
 			padding-top: 1.9rem;
 			padding-bottom: 1.75rem;
 		}
 	}
-	@media screen and (max-width: 40em) {
+	@media #{$small-only} {
 		.section-padding {
 			padding-top: 1.25rem;
 			padding-bottom: 1rem;
 		}
 	}
 
-// 5. Positioning
+// 4. Positioning
 // --------------
+
+.right { float: right; }
 
 .row-absolute {
 	position: absolute;
@@ -144,18 +113,20 @@
 	height: auto;
 	overflow: auto;
 	margin: auto;
-	top: 49%;
+	top: 50%;
 	left: 0;
 	bottom: 0;
 	right: 0;
 	display: table;
 	position: relative;
-	transform: translateY(-49%);
-	-webkit-transform: translateY(-49%);
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
 }
 
-// 6. Misc
+// 5. Misc
 // -------
+
+.clear { clear: both; }
 
 .black { background-color: $black; }
 
@@ -185,7 +156,7 @@
 
 .reveal p .button { margin-bottom: 0; }
 
-@media screen and (min-width: 64em) {
+@media #{$large-up} {
 	.large-collapse-right { padding-right: 0 !important; }
 	.large-collapse-left { padding-left: 0 !important; }
 }

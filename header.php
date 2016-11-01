@@ -26,6 +26,35 @@
 
 	<header id="masthead" role="banner" data-sticky-container>
 		<div class="small-12 sticky" data-sticky data-options="marginTop: 0">
+		<?php if ( is_woocommerce_activated() ) { ?>
+			<div class="top-stripe grey">
+				<div class="row">
+					<div class="column">
+						<ul class="menu right text-right">
+							<li class="cart first">
+								<?php nelumbo_cart_link(); ?>
+								<?php the_widget( 'WC_Widget_Cart' ); ?> 
+							</li>
+							<li class="search last">
+								<a><i class="fa fa-search"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-search black inverse">
+					<div class="row">
+						<div class="large-11 columns">
+							<?php get_product_search_form(); ?>
+						</div>
+						<div class="large-1 columns close inverse text-right">
+							<div class="column">
+								<a><i class="fa fa-times semi-transparent"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
 			<div class="top-bar">
 				<div class="row">
 					<div class="column">
@@ -54,7 +83,9 @@
 
 						<div class="menu-hamburger hide-for-large" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 							<ul class="menu">
-							<li><a><i class="fa fa-bars padding-top" data-toggle></i></a></li>
+								<li>
+									<a><i class="fa fa-bars padding-top" data-toggle></i></a>
+								</li>
 							</ul>
 						</div>
 						
@@ -75,6 +106,7 @@
 								</nav><!-- #site-navigation -->
 							</div>
 						</div><!-- #responsive-menu -->
+
 					</div>
 				</div>
 			</div>

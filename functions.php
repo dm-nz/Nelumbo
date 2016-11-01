@@ -87,10 +87,19 @@ add_action( 'after_setup_theme', 'nelumbo_content_width', 0 );
  */
 function nelumbo_widgets_init() {
 	register_sidebar( array(
-		'name'					=> esc_html__( 'Sidebar', 'nelumbo' ),
-		'id'						=> 'sidebar-1',
+		'name'			=> esc_html__( 'Sidebar', 'nelumbo' ),
+		'id'			=> 'sidebar-1',
 		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	 => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'			=> esc_html__( 'Footer', 'nelumbo' ),
+		'id'			=> 'footer-1',
+		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s large-3 medium-6 columns" data-equalizer-watch>',
 		'after_widget'	=> '</section>',
 		'before_title'	=> '<h2 class="widget-title">',
 		'after_title'	 => '</h2>',
@@ -179,8 +188,75 @@ define( 'AUTOSAVE_INTERVAL', 9000 ); // Seconds
 
 define( 'WP_POST_REVISIONS', false );*/
 
+
+/**
+* Logo
+*/
 add_theme_support('custom-logo', array(
 	'width'			=> 36,
 	'height'		=> 36,
 	'flex-height'	=> true
 ));
+
+/**
+* WooCommerce support
+*/
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+/**
+ * Query WooCommerce activation
+ */
+function is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}
+
+/**
+* WooCommerce cart link
+*/
+if ( ! function_exists( 'nelumbo_cart_link' ) ) {
+	/**
+	 * Cart Link
+	 * Displayed a link to the cart including the number of items present and the cart total
+	 *
+	 * @return void
+	 * @since  1.0.0
+	 */
+	function nelumbo_cart_link() {
+		?>
+			<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nelumbo' ); ?>">
+				<i class="fa fa-shopping-cart"></i>
+				<span>
+					<span class="amount strong margin-left-small margin-right-small"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+					<span class="count margin-right-small"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'nelumbo' ), WC()->cart->get_cart_contents_count() ) );?></span>
+					<i class="fa fa-angle-down"></i>
+				</span>
+			</a>
+		<?php
+	}
+}
+
+/**
+* Change number or products per row to 3
+*/
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns') && is_active_sidebar( 'sidebar-1' ) && function_exists('is_shop')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+/**
+* Move JS and CSS to bottom of the page
+*
+function footer_enqueue_scripts(){
+	//remove_action('wp_head','wp_print_scripts');
+	remove_action('wp_head','wp_enqueue_scripts',1);
+	//remove_action('wp_head','wp_print_head_scripts',9);
+	//add_action('wp_footer','wp_print_scripts',5);
+	add_action('wp_footer','wp_enqueue_scripts',5);
+	//add_action('wp_footer','wp_print_head_scripts',5);
+}
+add_action('after_setup_theme','footer_enqueue_scripts');*/

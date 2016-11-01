@@ -23,7 +23,7 @@ get_header(); ?>
 			<div class="row row-absolute">
 				<div class="large-8 medium-10 medium-centered columns">
 					<header class="entry-header vertical-middle text-center">
-						<?php the_title( '<h1 class="entry-title">', '</h1>' );
+						<?php the_title( '<h1 class="entry-title margin-bottom-small">', '</h1>' );
 							if ( 'post' === get_post_type() ) : ?>
 								<div class="entry-meta margin-bottom-none semi-transparent">
 								<?php echo get_the_date(); ?>
