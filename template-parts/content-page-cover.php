@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php.
+ * Template part for displaying page content in page-cover.php and page-cover-full-width.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

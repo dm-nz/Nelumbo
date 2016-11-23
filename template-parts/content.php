@@ -20,7 +20,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( !is_single() || is_single() && $cover == false ) { ?>
-	<header class="entry-header margin-bottom-normal">
+	<header class="entry-header margin-bottom-base">
 		<?php
 			if ( is_single() ) {
 				the_title( '<h1 class="entry-title">', '</h1>' );

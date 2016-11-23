@@ -231,7 +231,7 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 				<span>
 					<span class="amount strong margin-left-small margin-right-small"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
 					<span class="count margin-right-small"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'nelumbo' ), WC()->cart->get_cart_contents_count() ) );?></span>
-					<i class="fa fa-angle-down"></i>
+					<i class="fa fa-caret-down"></i>
 				</span>
 			</a>
 		<?php

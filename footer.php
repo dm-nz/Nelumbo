@@ -13,15 +13,15 @@
 
 	</div><!-- #content -->
 
-	<div id="footer-wrapper" class="inverse padding-bottom-xlarge">
+	<div id="footer-wrapper" class="inverse">
 	<?php if ( is_active_sidebar( 'footer-1' ) ) { ?>
-		<div id="footer-widgets" class="padding-top-xlarge">
-			<div class="row" data-equalizer>
+		<div id="footer-widgets" class="section-padding">
+			<div class="row padding-top-small" data-equalizer data-options="equalizeOnStack: false">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 			</div>
 		</div>
 	<?php } ?>
-		<footer id="colophon" class="site-footer padding-top-xlarge" role="contentinfo">
+		<footer id="colophon" class="site-footer section-padding" role="contentinfo">
 			<div class="row">
 				<div class="site-info column text-right">
 					Nelumbo theme by <a href="http://lotus.kg">Lotus</a>.

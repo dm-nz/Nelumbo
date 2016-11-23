@@ -37,8 +37,6 @@ get_header(); ?>
 
 				endwhile;
 
-				the_posts_navigation();
-
 			else :
 
 				get_template_part( 'template-parts/content', 'none' );
@@ -49,5 +47,12 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 		<?php get_sidebar(); ?>
+	</div>
+	<div id="post-nav-wrapper" class="grey section-padding">
+		<div class="row">
+			<div class="column">
+				<?php the_posts_navigation(); ?>
+			</div>
+		</div>
 	</div>
 <?php get_footer(); ?>

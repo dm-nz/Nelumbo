@@ -27,52 +27,72 @@
 // 2. Margins
 // ----------
 
-.margin-bottom-none { margin-bottom: 0 !important; }
-.margin-bottom-small { margin-bottom: 0.5em; }
-.margin-bottom-normal { margin-bottom: 1em; }
-.margin-bottom-large { margin-bottom: 1.5em }
-.margin-bottom-xlarge { margin-bottom: 2.5em; }
+.margin-bottom-none		{ margin-bottom: 0 !important; }
+.margin-bottom-tiny		{ margin-bottom: 0.25em; }
+.margin-bottom-small 	{ margin-bottom: 0.5em; }
+.margin-bottom-base		{ margin-bottom: 1rem; }
+.margin-bottom-medium 	{ margin-bottom: 1em; }
+.margin-bottom-large 	{ margin-bottom: 1.5em }
+.margin-bottom-xlarge 	{ margin-bottom: 2.5em; }
 
-.margin-top-none { margin-top: 0 !important; }
-.margin-top-small { margin-top: 0.5em; }
-.margin-top-normal { margin-top: 1em; }
-.margin-top-large { margin-top: 1.5em }
-.margin-top-xlarge { margin-top: 2.5em; }
+.margin-top-none 		{ margin-top: 0 !important; }
+.margin-top-tiny 		{ margin-top: 0.25em; }
+.margin-top-small 		{ margin-top: 0.5em; }
+.margin-top-base 		{ margin-top: 1rem; }
+.margin-top-medium 		{ margin-top: 1em; }
+.margin-top-large 		{ margin-top: 1.5em }
+.margin-top-xlarge 		{ margin-top: 2.5em; }
 
-.margin-left-none { margin-left: 0 !important; }
-.margin-left-small { margin-left: 0.5rem; }
-.margin-left-normal { margin-left: 1rem; }
-.margin-left-large { margin-left: 1.5rem; }
+.margin-left-none 		{ margin-left: 0 !important; }
+.margin-left-tiny 		{ margin-left: 0.25em; }
+.margin-left-small 		{ margin-left: 0.5em; }
+.margin-left-base 		{ margin-left: 1rem; }
+.margin-left-medium 	{ margin-left: 1em; }
+.margin-left-large 		{ margin-left: 1.5em; }
+.margin-left-xlarge 	{ margin-left: 2.5em; }
 
-.margin-right-none { margin-right: 0 !important; }
-.margin-right-small { margin-right: 0.5rem; }
-.margin-right-normal { margin-right: 1rem; }
-.margin-right-large { margin-right: 1.5rem; }
+.margin-right-none 		{ margin-right: 0 !important; }
+.margin-right-tiny 		{ margin-right: 0.25em; }
+.margin-right-small 	{ margin-right: 0.5em; }
+.margin-right-base 		{ margin-right: 1rem; }
+.margin-right-medium 	{ margin-right: 1em; }
+.margin-right-large 	{ margin-right: 1.5em; }
+.margin-right-xlarge 	{ margin-right: 2.5em; }
 
 // 3. Paddings
 // -----------
 
-.padding-bottom-none { padding-right: 0 !important; }
-.padding-bottom-small { padding-bottom: 0.5em; }
-.padding-bottom-normal { padding-bottom: 1em; }
-.padding-bottom-large { padding-bottom: 1.5em; }
-.padding-bottom-xlarge { padding-bottom: 2.5em; }
+.padding-bottom-none 	{ padding-right: 0 !important; }
+.padding-bottom-tiny 	{ padding-bottom: 0.25em; }
+.padding-bottom-small 	{ padding-bottom: 0.5em; }
+.padding-bottom-base 	{ padding-bottom: 1rem; }
+.padding-bottom-medium 	{ padding-bottom: 1em; }
+.padding-bottom-large 	{ padding-bottom: 1.5em; }
+.padding-bottom-xlarge 	{ padding-bottom: 2.5em; }
 
-.padding-top-none { padding-top: 0 !important; }
-.padding-top-small { padding-top: 0.5em; }
-.padding-top-normal { padding-top: 1em; }
-.padding-top-large { padding-top: 1.5em; }
-.padding-top-xlarge { padding-top: 2.5em; }
+.padding-top-none 		{ padding-top: 0 !important; }
+.padding-top-tiny 		{ padding-top: 0.25em; }
+.padding-top-small 		{ padding-top: 0.5em; }
+.padding-top-base 		{ padding-top: 1rem; }
+.padding-top-medium 	{ padding-top: 1em; }
+.padding-top-large 		{ padding-top: 1.5em; }
+.padding-top-xlarge 	{ padding-top: 2.5em; }
 
-.padding-left-none { padding-left: 0 !important; }
-.padding-left-small { padding-left: 0.5rem; }
-.padding-left-normal { padding-left: 1rem; }
-.padding-left-large { padding-left: 1.5rem; }
+.padding-left-none 		{ padding-left: 0 !important; }
+.padding-left-tiny 		{ padding-left: 0.25em; }
+.padding-left-small 	{ padding-left: 0.5em; }
+.padding-left-base 		{ padding-left: 1rem; }
+.padding-left-medium 	{ padding-left: 1em; }
+.padding-left-large 	{ padding-left: 1.5em; }
+.padding-left-xlarge 	{ padding-left: 2.5em; }
 
-.padding-right-none { padding-right: 0 !important; }
-.padding-right-small { padding-right: 0.5rem; }
-.padding-right-normal { padding-right: 1rem; }
-.padding-right-large { padding-right: 1.5rem; }
+.padding-right-none 	{ padding-right: 0 !important; }
+.padding-right-tiny 	{ padding-right: 0.25em; }
+.padding-right-small 	{ padding-right: 0.5em; }
+.padding-right-base 	{ padding-right: 1rem; }
+.padding-right-normal 	{ padding-right: 1em; }
+.padding-right-large 	{ padding-right: 1.5em; }
+.padding-right-xlarge 	{ padding-right: 1.5em; }
 
 .section-padding {
 	padding-top: 2.6rem;
@@ -125,8 +145,6 @@
 
 // 5. Misc
 // -------
-
-.clear { clear: both; }
 
 .black { background-color: $black; }
 

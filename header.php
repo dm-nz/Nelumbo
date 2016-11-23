@@ -99,9 +99,13 @@
 											'menu_class' => 'dropdown menu',
 											'walker' => new Foundation_Top_Bar,
 											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>',
-											'container' => '' ) );
+											'container' => ''
+										) );
 									} else {
-										wp_nav_menu( array('depth' => 1) );
+										wp_nav_menu( array(
+											'depth' => 1,
+											'container' => 'ul'
+										) );
 									} ?>
 								</nav><!-- #site-navigation -->
 							</div>

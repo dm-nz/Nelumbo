@@ -19,6 +19,7 @@ get_header(); ?>
 		<?php } ?>
 			<main id="main" class="site-main" role="main">
 
+				<?php woocommerce_breadcrumb(); ?>
 				<?php woocommerce_content(); ?>
 
 			</main><!-- #main -->
