@@ -158,7 +158,7 @@
 
 .product-search,
 .product-search input[type="search"],
-.product-search .close { height: 84px; }
+.product-search .close { height: 85px; }
 
 	@media #{$small-only} {
 		.product-search,
@@ -384,14 +384,16 @@ table.variations tbody td { padding: 0; }
 // -----------
 
 .woocommerce #reviews #comments ol.commentlist li img.avatar {
+	width: 48px;
 	padding: 0;
 	border: 0;
-	border-radius: $global-radius;
+	border-radius: 50%;
 }
 
 .woocommerce #reviews h3 { margin-bottom: 0.5em; }
 
 .woocommerce #reviews #comments ol.commentlist li .comment-text {
+	margin-left: 64px;
 	border: 0;
 	padding: 0;
 }
@@ -399,8 +401,10 @@ table.variations tbody td { padding: 0; }
 .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta {
     margin-top: -5px;
     margin-bottom: 0.25rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text p.meta strong { font-size: 1rem; }
 
 #review_form {
 	padding-top: 2rem;

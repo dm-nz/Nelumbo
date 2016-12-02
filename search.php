@@ -48,11 +48,17 @@ get_header(); ?>
 
 		<?php get_sidebar(); ?>
 	</div>
-	<div id="post-nav-wrapper" class="grey section-padding">
-		<div class="row">
-			<div class="column">
-				<?php the_posts_navigation(); ?>
+
+	<?php
+	if ( get_the_posts_navigation() ) : ?>
+		<div id="post-nav-wrapper" class="grey section-padding">
+			<div class="row">
+				<div class="column">
+					<?php the_posts_navigation(); ?>
+				</div>
 			</div>
 		</div>
-	</div>
+	<?php
+	endif ?>
+
 <?php get_footer(); ?>

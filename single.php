@@ -62,6 +62,9 @@ get_header(); ?>
 
 		<?php get_sidebar(); ?>
 	</div>
+
+	<?php
+	if ( get_the_post_navigation() ) : ?>
 	<div id="post-nav-wrapper" class="grey section-padding">
 		<div class="row">
 			<div class="column">
@@ -69,4 +72,6 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
+	<?php
+	endif ?>
 <?php get_footer(); ?>

@@ -59,6 +59,24 @@
 	border-color: $white;
 }
 
+pre {
+	padding: 0.5rem 1rem !important;
+	background: $light-gray;
+	border-radius: $global-radius;
+	margin-bottom: 1rem !important;
+}
+
+code {
+	border: 0 !important;
+	border-radius: $global-radius;
+}
+
+pre code {
+	background: none;
+	border: 0;
+	padding: 0;
+}
+
 // 1.2 Posts & comments navigation
 // -------------------------------
 
@@ -77,6 +95,7 @@
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
 	display: inline-block;
+	float: right;
 	text-align: right;
 	width: 50%;
 }
@@ -447,6 +466,10 @@ a { transition: 0.4s; }
 
 article { margin-bottom: 1.5rem; }
 
+.page-template-page-fluid #primary { margin-top: 0; }
+
+.page-template-page-fluid article { margin-bottom: 0; }
+
 .page-title,
 .entry-title { line-height: 1; }
 
@@ -464,7 +487,7 @@ article { margin-bottom: 1.5rem; }
 	.entry-meta { margin-bottom: 0; }
 }
 
-.entry-footer { margin-bottom: 1.5rem; }
+.entry-footer { margin-bottom: 1.25rem; }
 
 .entry-meta a,
 .entry-footer,
@@ -476,6 +499,12 @@ article { margin-bottom: 1.5rem; }
 .entry-footer i.fa {
 	margin-right: 0.75em;
 	color: $medium-gray;
+}
+
+.entry-footer .edit-link:before {
+	margin-right: 0.75em;
+	font-family: FontAwesome;
+	content: '\f040';
 }
 
 .more-link {
@@ -533,7 +562,7 @@ article { margin-bottom: 1.5rem; }
 // 4. Comments
 // -----------
 
-#comments { margin-top: 2rem; }
+#comments { margin-top: 1rem; }
 
 .comment-content a { word-wrap: break-word; }
 
@@ -545,7 +574,7 @@ article { margin-bottom: 1.5rem; }
 	border-top: 1px solid $light-gray;
 }
 
-.comments-title { margin-bottom: 0.5em; }
+.comments-title { margin-bottom: 0.75em; }
 
 #respond { margin-bottom: 2rem; }
 
@@ -563,39 +592,57 @@ article { margin-bottom: 1.5rem; }
 
 #comments .form-submit { clear: left; }
 
-ol.comment-list { margin-left: 45px; }
+ol.comment-list {
+	margin-left: 64px;
+	margin-bottom: 2rem;
+}
 
 ol.comment-list li { list-style: none; }
 
-ol ol.children { margin-left: 45px; }
+ol ol.children { margin-left: 48px; }
 
 .comment img.avatar {
 	position: absolute;
 	margin-top: 7px;
-	margin-left: -45px;
-	border-radius: $global-radius;
+	margin-left: -64px;
+	border-radius: 50%;
 }
 
-.comment .comment-author { display: inline-block; }
+ol ol.children .comment img.avatar {
+	width: 32px;
+	height: 32px;
+	margin-left: -48px;
+}
+
+.comment .comment-author {
+	display: inline-block;
+	color: $dark-gray;
+}
+
+.comment .comment-author a.url { color: $body-font-color; }
+
+	.comment .comment-author a.url:hover { color: $primary-color; }
 
 .comment .comment-metadata {
 	display: inline-block;
-	margin-left: 0.5em;
-	font-size: 0.75em;
+	margin-left: 0.25em;
+	font-size: 0.8em;
 }
 
 .comment .comment-metadata a { color: $dark-gray; }
 
 .comment .edit-link {
 	margin-left: 0.5em;
-	padding-left: 0.5em;
+	padding-left: 0.75em;
 	border-left: 1px solid $light-gray;
 }
 
 .comment .reply {
-	margin-top: -0.5em;
-	font-size: 0.75em;
+	margin-top: -1em;
+	font-size: 0.8em;
 }
+
+.comment .reply a { color: $dark-gray; }
 
 .comment .comment-body { margin-bottom: 1.5rem; }
 
@@ -635,7 +682,6 @@ ol ol.children { margin-left: 45px; }
 }
 
 .widget ul li li:last-of-type {	margin-bottom: 0; }
-
 
 .widget ul li a { color: $body-font-color; }
 
