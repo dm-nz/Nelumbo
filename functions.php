@@ -96,6 +96,15 @@ function nelumbo_widgets_init() {
 		'after_title'	 => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'			=> esc_html__( 'Shop sidebar', 'nelumbo' ),
+		'id'			=> 'sidebar-shop',
+		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	 => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer', 'nelumbo' ),
 		'id'			=> 'footer-1',
 		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
@@ -115,7 +124,7 @@ function nelumbo_scripts() {
 
 	wp_register_style( 'icons-style', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css', array(), '20160721', 'all' );
 
-	wp_register_style( 'font-style', get_template_directory_uri() . '/fonts/opensans/opensans.css', array(), '20160721', 'all' );
+	wp_register_style( 'font-style', get_template_directory_uri() . '/fonts/lato/lato.css', array(), '20170104', 'all' );
 
 	wp_enqueue_style( 'nelumbo-style', get_stylesheet_uri() );
 
@@ -178,7 +187,7 @@ add_image_size( 'cover', 1920, 450, true );
 /**
 * Entry featured image
 */
-add_image_size( 'entry-featured-img', 685, 685, false );
+add_image_size( 'entry-featured-img', 680, 680, false );
 //add_image_size( 'entry-featured-img-2x', 1370, 1370, false );
 
 /**
@@ -187,7 +196,6 @@ add_image_size( 'entry-featured-img', 685, 685, false );
 define( 'AUTOSAVE_INTERVAL', 9000 ); // Seconds
 
 define( 'WP_POST_REVISIONS', false );*/
-
 
 /**
 * Logo
@@ -226,7 +234,7 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 	 */
 	function nelumbo_cart_link() {
 		?>
-			<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nelumbo' ); ?>">
+			<a class="cart-content" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nelumbo' ); ?>">
 				<i class="fa fa-shopping-cart"></i>
 				<span>
 					<span class="amount strong margin-left-small margin-right-small"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
@@ -241,8 +249,10 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 /**
 * Change number or products per row to 3
 */
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns') && is_active_sidebar( 'sidebar-1' ) && function_exists('is_shop')) {
+if ( is_active_sidebar( 'sidebar-shop' ) ) {
+	add_filter('loop_shop_columns', 'loop_columns');
+}
+if ( !function_exists('loop_columns') && is_active_sidebar( 'sidebar-1' ) && function_exists('is_shop') ) {
 	function loop_columns() {
 		return 3; // 3 products per row
 	}

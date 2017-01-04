@@ -9,43 +9,29 @@
 
 ?>
 
-<!-- Checking if thumbnail size is big enough for cover -->
-<?php if ( has_post_thumbnail() )  {
-	$imgdata = wp_get_attachment_image_src( get_post_thumbnail_id(), 'cover' );
-	$imgwidth = $imgdata[1]; // thumbnail's width
-	if ($imgwidth >= 1920) {
-		$cover = true;
-	} else $cover = false;
-} ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( !is_single() || is_single() && $cover == false ) { ?>
-	<header class="entry-header margin-bottom-base">
+	<header class="entry-header">
 		<?php
-			if ( is_single() ) {
-				the_title( '<h1 class="entry-title margin-bottom-base">', '</h1>' );
-			} else { ?>
+		if ( is_single() ) {
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		} else { ?>
 
-		<?php if ( has_post_thumbnail() ) : ?>
-			<div class="entry-featured-img margin-bottom-large">
-			    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-			        <?php the_post_thumbnail('entry-featured-img'); ?>
-				</a>
-			</div>
-		<?php endif; ?>
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="entry-featured-img margin-bottom-large padding-top-small">
+				    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				        <?php the_post_thumbnail('entry-featured-img'); ?>
+					</a>
+				</div>
+			<?php endif; ?>
 
 			<?php
-				the_title( '<h2 class="entry-title margin-bottom-base"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			}
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			} ?>
 
-		if ( !is_single() && $cover == true || $cover == false ) : ?>
 		<div class="entry-meta">
 			<?php nelumbo_posted_on(); ?>
 		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
 	</header><!-- .entry-header -->
-	<?php } ?>
 
 	<div class="entry-content">
 		<?php
@@ -64,6 +50,17 @@
 
 	<footer class="entry-footer">
 		<?php nelumbo_entry_footer(); ?>
+		<?php
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'nelumbo' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<span class="divider"></span><span class="edit-link"><i class="fa fa-pencil"></i>',
+				'</span>'
+			);
+		?>
 	</footer><!-- .entry-footer -->
 	<div class="clear"></div>
 </article><!-- #post-## -->

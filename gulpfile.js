@@ -7,6 +7,7 @@ var cache = require('gulp-cache');
 var $    = require('gulp-load-plugins')();
 
 var sassPaths = [
+  'bower_components/normalize.scss/sass',
   'bower_components/foundation-sites/scss',
   'bower_components/motion-ui/src'
 ];
@@ -29,9 +30,9 @@ gulp.task('scripts', function() {
     // if some script depends on other you can choose what file import first  
     return gulp.src(
           [
-            'bower_components/what-input/what-input.js',
-            'bower_components/foundation-sites/dist/foundation.min.js',
-            'bower_components/foundation-sites/dist/plugins/*.js',
+            'bower_components/what-input/dist/what-input.js',
+            'bower_components/foundation-sites/dist/js/foundation.min.js',
+            'bower_components/foundation-sites/dist/js/plugins/*.js',
             'js/custom.js',
             'js/customizer.js',
             'js/navigation.js',

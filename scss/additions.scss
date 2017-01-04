@@ -11,16 +11,16 @@
 
 .h0-size { font-size: 3.25em; }
 
-	@media #{$medium-only} {
+	@include breakpoint(medium only) {
 		.h0-size { font-size: 2.9em; }
 	}
-	@media #{$small-only} {
+	@include breakpoint(small only) {
 		.h0-size { font-size: 2.3em; }
 	}
 
 .strong { font-weight: bold; }
 
-@media #{$small-only} {
+@include breakpoint(small only) {
 	.small-only-text-center { text-align: center; }
 }
 
@@ -98,13 +98,13 @@
 	padding-top: 2.6rem;
 	padding-bottom: 2.5rem;
 }
-	@media #{$medium-only} {
+	@include breakpoint(medium only) {
 		.section-padding {
 			padding-top: 1.9rem;
 			padding-bottom: 1.75rem;
 		}
 	}
-	@media #{$small-only} {
+	@include breakpoint(small only) {
 		.section-padding {
 			padding-top: 1.25rem;
 			padding-bottom: 1rem;
@@ -174,7 +174,7 @@
 
 .reveal p .button { margin-bottom: 0; }
 
-@media #{$large-up} {
+@include breakpoint(large up) {
 	.large-collapse-right { padding-right: 0 !important; }
 	.large-collapse-left { padding-left: 0 !important; }
 }

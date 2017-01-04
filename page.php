@@ -17,6 +17,8 @@ get_header(); ?>
 	<div class="row">
 		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
 		<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
+		<?php } else if ( is_cart() || is_checkout() ) { ?>
+		<div id="primary" class="content-area column">
 		<?php } else { ?>
 		<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 		<?php } ?>
@@ -38,6 +40,9 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php get_sidebar(); ?>
+		<?php if ( is_cart() || is_checkout() ) {
+		} else {
+			get_sidebar();
+		} ?>
 	</div>
 <?php get_footer();

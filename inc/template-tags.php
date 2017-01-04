@@ -43,16 +43,6 @@ function nelumbo_posted_on() {
 		echo '</span>';
 	}
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'nelumbo' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="divider"></span><i class="fa fa-pencil"></i><span class="edit-link">',
-		'</span>'
-	);
-
 }
 endif;
 

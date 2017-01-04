@@ -30,6 +30,7 @@ npm install gulp-uglify
 npm install gulp-rename
 npm install gulp-cache
 bower install
+git submodule update --init --recursive
 ```
 
 ### Commands
