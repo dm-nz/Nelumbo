@@ -10,7 +10,7 @@ get_header(); ?>
 
 	<div id="cover" class="inverse margin-bottom-base" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
 		<div class="row row-absolute">
-			<div class="large-7 medium-10 medium-centered columns">
+			<div class="medium-10 medium-centered columns">
 				<header class="entry-header vertical-middle text-center">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' );
 					if ( 'post' === get_post_type() ) : ?>

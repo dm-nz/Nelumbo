@@ -10,7 +10,7 @@ get_header(); ?>
 
 	<div id="cover" class="inverse margin-bottom-base" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
 		<div class="row row-absolute">
-			<div class="large-8 medium-10 medium-centered columns">
+			<div class="medium-10 medium-centered columns">
 				<header class="entry-header vertical-middle text-center">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' );
 					if ( is_single() ) : ?>
@@ -26,7 +26,7 @@ get_header(); ?>
 
 	<div class="row">
 		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
-		<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
+		<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
 		<?php } else { ?>
 		<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 		<?php } ?>

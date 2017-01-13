@@ -188,14 +188,6 @@ add_image_size( 'cover', 1920, 450, true );
 * Entry featured image
 */
 add_image_size( 'entry-featured-img', 680, 680, false );
-//add_image_size( 'entry-featured-img-2x', 1370, 1370, false );
-
-/**
-* Disable post revions and autosave
-*
-define( 'AUTOSAVE_INTERVAL', 9000 ); // Seconds
-
-define( 'WP_POST_REVISIONS', false );*/
 
 /**
 * Logo

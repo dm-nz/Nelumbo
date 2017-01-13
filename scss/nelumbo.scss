@@ -431,6 +431,8 @@ form input[type="submit"] { @include button; }
 
 .top-bar .button { margin-bottom: 0; }
 
+.inverse.top-bar .dropdown.menu > li.is-dropdown-submenu-parent > a::after { border-color: $white transparent transparent; }
+
 // 2.5 Responsive menu
 // -------------------
 
@@ -448,7 +450,11 @@ form input[type="submit"] { @include button; }
 
 .is-drilldown-submenu-parent > a::after { border-color: transparent transparent transparent $body-font-color !important; }
 
+	.inverse .is-drilldown-submenu-parent > a::after { border-color: transparent transparent transparent $white !important; }
+
 .js-drilldown-back > a::before { border-color: transparent $body-font-color transparent transparent !important; }
+
+	.inverse .js-drilldown-back > a::before { border-color: transparent $white transparent transparent !important; }
 
 // 3. Content
 // ----------

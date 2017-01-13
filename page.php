@@ -16,10 +16,12 @@ get_header(); ?>
 
 	<div class="row">
 		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
-		<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
-		<?php } else if ( is_cart() || is_checkout() ) { ?>
-		<div id="primary" class="content-area column">
-		<?php } else { ?>
+		<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
+		<?php } else if ( is_woocommerce_activated() ) {
+			if ( is_cart() || is_checkout() ) { ?>
+				<div id="primary" class="content-area column">
+			<?php }
+		} else { ?>
 		<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 		<?php } ?>
 			<main id="main" class="site-main" role="main">
@@ -40,7 +42,9 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php if ( is_cart() || is_checkout() ) {
+		<?php if ( is_woocommerce_activated() ) {
+			if ( is_cart() || is_checkout() ) {
+			}
 		} else {
 			get_sidebar();
 		} ?>
