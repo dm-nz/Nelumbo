@@ -32,7 +32,7 @@
 						esc_html__( 'Edit %s', 'nelumbo' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
-					'<span class="divider"></span><span class="edit-link"><i class="fa fa-pencil"></i>',
+					'<span class="divider tags-post-edit"></span><span class="edit-link"><i class="fa fa-pencil"></i>',
 					'</span>'
 				);
 			?>

@@ -7,12 +7,16 @@
  * @package Nelumbo
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
+} else if ( is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( ! is_woocommerce() ) {
+		return;
+	}
 }
 ?>
 
-<?php if ( is_woocommerce_activated()) {
+<?php if ( is_woocommerce_activated() ) {
 	if ( is_woocommerce() ) { ?>
 		<div class="medium-3 columns">
 			<aside id="secondary" class="widget-area" role="complementary">

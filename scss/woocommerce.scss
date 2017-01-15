@@ -158,7 +158,7 @@
 
 .product-search,
 .product-search input[type="search"],
-.product-search .close { height: 85px; }
+.product-search .close { height: 86px; }
 
 	@include breakpoint(small only) {
 		.product-search,
@@ -170,7 +170,7 @@
 	position: absolute;
 	z-index: 2;
 	display: none;
-	top: 37px;
+	top: 35px;
 	width: 100%;
 }
 

@@ -15,9 +15,9 @@
 get_header(); ?>
 
 	<div class="row">
-		<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
-		<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
-		<?php } else if ( is_woocommerce_activated() ) {
+		<?php if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) { ?>
+			<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
+		<?php } else if ( is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) || is_woocommerce_activated() && is_active_sidebar( 'sidebar-1' ) ) {
 			if ( is_cart() || is_checkout() ) { ?>
 				<div id="primary" class="content-area column">
 			<?php }

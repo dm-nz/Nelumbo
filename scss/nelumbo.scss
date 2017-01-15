@@ -546,6 +546,11 @@ a.more-link:hover {
 
 .page .entry-footer .divider { display: none; }
 
+.divider.tags-post-edit { display: none; }
+
+.cat-links + .divider.tags-post-edit,
+.tags-links + .divider.tags-post-edit { display: inline; }
+
 .archive .page-title,
 .search .page-title {
 	margin-bottom: 0.5em;

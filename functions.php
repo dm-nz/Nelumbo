@@ -244,7 +244,7 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 if ( is_active_sidebar( 'sidebar-shop' ) ) {
 	add_filter('loop_shop_columns', 'loop_columns');
 }
-if ( !function_exists('loop_columns') && is_active_sidebar( 'sidebar-1' ) && function_exists('is_shop') ) {
+if ( !function_exists('loop_columns') && is_active_sidebar( 'sidebar-shop' ) && function_exists('is_shop') ) {
 	function loop_columns() {
 		return 3; // 3 products per row
 	}
