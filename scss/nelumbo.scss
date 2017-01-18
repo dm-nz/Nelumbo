@@ -344,6 +344,8 @@ form input[type="submit"] { @include button; }
 
 .top-bar a { color: $body-font-color; }
 
+	.inverse.top-bar a { color: $white; }
+
 .top-bar ul ul { display: none; }
 
 .top-bar .dropdown.menu > li.is-dropdown-submenu-parent {

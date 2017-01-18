@@ -20,6 +20,8 @@ get_header(); ?>
 		<?php } else if ( is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) || is_woocommerce_activated() && is_active_sidebar( 'sidebar-1' ) ) {
 			if ( is_cart() || is_checkout() ) { ?>
 				<div id="primary" class="content-area column">
+			<?php } else { ?>
+				<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">		
 			<?php }
 		} else { ?>
 		<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
@@ -44,6 +46,8 @@ get_header(); ?>
 
 		<?php if ( is_woocommerce_activated() ) {
 			if ( is_cart() || is_checkout() ) {
+			} else {
+				get_sidebar();
 			}
 		} else {
 			get_sidebar();
