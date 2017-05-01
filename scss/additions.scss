@@ -1,5 +1,5 @@
 // Table of contents
-//
+// -----------------
 // 1. Typography
 // 2. Margins
 // 3. Paddings
@@ -62,7 +62,7 @@
 // 3. Paddings
 // -----------
 
-.padding-bottom-none 	{ padding-right: 0 !important; }
+.padding-bottom-none 	{ padding-bottom: 0 !important; }
 .padding-bottom-tiny 	{ padding-bottom: 0.25em; }
 .padding-bottom-small 	{ padding-bottom: 0.5em; }
 .padding-bottom-base 	{ padding-bottom: 1rem; }
@@ -145,6 +145,8 @@
 
 // 5. Misc
 // -------
+
+.white { background-color: $white; }
 
 .black { background-color: $black; }
 

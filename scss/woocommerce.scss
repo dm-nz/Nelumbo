@@ -1,5 +1,5 @@
 // Table of contents
-//
+// -----------------
 // 1. Common
 // 2. Shopping cart
 	// 2.1 Header cart
@@ -57,6 +57,11 @@
 	.woocommerce .woocommerce-message a.button.wc-forward:hover { background-color: scale-color(#8fae1b, $lightness: -14%); }
 
 	.woocommerce table { border-radius: $global-radius !important; }
+
+.woocommerce .woocommerce-breadcrumb,
+.woocommerce .woocommerce-breadcrumb a { color: $dark-gray; }
+
+	.woocommerce .woocommerce-breadcrumb a:hover { color: scale-color($primary-color, $lightness: -14%); }
 
 // 2. Shopping cart
 // ----------------
@@ -215,7 +220,7 @@
 	font-size: 1rem;
 	padding: 0.25rem 0.5rem;
 	padding-right: 1rem;
-	background-position-x: right -0.3rem;
+	background-position: center right -6px;
 }
 
 // 4.2 Product item
@@ -293,6 +298,8 @@
 
 // 5.1 Summary
 // -----------
+
+.woocommerce div.product div.images .flex-control-thumbs li { margin: 1rem 1rem 0 0; }
 
 .woocommerce div.product .product_title { margin-bottom: 0.5em; }
 

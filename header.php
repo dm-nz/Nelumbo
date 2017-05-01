@@ -98,7 +98,7 @@
 											'menu_id' => 'primary-menu',
 											'menu_class' => 'dropdown menu',
 											'walker' => new Foundation_Top_Bar,
-											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown">%3$s</ul>',
+											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown" data-close-on-click-inside="false" data-back-button="<li class=\'js-drilldown-back\'><a>Назад</a></li>">%3$s</ul>',
 											'container' => ''
 										) );
 									} else {

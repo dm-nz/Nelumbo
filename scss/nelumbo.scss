@@ -1,5 +1,5 @@
 // Table of contents
-//
+// -----------------
 // 1. Global
 	// 1.1 Misc
 	// 1.2 Posts & comments navigation
@@ -37,13 +37,13 @@
 .inverse a {
 	color: $white;
 	text-decoration: underline;
-	text-decoration-color: $dark-gray;
+	text-decoration-color: rgba(255,255,255,0.5);
 }
 
 	.inverse a:hover {
 		color: $white;
 		text-decoration: none;
-		text-decoration-color: $dark-gray;
+		text-decoration-color: rgba(255,255,255,0.5);
 	}
 
 .inverse table thead,
@@ -70,6 +70,7 @@ pre {
 	background: $light-gray;
 	border-radius: $global-radius;
 	margin-bottom: 1rem !important;
+	overflow: auto;
 }
 
 code {
@@ -261,7 +262,7 @@ form textarea[rows] { height: 8rem; }
 	color: $medium-gray;
 	position: absolute;
 	line-height: 1.25;
-	margin-top: 9px;
+	margin-top: 11px;
 	margin-left: 12px;
 	width: 25px;
 	z-index: 1;
@@ -329,7 +330,7 @@ form input[type="submit"] { @include button; }
 		.fixed { position: absolute; }
 	}
 
-#masthead {z-index: 5; }
+#masthead { z-index: 10; }
 
 .top-bar {
 	border-bottom: 1px solid $light-gray;
@@ -428,8 +429,6 @@ form input[type="submit"] { @include button; }
 	}
 
 .top-bar-right .menu > li > a {	text-transform: uppercase; }
-
-.top-bar-right .menu > li > a:last-of-type { padding-right: 0; }
 
 .top-bar .button { margin-bottom: 0; }
 
@@ -832,3 +831,11 @@ table tfoot td#next { text-align: right; }
 #footer-widgets .menu > li { display: block; }
 
 #colophon .row { opacity: 0.5; }
+
+@include breakpoint(small only) {
+	#colophon .columns {
+		text-align: left;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+}
