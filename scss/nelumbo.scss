@@ -84,6 +84,15 @@ pre code {
 	padding: 0;
 }
 
+ul.fa-ul { line-height: 1.9; }
+
+ul .fa-li { top: 0.5em;}
+
+audio,
+video,
+.wp-audio-shortcode,
+.wp-video { margin-bottom: 1rem; }
+
 // 1.2 Posts & comments navigation
 // -------------------------------
 
@@ -219,21 +228,28 @@ object { max-width: 100%; }
 	margin-right: auto;
 }
 
-.wp-caption .wp-caption-text { margin: 0.8075em 0; }
+.wp-caption .wp-caption-text { margin: 1rem 0; }
 
-.wp-caption-text { text-align: center; }
+.wp-caption-text { color: $dark-gray; }
 
 // 1.8 Galleries
 // -------------
 
-.gallery { margin-bottom: 1.5em; }
+.gallery {
+	padding-top: 0.5rem;
+	margin-bottom: 1.5rem;
+}
 
 .gallery-item {
+	margin-bottom: 0.5rem;
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
 }
+
+.gallery-icon,
+.gallery-caption { margin-bottom: 0.5rem; }
 
 .gallery-columns-2 .gallery-item { max-width: 50%; }
 .gallery-columns-3 .gallery-item { max-width: 33.33%; }
@@ -363,8 +379,6 @@ form input[type="submit"] { @include button; }
 
 .admin-bar .is-stuck { margin-top: 32px !important; }
 
-.menu > li.site-logo > a { padding: 0 0.75rem 0 0 }
-
 .inverse .menu > li > a { color: $white; text-decoration: none; }
 
 // 2.2 Top stripe
@@ -381,6 +395,8 @@ form input[type="submit"] { @include button; }
 
 .top-stripe .menu > li.last > a { padding-right: 0; }
 
+.top-stripe .menu > li.last > a i { margin-right: 0; }
+
 .top-stripe .fa-caret-down { margin-top: -2px; }
 
 .top-stripe .product-search { background-color: #444; }
@@ -388,7 +404,32 @@ form input[type="submit"] { @include button; }
 // 2.3 Top bar title
 // -----------------
 
+.top-bar-title .site-logo img {
+	width: 35px;
+	height: 35px;
+	margin-right: 0.5em;
+}
+
+@include breakpoint(medium up) {
+	.top-bar-title .site-logo {
+		position: absolute;
+		margin-top: -6px;
+	}
+
+	.top-bar-title .site-logo img {
+		width: 48px;
+		height: 48px;
+		margin-right: 0;
+	}
+}
+
+.menu > li.site-logo > a { padding: 0; }
+
 .top-bar-title .site-name {	font-weight: bold; }
+
+	@include breakpoint(medium up) {
+		.top-bar-title .site-name.with-logo { padding-left: 64px; }
+	}
 
 .top-bar-title .site-name h1 {
 	margin-bottom: 0;
@@ -400,11 +441,6 @@ form input[type="submit"] { @include button; }
 .top-bar-title .site-name a {
 	padding-left: 0;
 	padding-right: 0;
-}
-
-.top-bar-title .site-name img {
-	height: 41px;
-	width: auto;
 }
 
 @include breakpoint(small only) {
@@ -429,6 +465,8 @@ form input[type="submit"] { @include button; }
 	}
 
 .top-bar-right .menu > li > a {	text-transform: uppercase; }
+
+.top-bar-right .menu.dropdown > li:last-of-type > a { padding-right: 0; }
 
 .top-bar .button { margin-bottom: 0; }
 
@@ -596,6 +634,34 @@ a.more-link:hover {
 
 	#cover .entry-header { margin-top: 1rem; }
 }
+
+// 3.3 Post formats
+// ----------------
+
+@include breakpoint(medium up) {
+	.format-aside h1.entry-title,
+	.format-aside h2.entry-title  { font-size: 1.5rem; }
+}
+
+.format-status .entry-title { display: none; }
+
+.format-status .entry-content { font-size: 1.5em; }
+
+.entry-format a:before {
+	margin-right: 0.75em;
+	font-family: FontAwesome;
+	color: $medium-gray;
+}
+
+.format-chat .entry-format a:before { content: '\f086'; }
+.format-audio .entry-format a:before { content: '\f028'; }
+.format-status .entry-format a:before { content: '\f21e'; }
+.format-gallery .entry-format a:before { content: '\f00a'; }
+.format-link .entry-format a:before { content: '\f0c1'; }
+.format-quote .entry-format a:before { content: '\f10d'; }
+.format-video .entry-format a:before { content: '\f008'; }
+.format-image .entry-format a:before { content: '\f03e'; }
+.format-aside .entry-format a:before { content: '\f249'; }
 
 // 4. Comments
 // -----------
@@ -838,4 +904,8 @@ table tfoot td#next { text-align: right; }
 		margin-top: 0.5rem;
 		margin-bottom: 0.5rem;
 	}
+}
+
+@include breakpoint(medium up) {
+	#colophon .site-developer { text-align: right; }
 }

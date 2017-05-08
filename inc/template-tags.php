@@ -51,6 +51,16 @@ if ( ! function_exists( 'nelumbo_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function nelumbo_entry_footer() {
+	$format = get_post_format();
+	if ( current_theme_supports( 'post-formats', $format ) ) {
+		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
+			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'twentysixteen' ) ),
+			esc_url( get_post_format_link( $format ) ),
+			get_post_format_string( $format )
+		);
+		echo '<span class="divider"></span>';
+	}
+
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */

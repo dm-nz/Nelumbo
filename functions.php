@@ -77,6 +77,23 @@ function nelumbo_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * @link https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'image',
+		'video',
+		'quote',
+		'link',
+		'gallery',
+		'audio',
+		'status',
+		'chat'
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'nelumbo_setup' );
@@ -179,8 +196,8 @@ add_image_size( 'entry-featured-img', 680, 680, false );
 
 // Logo
 add_theme_support('custom-logo', array(
-	'width'			=> 36,
-	'height'		=> 36,
+	'width'			=> 96,
+	'height'		=> 96,
 	'flex-height'	=> true
 ));
 

@@ -17,13 +17,17 @@ get_header(); ?>
 	<div class="row">
 		<?php if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) { ?>
 			<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
-		<?php } else if ( is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) || is_woocommerce_activated() && is_active_sidebar( 'sidebar-1' ) ) {
+
+		<?php } else if ( is_woocommerce_activated() ) {
 			if ( is_cart() || is_checkout() ) { ?>
 				<div id="primary" class="content-area column">
+			<?php } else if ( ! is_active_sidebar( 'sidebar-1' ) ) { ?>
+				<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
 			<?php } else { ?>
-				<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">		
+				<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 			<?php }
 		} else { ?>
+
 		<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 		<?php } ?>
 			<main id="main" class="site-main" role="main">

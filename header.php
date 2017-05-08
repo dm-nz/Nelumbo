@@ -60,19 +60,23 @@
 					<div class="column">
 						<div class="top-bar-title">
 							<ul class="menu site-branding">
+							<?php
+							if ( function_exists( 'the_custom_logo' ) ) { ?>
+								<li class="site-logo"><?php nelumbo_the_custom_logo(); ?></li>
+							<?php
+							} ?>
+								<li class="site-name site-title <?php if ( function_exists( 'the_custom_logo' ) ) { echo 'with-logo'; } ?>">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+									<?php
+									if ( is_front_page() && is_home() ) { ?>
+										<h1><?php bloginfo( 'name' ); ?></h1>
+									<?php
+									} else {
+										bloginfo( 'name' );
+									} ?>
+									</a>
+								</li>
 								<?php
-								if ( function_exists( 'the_custom_logo' ) ) : ?>
-									<li class="site-logo"><?php nelumbo_the_custom_logo(); ?></li>
-								<?php
-								endif; ?>
-								<?php
-								if ( is_front_page() && is_home() ) : ?>
-									<li class="site-name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1><?php bloginfo( 'name' ); ?></h1></a></li>
-								<?php else : ?>
-									<li class="site-name site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
-								<?php
-								endif;
-
 								$description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
 									<li class="site-description show-for-large"><span><?php echo $description; /* WPCS: xss ok. */ ?></span></li>

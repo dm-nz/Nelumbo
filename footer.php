@@ -23,8 +23,11 @@
 	<?php } ?>
 		<footer id="colophon" class="site-footer section-padding" role="contentinfo">
 			<div class="row">
-				<div class="site-info column text-right">
-					Nelumbo theme by <a href="http://lotus.kg">Lotus</a>.
+				<div class="site-copyright medium-6 columns">
+					<i class="fa fa-copyright margin-right-small"></i><?php echo date('Y') . " "; bloginfo('name'); ?>
+				</div>
+				<div class="site-developer medium-6 columns">
+					<i class="fa fa-wordpress margin-right-small"></i>Nelumbo theme by <a href="http://lotus.kg">Lotus</a>
 				</div><!-- .site-info -->
 			</div>
 		</footer><!-- #colophon -->
