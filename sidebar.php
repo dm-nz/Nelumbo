@@ -7,32 +7,33 @@
  * @package Nelumbo
  */
 
-if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) :
 	return;
-} else if ( is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) {
-	if ( ! is_woocommerce() ) {
+elseif ( is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) :
+	if ( ! is_woocommerce() ) :
 		return;
-	}
-}
+	endif;
+endif;
 ?>
 
-<?php if ( is_woocommerce_activated() ) {
-	if ( is_woocommerce() ) { ?>
+<?php if ( is_woocommerce_activated() ) :
+	if ( is_woocommerce() ) : ?>
 		<div class="medium-3 columns">
 			<aside id="secondary" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'sidebar-shop' ); ?>
 			</aside><!-- #secondary -->
-			<?php } else { ?>
+		</div><!-- .columns -->
+	<?php else : ?>
 		<div class="medium-4 large-collapse-left columns">
 			<aside id="secondary" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</aside><!-- #secondary -->
-		</div>
-	<?php } ?>
-<?php } else { ?>
+		</div><!-- .columns -->
+	<?php endif; ?>
+<?php else : ?>
 	<div class="medium-4 large-collapse-left columns">
 		<aside id="secondary" class="widget-area" role="complementary">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</aside><!-- #secondary -->
-	</div>
-<?php } ?>
+	</div><!-- .columns -->
+<?php endif; ?>

@@ -196,8 +196,8 @@ add_image_size( 'entry-featured-img', 680, 680, false );
 
 // Logo
 add_theme_support('custom-logo', array(
-	'width'			=> 96,
-	'height'		=> 96,
+	'width'			=> 88,
+	'height'		=> 88,
 	'flex-height'	=> true
 ));
 

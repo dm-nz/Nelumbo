@@ -40,6 +40,7 @@
 //  35. Title Bar
 //  36. Tooltip
 //  37. Top Bar
+//  38. Spaces
 
 @import 'util/util';
 
@@ -619,3 +620,13 @@ $topbar-title-spacing: 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
 
+
+// 38. Spaces
+// ----------
+
+$tiny-space: 0.25em;
+$small-space: 0.5em;
+$medium-space: 1em;
+$base-space: 1rem;
+$large-space: 1.5em;
+$xlarge-space: 2.5em;
