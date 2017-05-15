@@ -109,9 +109,9 @@
 		}
 	}
 
-.top-stripe.inverse .widget_shopping_cart {
-	color: $body-font-color !important;
-}
+	.top-stripe.inverse .widget_shopping_cart {
+		color: $body-font-color !important;
+	}
 
 .top-stripe.inverse .widget_shopping_cart .mini_cart_item a {
 	color: $primary-color;
@@ -135,6 +135,22 @@
 .top-stripe .widget_shopping_cart .btn:last-of-type,
 .top-stripe .widget_shopping_cart .buttons {
 	margin-bottom: 0;
+}
+
+@include breakpoint(small only) {
+	.top-stripe .menu > li.cart > a {
+		padding-right: 0;
+	}
+}
+
+.top-stripe .cart .amount {
+	margin-left: $small-space;
+	font-weight: bold;
+}
+
+.top-stripe .cart .amount,
+.top-stripe .cart .count {
+	margin-right: $small-space;
 }
 
 // 2.2 Widget cart
@@ -205,9 +221,9 @@
 }
 
 .woocommerce #add_payment_method .wc-proceed-to-checkout a.checkout-button,
-.woocommerce .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
-.woocommerce .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
-	font-size: 1em;
+.woocommerce-cart .woocommerce .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .woocommerce .wc-proceed-to-checkout a.checkout-button {
+	font-size: 0.9rem;
 }
 
 // 3. Product search
@@ -216,7 +232,7 @@
 .product-search,
 .product-search input[type="search"],
 .product-search .close {
-	height: 82px;
+	height: 83px;
 }
 
 	@include breakpoint(small only) {
@@ -262,6 +278,12 @@
 
 .product-search .close i {
 	@include vertical-center;
+	color: $medium-gray;
+	transition: 0.3s;
+}
+
+.product-search .close i:hover {
+	color: $dark-gray;
 }
 
 // 4. Product archive

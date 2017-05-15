@@ -8,14 +8,14 @@
 
 get_header(); ?>
 
-<div id="cover" class="inverse margin-bottom-base" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
+<div id="cover" class="inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
 	<div class="row row-absolute">
 		<div class="column">
 			<header class="entry-header vertical-middle text-center">
 				<?php
 				the_title( '<h1 class="entry-title">', '</h1>' );
 				if ( is_single() ) : ?>
-					<div class="entry-meta margin-bottom-none semi-transparent">
+					<div class="entry-meta">
 						<?php echo get_the_date(); ?>
 					</div><!-- .entry-meta -->
 				<?php endif; ?>
@@ -25,7 +25,7 @@ get_header(); ?>
 	<div class="filter"></div>
 </div><!-- #cover -->
 <div class="row">
-<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) { ?>
+<?php if ( ! is_active_sidebar( 'sidebar-1' )  ) : ?>
 	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
 <?php else : ?>
 	<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
@@ -46,7 +46,7 @@ get_header(); ?>
 </div><!-- .row -->
 
 <?php if ( get_the_post_navigation() ) : ?>
-<div id="post-nav-wrapper" class="grey section-padding">
+<div id="post-nav-wrapper" class="section-padding">
 	<div class="row">
 		<div class="column">
 			<?php the_post_navigation(); ?>

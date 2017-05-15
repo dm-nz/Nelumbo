@@ -26,7 +26,7 @@
 	<header id="masthead" role="banner" data-sticky-container>
 		<div class="small-12 sticky" data-sticky data-options="marginTop: 0">
 		<?php if ( is_woocommerce_activated() ) : ?>
-			<div class="top-stripe grey">
+			<div class="top-stripe">
 				<div class="row">
 					<div class="column">
 						<ul class="menu right text-right">
@@ -34,7 +34,7 @@
 								<?php nelumbo_cart_link(); ?>
 								<?php the_widget( 'WC_Widget_Cart' ); ?> 
 							</li><!-- .cart -->
-							<li class="search last">
+							<li class="search-toggle last hide-for-small-only">
 								<a><i class="fa fa-search"></i></a>
 							</li><!-- .search -->
 						</ul><!-- .menu -->
@@ -47,7 +47,7 @@
 						</div><!-- .columns -->
 						<div class="close large-1 columns inverse text-right">
 							<div class="column">
-								<a><i class="fa fa-times semi-transparent"></i></a>
+								<a><i class="fa fa-times"></i></a>
 							</div><!-- .column -->
 						</div><!-- .close -->
 					</div><!-- .row -->
@@ -59,10 +59,10 @@
 					<div class="column">
 						<div class="top-bar-title">
 							<ul class="site-branding menu">
-							<?php if ( function_exists( 'the_custom_logo' ) ) : ?>
+							<?php if ( has_custom_logo() ) : ?>
 								<li class="site-logo"><?php nelumbo_the_custom_logo(); ?></li>
 							<?php endif; ?>
-								<li class="site-name <?php if ( function_exists( 'the_custom_logo' ) ) : echo 'with-logo'; endif; ?>">
+								<li class="site-name <?php if ( has_custom_logo() ) : echo 'with-logo'; endif; ?>">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 									<?php if ( is_front_page() && is_home() ) : ?>
 										<h1><?php bloginfo( 'name' ); ?></h1>
@@ -83,7 +83,10 @@
 						</div><!-- .top-bar-title -->
 						<div class="menu-hamburger hide-for-large" data-responsive-toggle="responsive-menu" data-hide-for="medium">
 							<ul class="menu">
-								<li><a><i class="fa fa-bars padding-top" data-toggle></i></a></li>
+							<?php if ( is_woocommerce_activated() ) : ?>
+								<li class="search-toggle"><a><i class="fa fa-search"></i></a></li>
+							<?php endif; ?>
+								<li><a><i class="fa fa-bars" data-toggle></i></a></li>
 							</ul><!-- .menu -->
 						</div><!-- .menu-hamburger -->
 						<div id="responsive-menu">
@@ -96,7 +99,7 @@
 											'menu_id' => 'primary-menu',
 											'menu_class' => 'dropdown menu',
 											'walker' => new Foundation_Top_Bar,
-											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown" data-close-on-click-inside="false" data-back-button="<li class=\'js-drilldown-back\'><a>Назад</a></li>">%3$s</ul>',
+											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown" data-close-on-click-inside="false" data-back-button="<li class=\'js-drilldown-back\'><a>Back</a></li>">%3$s</ul>',
 											'container' => ''
 										) );
 									else :
@@ -104,7 +107,7 @@
 											'depth' => 1,
 											'container' => 'ul',
 											'menu_class' => 'dropdown menu',
-											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown" data-close-on-click-inside="false" data-back-button="<li class=\'js-drilldown-back\'><a>Назад</a></li>">%3$s</ul>',
+											'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown" data-close-on-click-inside="false" data-back-button="<li class=\'js-drilldown-back\'><a>Back</a></li>">%3$s</ul>',
 										) );
 									endif;
 									?>

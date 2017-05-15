@@ -242,8 +242,8 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 		<a class="cart-content" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nelumbo' ); ?>">
 			<i class="fa fa-shopping-cart"></i>
 			<span>
-				<span class="amount strong margin-left-small margin-right-small"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
-				<span class="count margin-right-small"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'nelumbo' ), WC()->cart->get_cart_contents_count() ) );?></span>
+				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
+				<span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'nelumbo' ), WC()->cart->get_cart_contents_count() ) );?></span>
 				<i class="fa fa-caret-down"></i>
 			</span>
 		</a>

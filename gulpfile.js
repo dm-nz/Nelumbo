@@ -1,8 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var cache = require('gulp-cache');
 
 var $    = require('gulp-load-plugins')();
 
@@ -32,15 +30,13 @@ gulp.task('scripts', function() {
           [
             'bower_components/what-input/dist/what-input.js',
             'bower_components/foundation-sites/dist/js/foundation.min.js',
-            'bower_components/foundation-sites/dist/js/plugins/*.js',
+            //'bower_components/foundation-sites/dist/js/plugins/*.min.js',
             'js/custom.js',
-            'js/customizer.js',
-            'js/navigation.js',
+            //'js/navigation.js',
             'js/skip-link-focus-fix.js'
           ]
         )
       .pipe(concat('app.js'))
-      //.pipe(rename({suffix: '.min'}))
       .pipe(uglify())
       .pipe(gulp.dest('js'));
 });

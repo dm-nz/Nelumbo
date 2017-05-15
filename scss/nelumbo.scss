@@ -43,7 +43,7 @@
 }
 
 	.inverse a:hover {
-		color: $white;
+		color: $medium-gray;
 		text-decoration: none;
 		text-decoration-color: rgba(255,255,255,0.5);
 	}
@@ -58,6 +58,10 @@
 
 .inverse table tbody tr:nth-child(2n) { background-color: rgba(255,255,255,0.1); }
 
+a:hover abbr {
+	color: inherit;
+}
+
 .inverse abbr {
 	color: inherit;
 	border-color: $white;
@@ -68,10 +72,10 @@
 blockquote { background-color: $light-gray; }
 
 pre {
-	padding: 0.5rem 1rem !important;
+	padding: $small-space $medium-space !important;
 	background: $light-gray;
 	border-radius: $global-radius;
-	margin-bottom: 1rem !important;
+	margin-bottom: $base-space !important;
 	overflow: auto;
 }
 
@@ -91,18 +95,81 @@ ul.fa-ul {
 }
 
 ul .fa-li {
-	top: 0.5em;
+	top: $small-space;
 }
 
-audio,
-video,
-.wp-audio-shortcode,
-.wp-video {
-	margin-bottom: 1rem;
+i.fa { margin-right: $small-space; }
+
+.section-padding {
+	padding-top: 2.6rem;
+	padding-bottom: 2.5rem;
+}
+	@include breakpoint(medium only) {
+		.section-padding {
+			padding-top: 1.9rem;
+			padding-bottom: 1.75rem;
+		}
+	}
+	
+	@include breakpoint(small only) {
+		.section-padding {
+			padding-top: 1.25rem;
+			padding-bottom: 1rem;
+		}
+	}
+
+.row-absolute {
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.floor {
+	position: absolute;
+	bottom: 1.25rem;
+}
+
+.vertical-middle {
+	width: 99%;
+	height: auto;
+	overflow: auto;
+	margin: auto;
+	top: 50%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: table;
+	position: relative;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.clear:before,
+.clear:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+	clear: both;
+}
+
+.divider {
+	border-left: 1px solid $light-gray;
+	margin-left: $medium-space;
+	margin-right: $medium-space;
+}
+
+@include breakpoint(large up) {
+	.large-collapse-right { padding-right: 0 !important; }
+	.large-collapse-left { padding-left: 0 !important; }
 }
 
 // 1.2 Posts & comments navigation
 // -------------------------------
+
+#post-nav-wrapper {
+	background-color: $light-gray;
+}
 
 .comment-navigation a,
 .post-navigation a,
@@ -129,13 +196,13 @@ video,
 .nav-previous a:before {
 	font-family: FontAwesome;
 	content: '\f104';
-	margin-right: 0.5em;
+	margin-right: $small-space;
 }
 
 .nav-next a:after {
 	font-family: FontAwesome;
 	content: '\f105';
-	margin-left: 0.5em;
+	margin-left: $small-space;
 }
 
 // 1.3 Accessibility
@@ -153,7 +220,7 @@ video,
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
 	clip: auto !important;
 	color: #21759b;
 	display: block;
@@ -175,6 +242,14 @@ video,
 
 // 1.4 Alignments
 // --------------
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
 
 .alignleft {
 	display: inline;
@@ -224,6 +299,13 @@ embed,
 iframe,
 object { max-width: 100%; }
 
+audio,
+video,
+.wp-audio-shortcode,
+.wp-video {
+	margin-bottom: $base-space;
+}
+
 // 1.7 Captions
 // ------------
 
@@ -239,7 +321,7 @@ object { max-width: 100%; }
 }
 
 .wp-caption .wp-caption-text {
-	margin: 1rem 0;
+	margin: $base-space 0;
 }
 
 .wp-caption-text {
@@ -251,7 +333,7 @@ object { max-width: 100%; }
 
 .gallery {
 	padding-top: 0.5rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: $large-space;
 }
 
 .gallery-item {
@@ -325,7 +407,7 @@ form textarea[rows] {
 
 .wpcf7-not-valid-tip {
 	margin-top: -1rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: $small-space;
 }
 
 div.wpcf7-response-output {
@@ -362,6 +444,10 @@ form input[type="submit"] {
 .inverse .button.hollow {
 	border: 1px solid $white;
 	color: $white;
+}
+
+.reveal p .button {
+	margin-bottom: 0;
 }
 
 // 2. Header
@@ -407,6 +493,10 @@ form input[type="submit"] {
 		color: $white;
 	}
 
+	.inverse.top-bar a:hover {
+		color: $medium-gray;
+	}
+
 .top-bar ul ul {
 	display: none;
 }
@@ -432,16 +522,24 @@ form input[type="submit"] {
 	text-decoration: none;
 }
 
+	.inverse .menu > li > a:hover {
+		color: $medium-gray;
+	}
+
 // 2.2 Top stripe
 // -----------------
+
+.top-stripe {
+	background-color: $light-gray;
+}
 
 .top-stripe a {
 	color: inherit;
 }
 
 .top-stripe .menu > li > a {
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: $base-space;
+	padding-right: $base-space;
 }
 
 .top-stripe .menu > li.first > a {
@@ -470,7 +568,7 @@ form input[type="submit"] {
 .top-bar-title .site-logo img {
 	width: 35px;
 	height: 35px;
-	margin-right: 0.5em;
+	margin-right: $small-space;
 }
 
 @include breakpoint(medium up) {
@@ -549,12 +647,69 @@ form input[type="submit"] {
 	padding-right: 0;
 }
 
-.top-bar .button {
-	margin-bottom: 0;
-}
-
 .inverse.top-bar .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
 	border-color: $white transparent transparent;
+}
+
+.top-bar-right .button {
+	padding: 0 0.5rem;
+	border: 0;
+	background: none;
+	font-size: inherit;
+}
+
+	.top-bar-right .button:hover {
+		background: none;
+		color: inherit;
+	}
+
+.top-bar-right .menu.drilldown .button {
+	padding: 0;
+}
+
+.top-bar-right .hollow.button {
+	border: 0;
+	color: inherit;
+}
+
+.top-bar-right .button a {
+	@include button;
+	padding: $menu-item-padding;
+	margin-bottom: 0;
+	font-size: inherit;
+}
+
+.top-bar-right .menu.drilldown .button a {
+	display: block;
+}
+
+.top-bar-right .hollow.button a {
+	background-color: transparent;
+	color: $primary-color;
+	border: 1px solid $primary-color;
+}
+
+	.top-bar-right .hollow.button a:hover {
+		color: scale-color($primary-color, $lightness: -14%);
+		border-color: scale-color($primary-color, $lightness: -14%);
+	}
+
+	.inverse .top-bar-right .hollow.button a {
+		color: $white;
+		border-color: $white;
+	}
+
+		.inverse .top-bar-right .hollow.button a:hover {
+			color: $medium-gray;
+			border-color: $medium-gray;
+		}
+
+.top-bar-right .menu.dropdown > li:last-of-type.button {
+	padding-right: 0;
+}
+
+.top-bar-right .menu.dropdown > li:last-of-type.button > a {
+	padding-right: 1rem;
 }
 
 // 2.5 Responsive menu
@@ -575,7 +730,7 @@ form input[type="submit"] {
 }
 
 .is-drilldown .menu > li > a {
-	padding: 1rem 0;
+	padding: $base-space 0;
 }
 
 .is-drilldown-submenu-parent > a::after {
@@ -602,9 +757,12 @@ a {
 	transition: 0.4s;
 }
 
-#primary,
+#primary {
+	margin-top: $large-space;
+}
+
 #secondary {
-	margin-top: 1.5rem;
+	margin-top: 2rem;
 }
 
 @include breakpoint(small only) {
@@ -614,31 +772,30 @@ a {
 	}
 
 	#secondary {
-		padding-top: 1.5rem;
+		padding-top: $large-space;
 		border-top: 1px solid $light-gray;
 	}
 }
 
 article {
-	margin-bottom: 1.5rem;
+	margin-bottom: $large-space;
 }
 
-.page-template-page-fluid #primary {
-	margin-top: 0;
+.entry-featured-img {
+	margin-bottom: $large-space;
 }
 
-.page-template-page-fluid article {
-	margin-bottom: 0;
-}
-
-.page-title,
-.entry-title {
-	line-height: 1.2;
-}
-
-.entry-title,
 .entry-header {
-	margin-bottom: 0.75rem;
+	margin-bottom: $base-space;
+}
+
+.page-title {
+	line-height: 1.25;
+	margin-bottom: $base-space;
+}
+
+.entry-title {
+	line-height: 1.25;
 }
 
 .entry-title a {
@@ -656,8 +813,8 @@ article {
 }
 
 @include breakpoint(small only) {
-	.entry-header.margin-bottom-large {
-		margin-bottom: 0.5em;
+	.entry-header {
+		margin-bottom: $small-space;
 	}
 
 	.entry-meta {
@@ -668,6 +825,19 @@ article {
 .entry-meta {
 	font-size: 0.867em;
 }
+
+.entry-meta .item:before,
+.entry-footer .item:before {
+	margin-right: 0.75em;
+	font-family: FontAwesome;
+	color: $medium-gray;
+}
+
+.posted-on:before		{ content: '\f073'; }
+.comments-link:before 	{ content: '\f075'; }
+.cat-links:before 		{ content: '\f07c'; }
+.tags-links:before 		{ content: '\f02b'; }
+.edit-link:before 		{ content: '\f040'; }
 
 a.more-link {
 	display: inline-block;
@@ -685,8 +855,7 @@ a.more-link:hover {
 }
 
 .entry-footer {
-	padding-bottom: 0.75rem;
-	margin-bottom: 0.75rem;
+	margin-bottom: $medium-space;
 	font-size: 0.867em;
 }
 
@@ -720,8 +889,8 @@ a.more-link:hover {
 
 .archive .page-title,
 .search .page-title {
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
+	margin-bottom: $small-space;
+	padding-bottom: $small-space;
 	border-bottom: 1px solid $light-gray;
 }
 
@@ -730,6 +899,7 @@ a.more-link:hover {
 
 #cover {
 	position: relative;
+	margin-bottom: $base-space;
 	overflow: hidden;
 	background: $black;
 	background-position: center;
@@ -752,7 +922,8 @@ a.more-link:hover {
 }
 
 #cover .entry-meta {
-	color: $white;
+	color: rgba($white, 0.5);
+	margin-bottom: 0;
 }
 
 @include breakpoint(medium only) {
@@ -769,7 +940,7 @@ a.more-link:hover {
 	}
 
 	#cover .entry-header {
-		margin-top: 1rem;
+		margin-top: $base-space;
 	}
 }
 
@@ -779,7 +950,7 @@ a.more-link:hover {
 @include breakpoint(medium up) {
 	.format-aside h1.entry-title,
 	.format-aside h2.entry-title  {
-		font-size: 1.5rem;
+		font-size: $large-space;
 	}
 }
 
@@ -791,27 +962,21 @@ a.more-link:hover {
 	font-size: 1.5em;
 }
 
-.entry-format a:before {
-	margin-right: 0.75em;
-	font-family: FontAwesome;
-	color: $medium-gray;
-}
-
-.format-chat .entry-format a:before { content: '\f086'; }
-.format-audio .entry-format a:before { content: '\f028'; }
-.format-status .entry-format a:before { content: '\f21e'; }
-.format-gallery .entry-format a:before { content: '\f00a'; }
-.format-link .entry-format a:before { content: '\f0c1'; }
-.format-quote .entry-format a:before { content: '\f10d'; }
-.format-video .entry-format a:before { content: '\f008'; }
-.format-image .entry-format a:before { content: '\f03e'; }
-.format-aside .entry-format a:before { content: '\f249'; }
+.format-chat .entry-format:before { content: '\f086'; }
+.format-audio .entry-format:before { content: '\f028'; }
+.format-status .entry-format:before { content: '\f21e'; }
+.format-gallery .entry-format:before { content: '\f00a'; }
+.format-link .entry-format:before { content: '\f0c1'; }
+.format-quote .entry-format:before { content: '\f10d'; }
+.format-video .entry-format:before { content: '\f008'; }
+.format-image .entry-format:before { content: '\f03e'; }
+.format-aside .entry-format:before { content: '\f249'; }
 
 // 4. Comments
 // -----------
 
 #comments {
-	margin-top: 1rem;
+	margin-top: $base-space;
 }
 
 .comment-content a {
@@ -824,7 +989,7 @@ a.more-link:hover {
 
 .comments-title,
 #respond {
-	padding-top: 1.5rem;
+	padding-top: $large-space;
 	border-top: 1px solid $light-gray;
 }
 
@@ -833,7 +998,7 @@ a.more-link:hover {
 }
 
 #respond {
-	margin-bottom: 2rem;
+	margin-bottom: $xlarge-space;
 }
 
 .comment-form {
@@ -860,7 +1025,7 @@ a.more-link:hover {
 
 ol.comment-list {
 	margin-left: 64px;
-	margin-bottom: 2rem;
+	margin-bottom: $xlarge-space;
 }
 
 ol.comment-list li {
@@ -903,7 +1068,7 @@ ol ol.children .comment img.avatar {
 
 .comment .comment-metadata {
 	display: inline-block;
-	margin-left: 0.25em;
+	margin-left: $tiny-space;
 	font-size: 0.867em;
 }
 
@@ -916,7 +1081,7 @@ ol ol.children .comment img.avatar {
 	.comment .reply a:hover { color: $primary-color; }
 
 .comment .edit-link {
-	margin-left: 0.5em;
+	margin-left: $small-space;
 	padding-left: 0.75em;
 	border-left: 1px solid $light-gray;
 }
@@ -927,7 +1092,7 @@ ol ol.children .comment img.avatar {
 }
 
 .comment .comment-body {
-	margin-bottom: 1.5rem;
+	margin-bottom: $large-space;
 }
 
 // 5. Sidebar
@@ -937,11 +1102,11 @@ ol ol.children .comment img.avatar {
 // ------------
 
 .widget {
-	margin-bottom: 2.5rem;
+	margin-bottom: $xlarge-space;
 }
 
 .widget.widget_search {
-	margin-bottom: 1.5rem;
+	margin-bottom: $large-space;
 }
 
 .widget ul {
@@ -950,8 +1115,8 @@ ol ol.children .comment img.avatar {
 }
 
 .widget ul li {
-	margin-bottom: 0.5em;
-	padding-bottom: 0.5em;
+	margin-bottom: $small-space;
+	padding-bottom: $small-space;
 	border-bottom: 1px solid $light-gray;
 }
 
@@ -960,12 +1125,12 @@ ol ol.children .comment img.avatar {
 	}
 
 .widget ul ul {
-	margin-top: 0.5em;
-	padding-left: 1rem;
+	margin-top: $small-space;
+	padding-left: $base-space;
 }
 
 .widget ul li li {
-	padding-top: 0.5em;
+	padding-top: $small-space;
 	padding-bottom: 0;
 	border-top: 1px solid $light-gray;
 	border-bottom: 0;
@@ -990,8 +1155,7 @@ ol ol.children .comment img.avatar {
 }
 
 	.inverse .widget ul li a:hover {
-		text-decoration: underline;
-		text-decoration-color: $dark-gray;
+		color: $medium-gray;
 	}
 
 h2.widget-title {
@@ -1091,12 +1255,14 @@ table tfoot td#next {
 // 6. Footer
 // ---------
 
+$footer-color: $black;
+
 #footer-wrapper {
-	background: $black;
+	background: $footer-color;
 }
 
 #footer-widgets {
-	background-color: #444;
+	background-color: scale-color($footer-color, $lightness: 5%);
 }
 
 #footer-widgets .column:last-child:not(:first-child),
@@ -1108,8 +1274,13 @@ table tfoot td#next {
 	display: block;
 }
 
+#footer-widgets .widget {
+	margin-top: $medium-space;
+	margin-bottom: 0;
+}
+
 #colophon .row {
-	opacity: 0.6;
+	opacity: 0.5;
 }
 
 @include breakpoint(small only) {

@@ -27,8 +27,6 @@ Open theme's folder in your command line, and install the needed dependencies:
 npm install
 npm install gulp-concat
 npm install gulp-uglify
-npm install gulp-rename
-npm install gulp-cache
 bower install
 git submodule update --init --recursive
 ```

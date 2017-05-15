@@ -7,7 +7,7 @@ if ($(window).width() <= 640) {
 	})
 }
 
-$('.top-stripe .search a').click(function() {
+$('.search-toggle').click(function() {
 	$('.product-search').toggle();
 	$('.product-search input.search-field').focus();
 })
@@ -15,3 +15,7 @@ $('.top-stripe .search a').click(function() {
 $('.product-search .close a').click(function() {
 	$('.product-search').hide();
 })
+
+if ($('.top-bar-right li').length) {
+	$('.top-bar-right').css('margin-top','0');
+}

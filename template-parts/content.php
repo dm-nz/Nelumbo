@@ -16,7 +16,7 @@
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			if ( has_post_thumbnail() ) : ?>
-				<div class="entry-featured-img margin-bottom-large padding-top-small">
+				<div class="entry-featured-img">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 						<?php the_post_thumbnail('entry-featured-img'); ?>
 					</a>
@@ -51,7 +51,7 @@
 				esc_html__( 'Edit %s', 'nelumbo' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
-			'<span class="divider tags-post-edit"></span><span class="edit-link"><i class="fa fa-pencil"></i>',
+			'<span class="divider tags-post-edit"></span><span class="edit-link item">',
 			'</span>'
 		);
 		?>
