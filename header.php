@@ -54,7 +54,7 @@
 				</div><!-- .product-search -->
 			</div><!-- .top-stripe -->
 		<?php endif; ?>
-			<div class="top-bar">
+			<div class="top-bar <?php if ( has_custom_logo() ) : echo 'with-logo'; endif; ?>">
 				<div class="row">
 					<div class="column">
 						<div class="top-bar-title">
@@ -62,7 +62,7 @@
 							<?php if ( has_custom_logo() ) : ?>
 								<li class="site-logo"><?php nelumbo_the_custom_logo(); ?></li>
 							<?php endif; ?>
-								<li class="site-name <?php if ( has_custom_logo() ) : echo 'with-logo'; endif; ?>">
+								<li class="site-title">
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 									<?php if ( is_front_page() && is_home() ) : ?>
 										<h1><?php bloginfo( 'name' ); ?></h1>
@@ -72,7 +72,7 @@
 									endif;
 									?>
 									</a>
-								</li><!-- .site-name -->
+								</li><!-- .site-title -->
 								<?php
 								$description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>

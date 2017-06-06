@@ -15,11 +15,12 @@
 	// 2.1 Misc
 	// 2.2 Top stripe
 	// 2.3 Top bar title
-	// 2.4 Top bar right
+	// 2.4 Top bar right & left
 	// 2.5 Responsive menu
 // 3. Content
 	// 3.1 Entry
 	// 3.2 Cover
+	// 3.3 Post formats
 // 4. Comments
 // 5. Sidebar
 	// 5.1 Widgets
@@ -98,8 +99,6 @@ ul .fa-li {
 	top: $small-space;
 }
 
-i.fa { margin-right: $small-space; }
-
 .section-padding {
 	padding-top: 2.6rem;
 	padding-bottom: 2.5rem;
@@ -162,6 +161,28 @@ i.fa { margin-right: $small-space; }
 @include breakpoint(large up) {
 	.large-collapse-right { padding-right: 0 !important; }
 	.large-collapse-left { padding-left: 0 !important; }
+}
+
+#up {
+	display: none;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	font-size: 1.5rem;
+	text-align: center;
+	background: rgba($black, 0.5);
+	color: $white;
+	border-radius: $global-radius;
+}
+
+	#up:hover {
+		background-color: rgba($black, 0.75);
+	}
+
+#up a {
+	display: block;
+	padding: 0rem 0.8rem 0.25rem;
+	color: $white;
 }
 
 // 1.2 Posts & comments navigation
@@ -485,6 +506,10 @@ form input[type="submit"] {
 		}
 	}
 
+.top-bar.with-logo {
+	padding: 1.4rem 0;
+}
+
 .top-bar a {
 	color: $body-font-color;
 }
@@ -566,21 +591,15 @@ form input[type="submit"] {
 // -----------------
 
 .top-bar-title .site-logo img {
-	width: 35px;
+	width: auto;
 	height: 35px;
-	margin-right: $small-space;
+	margin-right: $large-space;
 }
 
 @include breakpoint(medium up) {
-	.top-bar-title .site-logo {
-		position: absolute;
-		margin-top: -4px;
-	}
-
 	.top-bar-title .site-logo img {
-		width: 44px;
+		width: auto;
 		height: 44px;
-		margin-right: 0;
 	}
 }
 
@@ -588,30 +607,24 @@ form input[type="submit"] {
 	padding: 0;
 }
 
-.top-bar-title .site-name {
+.top-bar-title .site-title {
 	font-weight: bold;
 }
 
-	@include breakpoint(medium up) {
-		.top-bar-title .site-name.with-logo {
-			padding-left: 56px;
-		}
-	}
-
-.top-bar-title .site-name h1 {
+.top-bar-title .site-title h1 {
 	margin-bottom: 0;
 	font-size: inherit;
 	font-weight: bold;
 	line-height: 1;
 }
 
-.top-bar-title .site-name a {
+.top-bar-title .site-title a {
 	padding-left: 0;
 	padding-right: 0;
 }
 
 @include breakpoint(small only) {
-	.top-bar-title .site-name img {
+	.top-bar-title .site-title img {
 		height: 24px;
 	}
 }
@@ -626,24 +639,38 @@ form input[type="submit"] {
 		border-color: rgba(255,255,255,0.1)
 	}
 
-// 2.4 Tob bar right
-// -----------------
+// 2.4 Tob bar right & left
+// ------------------------
 
+.top-bar-left,
 .top-bar-right {
 	font-size: 0.867rem;
 }
 
 	@include breakpoint(medium up) {
-		.top-bar-right {
-			margin-top: 2px;
+		.top-bar-left {
+			margin-left: $large-space;
 		}
 	}
 
+	@include breakpoint(medium up) {
+		.top-bar-left,
+		.top-bar-right {
+			margin-top: 2px !important;
+		}
+
+		.with-logo .top-bar-left,
+		.with-logo .top-bar-right {
+			margin-top: 7px !important;
+		}
+	}
+
+.top-bar-left .menu > li > a,
 .top-bar-right .menu > li > a {
 	text-transform: uppercase;
 }
 
-.top-bar-right .menu.dropdown > li:last-of-type > a {
+.top-bar-right .menu.dropdown > li:last-of-type:not(.is-dropdown-submenu-parent) > a {
 	padding-right: 0;
 }
 
@@ -651,55 +678,55 @@ form input[type="submit"] {
 	border-color: $white transparent transparent;
 }
 
-.top-bar-right .button {
+.top-bar .button {
 	padding: 0 0.5rem;
 	border: 0;
 	background: none;
 	font-size: inherit;
 }
 
-	.top-bar-right .button:hover {
+	.top-bar .button:hover {
 		background: none;
 		color: inherit;
 	}
 
-.top-bar-right .menu.drilldown .button {
+.top-bar .menu.drilldown .button {
 	padding: 0;
 }
 
-.top-bar-right .hollow.button {
+.top-bar .menu.drilldown .button a {
+	display: block;
+}
+
+.top-bar .hollow.button {
 	border: 0;
 	color: inherit;
 }
 
-.top-bar-right .button a {
+.top-bar .button a {
 	@include button;
 	padding: $menu-item-padding;
 	margin-bottom: 0;
 	font-size: inherit;
 }
 
-.top-bar-right .menu.drilldown .button a {
-	display: block;
-}
-
-.top-bar-right .hollow.button a {
+.top-bar .hollow.button a {
 	background-color: transparent;
 	color: $primary-color;
 	border: 1px solid $primary-color;
 }
 
-	.top-bar-right .hollow.button a:hover {
+	.top-bar .hollow.button a:hover {
 		color: scale-color($primary-color, $lightness: -14%);
 		border-color: scale-color($primary-color, $lightness: -14%);
 	}
 
-	.inverse .top-bar-right .hollow.button a {
+	.inverse .top-bar .hollow.button a {
 		color: $white;
 		border-color: $white;
 	}
 
-		.inverse .top-bar-right .hollow.button a:hover {
+		.inverse .top-bar .hollow.button a:hover {
 			color: $medium-gray;
 			border-color: $medium-gray;
 		}
@@ -759,6 +786,10 @@ a {
 
 #primary {
 	margin-top: $large-space;
+}
+
+#primary.front-page {
+	margin-top: 0;
 }
 
 #secondary {
@@ -873,12 +904,6 @@ a.more-link:hover {
 	margin-left: -3px;
 }
 
-.entry-meta i.fa,
-.entry-footer i.fa {
-	margin-right: 0.75em;
-	color: $medium-gray;
-}
-
 .page .entry-footer .divider,
 .divider.tags-post-edit { display: none; }
 
@@ -962,15 +987,15 @@ a.more-link:hover {
 	font-size: 1.5em;
 }
 
-.format-chat .entry-format:before { content: '\f086'; }
-.format-audio .entry-format:before { content: '\f028'; }
-.format-status .entry-format:before { content: '\f21e'; }
-.format-gallery .entry-format:before { content: '\f00a'; }
-.format-link .entry-format:before { content: '\f0c1'; }
-.format-quote .entry-format:before { content: '\f10d'; }
-.format-video .entry-format:before { content: '\f008'; }
-.format-image .entry-format:before { content: '\f03e'; }
-.format-aside .entry-format:before { content: '\f249'; }
+.format-chat .entry-format:before 		{ content: '\f086'; }
+.format-audio .entry-format:before 		{ content: '\f028'; }
+.format-status .entry-format:before 	{ content: '\f21e'; }
+.format-gallery .entry-format:before 	{ content: '\f00a'; }
+.format-link .entry-format:before 		{ content: '\f0c1'; }
+.format-quote .entry-format:before 		{ content: '\f10d'; }
+.format-video .entry-format:before 		{ content: '\f008'; }
+.format-image .entry-format:before 		{ content: '\f03e'; }
+.format-aside .entry-format:before 		{ content: '\f249'; }
 
 // 4. Comments
 // -----------

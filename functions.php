@@ -72,12 +72,6 @@ function nelumbo_setup() {
 		'caption',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'nelumbo_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
 	/*
 	 * Enable support for Post Formats.
 	 *
@@ -189,14 +183,13 @@ require get_template_directory() . '/inc/jetpack.php';
 // ------
 
 // Cover thumbnail
-add_image_size( 'cover', 1920, 450, true );
+add_image_size( 'cover', 1920, 600, true );
 
 // Entry featured image
 add_image_size( 'entry-featured-img', 680, 680, false );
 
 // Logo
 add_theme_support('custom-logo', array(
-	'width'			=> 88,
 	'height'		=> 88,
 	'flex-height'	=> true
 ));
