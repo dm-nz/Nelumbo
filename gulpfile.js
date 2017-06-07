@@ -29,10 +29,8 @@ gulp.task('scripts', function() {
     return gulp.src(
           [
             'bower_components/what-input/dist/what-input.js',
-            'bower_components/foundation-sites/dist/js/foundation.min.js',
-            //'bower_components/foundation-sites/dist/js/plugins/*.min.js',
+            'bower_components/foundation-sites/dist/js/foundation.js',
             'js/custom.js',
-            //'js/navigation.js',
             'js/skip-link-focus-fix.js'
           ]
         )

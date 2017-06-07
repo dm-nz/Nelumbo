@@ -159,7 +159,7 @@ $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
 $blockquote-color: $black;
-$blockquote-padding: rem-calc(15 20 1 16);
+$blockquote-padding: rem-calc(15 20 1 19);
 $blockquote-border: 4px solid $primary-color;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
@@ -213,7 +213,7 @@ $accordion-content-padding: 1rem;
 
 $accordionmenu-arrows: true;
 $accordionmenu-arrow-color: $primary-color;
-$accordionmenu-arrow-size: 5px;
+$accordionmenu-arrow-size: 6px;
 
 // 9. Badge
 // --------
@@ -321,7 +321,7 @@ $closebutton-color-hover: $black;
 $drilldown-transition: transform 0.15s linear;
 $drilldown-arrows: true;
 $drilldown-arrow-color: $primary-color;
-$drilldown-arrow-size: 5px;
+$drilldown-arrow-size: 6px;
 $drilldown-background: $white;
 
 // 17. Dropdown
@@ -344,7 +344,7 @@ $dropdown-sizes: (
 
 $dropdownmenu-arrows: true;
 $dropdownmenu-arrow-color: $anchor-color;
-$dropdownmenu-arrow-size: 5px;
+$dropdownmenu-arrow-size: 6px;
 $dropdownmenu-min-width: 200px;
 $dropdownmenu-background: $white;
 $dropdownmenu-border: 1px solid $medium-gray;
@@ -619,7 +619,6 @@ $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
-
 
 // 38. Spaces
 // ----------

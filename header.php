@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'nelumbo' ); ?></a>
 	<header id="masthead" role="banner" data-sticky-container>
-		<div class="small-12 sticky" data-sticky data-options="marginTop: 0">
+		<div class="small-12" data-sticky data-options="marginTop:0;">
 		<?php if ( is_woocommerce_activated() ) : ?>
 			<div class="top-stripe">
 				<div class="row">

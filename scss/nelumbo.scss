@@ -1256,6 +1256,11 @@ h2.widget-title {
 			text-decoration-color: $dark-gray;
 		}
 
+#wp-calendar thead,
+#wp-calendar tbody {
+	text-align: center;
+}
+
 table tfoot td#next {
 	text-align: right;
 }
