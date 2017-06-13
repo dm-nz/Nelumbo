@@ -18,7 +18,7 @@ get_header(); ?>
 <?php if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
 <?php elseif ( is_woocommerce_activated() ) :
-	if ( is_cart() || is_checkout() ) : ?>
+	if ( is_cart() || is_checkout() || is_account_page() ) : ?>
 	<div id="primary" class="content-area column">
 <?php elseif ( ! is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
@@ -44,7 +44,7 @@ else :
 	</div><!-- #primary -->
 	<?php
 	if ( is_woocommerce_activated() ) :
-		if ( is_cart() || is_checkout() ) :
+		if ( is_cart() || is_checkout() || is_account_page() ) :
 		else :
 			get_sidebar();
 		endif;

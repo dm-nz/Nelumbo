@@ -26,17 +26,32 @@
 	<header id="masthead" role="banner" data-sticky-container>
 		<div class="small-12" data-sticky data-options="marginTop:0;">
 		<?php if ( is_woocommerce_activated() ) : ?>
-			<div class="top-stripe">
+			<div class="top-stripe inverse">
 				<div class="row">
 					<div class="column">
-						<ul class="menu right text-right">
-							<li class="cart first">
+						<ul class="menu dropdown right text-right" data-dropdown-menu>
+							<li class="search-toggle first hide-for-small-only">
+								<a><i class="fa fa-search"></i><span><?php echo __( 'Search' );?></span></a>
+							</li><!-- .search-toggle -->
+							<li class="cart is-dropdown-submenu-parent">
 								<?php nelumbo_cart_link(); ?>
-								<?php the_widget( 'WC_Widget_Cart' ); ?> 
+								<ul class="menu dropdown">
+									<li><?php the_widget( 'WC_Widget_Cart' ); ?></li>
+								</ul>
 							</li><!-- .cart -->
-							<li class="search-toggle last hide-for-small-only">
-								<a><i class="fa fa-search"></i></a>
-							</li><!-- .search -->
+							<li class="last">
+								<?php if ( ! is_user_logged_in() ) : ?>
+									<a href="/my-account"><i class="fa fa-sign-in"></i><span><?php echo __( 'Sign in', 'woocommerce' );?></span></a>
+								<?php else : ?>
+									<a href="/my-account"><i class="fa fa-user-circle"></i><span><?php echo __( 'My account', 'woocommerce' );?></span></a>
+									<ul class="menu dropdown">
+										<li><a href="/my-account/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' );?></span></a></li>
+										<li><a href="/my-account/customer-logout"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' );?></span></a></li>
+										<li><a href="/my-account/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' );?></span></a></li>
+										<li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' );?></span></a></li>
+									</ul>
+								<?php endif; ?>
+							</li>
 						</ul><!-- .menu -->
 					</div><!-- .column -->
 				</div><!-- .row -->

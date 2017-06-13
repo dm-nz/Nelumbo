@@ -35,40 +35,43 @@
 
 .inverse {
 	color: $white !important;
-}
 
-.inverse a {
-	color: $white;
-	text-decoration: underline;
-	text-decoration-color: rgba(255,255,255,0.5);
-}
-
-	.inverse a:hover {
-		color: $medium-gray;
-		text-decoration: none;
+	a {
+		color: $white;
+		text-decoration: underline;
 		text-decoration-color: rgba(255,255,255,0.5);
+
+		&:hover {
+			color: $medium-gray;
+			text-decoration: none;
+			text-decoration-color: rgba(255,255,255,0.5);
+		}
+
 	}
 
-.inverse table thead,
-.inverse table tbody,
-.inverse table tfoot {
-	background: none;
-	color: inherit;
-	border-color: rgba(255,255,255,0.1);
-}
+	table thead,
+	table tbody,
+	table tfoot {
+		background: none;
+		color: inherit;
+		border-color: rgba(255,255,255,0.1);
+	}
 
-.inverse table tbody tr:nth-child(2n) { background-color: rgba(255,255,255,0.1); }
+	table tbody tr:nth-child(2n) { background-color: rgba(255,255,255,0.1); }
+
+	cite {
+		color: $medium-gray;
+	}
+}
 
 a:hover abbr {
 	color: inherit;
-}
 
-.inverse abbr {
-	color: inherit;
-	border-color: $white;
+	&.inverse {
+		color: inherit;
+		border-color: $white;
+	}
 }
-
-.inverse cite { color: $medium-gray; }
 
 blockquote { background-color: $light-gray; }
 
@@ -102,20 +105,21 @@ ul .fa-li {
 .section-padding {
 	padding-top: 2.6rem;
 	padding-bottom: 2.5rem;
-}
+
 	@include breakpoint(medium only) {
-		.section-padding {
+		& {
 			padding-top: 1.9rem;
 			padding-bottom: 1.75rem;
 		}
 	}
 	
 	@include breakpoint(small only) {
-		.section-padding {
+		& {
 			padding-top: 1.25rem;
 			padding-bottom: 1rem;
 		}
 	}
+}
 
 .row-absolute {
 	position: absolute;
@@ -173,16 +177,16 @@ ul .fa-li {
 	background: rgba($black, 0.5);
 	color: $white;
 	border-radius: $global-radius;
-}
 
-	#up:hover {
+	&:hover {
 		background-color: rgba($black, 0.75);
 	}
 
-#up a {
-	display: block;
-	padding: 0rem 0.8rem 0.25rem;
-	color: $white;
+	a {
+		display: block;
+		padding: 0rem 0.8rem 0.25rem;
+		color: $white;
+	}
 }
 
 // 1.2 Posts & comments navigation
@@ -333,16 +337,16 @@ video,
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
-}
 
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
+	img[class*="wp-image-"] {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-.wp-caption .wp-caption-text {
-	margin: $base-space 0;
+	.wp-caption-text {
+		margin: $base-space 0;
+	}
 }
 
 .wp-caption-text {
@@ -365,6 +369,10 @@ video,
 	width: 100%;
 }
 
+.gallery-caption {
+	display: block;
+}
+
 .gallery-icon,
 .gallery-caption {
 	margin-bottom: 0.5rem;
@@ -379,12 +387,21 @@ video,
 .gallery-columns-8 .gallery-item { max-width: 12.5%; }
 .gallery-columns-9 .gallery-item { max-width: 11.11%; }
 
-.gallery-caption {
-	display: block;
-}
-
 // 1.9 Forms
 // ---------
+
+fieldset {
+	border: $fieldset-border !important;
+	padding: 0 $medium-space $medium-space !important;
+	margin: $fieldset-margin !important;
+	border-radius: $global-radius;
+}
+
+legend {
+	margin-top: $small-space;
+	padding: 0 $small-space !important;
+	font-weight: bold;
+}
 
 select {
 	padding-top: 0.35rem !important;
@@ -465,6 +482,11 @@ form input[type="submit"] {
 .inverse .button.hollow {
 	border: 1px solid $white;
 	color: $white;
+
+	&:hover {
+		color: rgba($white, 0.7);
+		border-color: rgba($white, 0.7);
+	}
 }
 
 .reveal p .button {
@@ -481,11 +503,13 @@ form input[type="submit"] {
 	position: fixed;
 	width: 100%;
 	z-index: 2;
-}
 
 	@include breakpoint(small only) {
-		.fixed { position: absolute; }
+		& {
+			position: absolute;
+		}
 	}
+}
 
 #masthead {
 	z-index: 10;
@@ -494,47 +518,47 @@ form input[type="submit"] {
 .top-bar {
 	border-bottom: 1px solid $light-gray;
 	transition: 0.3s;
-}
 
-	.top-bar.inverse {
+	&.inverse {
 		border-color: rgba(255,255,255,0.08);
 	}
 
 	@include breakpoint(small only) {
-		.top-bar {
+		& {
 			padding: 0.5rem 0 !important;
 		}
 	}
 
-.top-bar.with-logo {
-	padding: 1.4rem 0;
-}
-
-.top-bar a {
-	color: $body-font-color;
-}
-
-	.inverse.top-bar a {
-		color: $white;
+	&.with-logo {
+		padding: 1.4rem 0;
 	}
 
-	.inverse.top-bar a:hover {
-		color: $medium-gray;
+	a {
+		color: $body-font-color;
 	}
 
-.top-bar ul ul {
-	display: none;
-}
+		&.inverse a {
+			color: $white;
 
-.top-bar .dropdown.menu > li.is-dropdown-submenu-parent {
-	> a::after {
-		border-color: $body-font-color transparent transparent;
+			&:hover {
+				color: $medium-gray;
+			}
+		}
+
+	ul ul {
+		display: none;
 	}
-	li.opens-left > a::after {
-		border-color: transparent $body-font-color transparent transparent;
-	}
-	li.opens-right > a::after {
-		border-color: transparent transparent transparent $body-font-color;
+
+	.dropdown.menu > li.is-dropdown-submenu-parent {
+		> a::after {
+			border-color: $body-font-color transparent transparent;
+		}
+		li.opens-left > a::after {
+			border-color: transparent $body-font-color transparent transparent;
+		}
+		li.opens-right > a::after {
+			border-color: transparent transparent transparent $body-font-color;
+		}
 	}
 }
 
@@ -545,99 +569,124 @@ form input[type="submit"] {
 .inverse .menu > li > a {
 	color: $white;
 	text-decoration: none;
-}
 
-	.inverse .menu > li > a:hover {
+	&:hover {
 		color: $medium-gray;
 	}
+}
 
 // 2.2 Top stripe
 // -----------------
 
 .top-stripe {
-	background-color: $light-gray;
-}
+	padding: 3px 0;
+	background-color: $primary-color;
 
-.top-stripe a {
-	color: inherit;
-}
+	&.inverse,
+	&.inverse .menu > li > a {
+		color: rgba($white, 0.8);
 
-.top-stripe .menu > li > a {
-	padding-left: $base-space;
-	padding-right: $base-space;
-}
+		&:hover {
+			color: rgba($white, 0.6);
+		}
+	}
 
-.top-stripe .menu > li.first > a {
-	padding-left: 0;
-}
+	.menu > li.first > a {
+		padding-left: 0;
+	}
 
-.top-stripe .menu > li.last > a {
-	padding-right: 0;
-}
+	.menu > li.last > a {
+		padding-right: 0;
+	}
 
-.top-stripe .menu > li.last > a i {
-	margin-right: 0;
-}
+	.menu i.fa {
+		margin-right: 0.75em;
+	}
 
-.top-stripe .fa-caret-down {
-	margin-top: -2px;
-}
+	.menu.is-dropdown-submenu {
+		margin-top: 2px;
+		text-align: left;
+		z-index: 3;
 
-.top-stripe .product-search {
-	background-color: #444;
+		i.fa {
+			width: 1.25em;
+			margin-right: 0.5em;
+			color: $medium-gray;
+		}
+	}
+
+	&.inverse .is-dropdown-submenu,
+	&.inverse .is-dropdown-submenu.menu > li > a {
+		color: $body-font-color;
+	}
+
+		&.inverse .is-dropdown-submenu.menu > li > a:hover {
+			color: $primary-color;
+		}
+
+	.is-dropdown-submenu-parent a::after {
+		top: 55%;
+	}
+
+		&.inverse .is-dropdown-submenu-parent a::after {
+			opacity: 0.8;
+		}
 }
 
 // 2.3 Top bar title
 // -----------------
 
-.top-bar-title .site-logo img {
-	width: auto;
-	height: 35px;
-	margin-right: $large-space;
-}
-
-@include breakpoint(medium up) {
-	.top-bar-title .site-logo img {
-		width: auto;
-		height: 44px;
-	}
-}
-
 .menu > li.site-logo > a {
 	padding: 0;
 }
 
-.top-bar-title .site-title {
-	font-weight: bold;
-}
+.top-bar-title {
 
-.top-bar-title .site-title h1 {
-	margin-bottom: 0;
-	font-size: inherit;
-	font-weight: bold;
-	line-height: 1;
-}
+	.site-logo img {
+		width: auto;
+		height: 35px;
+		margin-right: $large-space;
 
-.top-bar-title .site-title a {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-@include breakpoint(small only) {
-	.top-bar-title .site-title img {
-		height: 24px;
+		@include breakpoint(medium up) {
+			& {
+				width: auto;
+				height: 44px;
+			}
+		}
 	}
-}
 
-.top-bar-title .site-description span {
-	margin-left: 1em;
-	padding-left: 1em;
-	border-left: 1px solid $light-gray;
-}
+	.site-title {
+		font-weight: bold;
 
-	.inverse .top-bar-title .site-description span {
-		border-color: rgba(255,255,255,0.1)
+		h1 {
+			margin-bottom: 0;
+			font-size: inherit;
+			font-weight: bold;
+			line-height: 1;
+		}
+
+		a {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		@include breakpoint(small only) {
+			img {
+				height: 24px;
+			}
+		}
 	}
+
+	.site-description span {
+		margin-left: 1em;
+		padding-left: 1em;
+		border-left: 1px solid $light-gray;
+	}
+
+		.inverse & .site-description span {
+			border-color: rgba(255,255,255,0.1);
+		}
+}
 
 // 2.4 Tob bar right & left
 // ------------------------
@@ -674,62 +723,65 @@ form input[type="submit"] {
 	padding-right: 0;
 }
 
-.inverse.top-bar .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+.inverse .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
 	border-color: $white transparent transparent;
 }
 
-.top-bar .button {
-	padding: 0 0.5rem;
-	border: 0;
-	background: none;
-	font-size: inherit;
-}
+.top-bar {
 
-	.top-bar .button:hover {
+	.button {
+		padding: 0 0.5rem;
+		border: 0;
 		background: none;
+		font-size: inherit;
+
+		&:hover {
+			background: none;
+			color: inherit;
+		}
+
+		a {
+			@include button;
+			padding: $menu-item-padding;
+			margin-bottom: 0;
+			font-size: inherit;
+		}
+	}
+
+	.menu.drilldown .button {
+		padding: 0;
+
+		a {
+			display: block;
+		}
+	}
+
+	.hollow.button {
+		border: 0;
 		color: inherit;
+
+		a {
+			background-color: transparent;
+			color: $primary-color;
+			border: 1px solid $primary-color;
+
+			&:hover {
+				color: scale-color($primary-color, $lightness: -14%);
+				border-color: scale-color($primary-color, $lightness: -14%);
+			}
+		}
 	}
 
-.top-bar .menu.drilldown .button {
-	padding: 0;
-}
-
-.top-bar .menu.drilldown .button a {
-	display: block;
-}
-
-.top-bar .hollow.button {
-	border: 0;
-	color: inherit;
-}
-
-.top-bar .button a {
-	@include button;
-	padding: $menu-item-padding;
-	margin-bottom: 0;
-	font-size: inherit;
-}
-
-.top-bar .hollow.button a {
-	background-color: transparent;
-	color: $primary-color;
-	border: 1px solid $primary-color;
-}
-
-	.top-bar .hollow.button a:hover {
-		color: scale-color($primary-color, $lightness: -14%);
-		border-color: scale-color($primary-color, $lightness: -14%);
-	}
-
-	.inverse .top-bar .hollow.button a {
+	&.inverse .hollow.button a {
 		color: $white;
 		border-color: $white;
-	}
 
-		.inverse .top-bar .hollow.button a:hover {
+		&:hover {
 			color: $medium-gray;
 			border-color: $medium-gray;
 		}
+	}
+}
 
 .top-bar-right .menu.dropdown > li:last-of-type.button {
 	padding-right: 0;
@@ -754,25 +806,27 @@ form input[type="submit"] {
 	margin-top: 0.5rem;
 	padding-top: 0.25rem;
 	border-top: 1px solid $light-gray;
-}
 
-.is-drilldown .menu > li > a {
-	padding: $base-space 0;
+	.menu > li > a {
+		padding: $base-space 0;
+	}
 }
 
 .is-drilldown-submenu-parent > a::after {
 	border-color: transparent transparent transparent $body-font-color !important;
-}
 
-	.inverse .is-drilldown-submenu-parent > a::after {
+	.inverse & {
 		border-color: transparent transparent transparent $white !important;
 	}
+}
 
 .js-drilldown-back > a::before {
 	border-color: transparent $body-font-color transparent transparent !important;
-}
 
-	.inverse .js-drilldown-back > a::before { border-color: transparent $white transparent transparent !important; }
+	.inverse & {
+		border-color: transparent $white transparent transparent !important;
+	}
+}
 
 // 3. Content
 // ----------
@@ -786,10 +840,10 @@ a {
 
 #primary {
 	margin-top: $large-space;
-}
 
-#primary.front-page {
-	margin-top: 0;
+	&.front-page {
+		margin-top: 0;
+	}
 }
 
 #secondary {
@@ -858,7 +912,8 @@ article {
 }
 
 .entry-meta .item:before,
-.entry-footer .item:before {
+.entry-footer .item:before,
+.edit-link:before {
 	margin-right: 0.75em;
 	font-family: FontAwesome;
 	color: $medium-gray;
@@ -878,20 +933,20 @@ a.more-link {
 	border-radius: $global-radius;
 	color: $body-font-color;
 	font-size: 0.867em;
-}
 
-a.more-link:hover {
-	color: $body-font-color;
-	background-color: $medium-gray;
+	&:hover {
+		color: $body-font-color;
+		background-color: $medium-gray;
+	}
 }
 
 .entry-footer {
 	margin-bottom: $medium-space;
 	font-size: 0.867em;
-}
 
-.single .entry-footer {
-	margin-bottom: 0;
+	.single & {
+		margin-bottom: 0;
+	}
 }
 
 .entry-meta a,
@@ -905,7 +960,9 @@ a.more-link:hover {
 }
 
 .page .entry-footer .divider,
-.divider.tags-post-edit { display: none; }
+.divider.tags-post-edit {
+	display: none;
+}
 
 .cat-links + .divider.tags-post-edit,
 .tags-links + .divider.tags-post-edit {
@@ -930,42 +987,42 @@ a.more-link:hover {
 	background-position: center;
 	background-size: cover;
 	text-shadow: 0 0 1.5em black;
-}
 
-#cover,
-#cover .column {
-	height: 450px;
-}
+	&,
+	.column {
+		height: 450px;
 
-#cover .filter {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: rgba(0,0,0,0.25);
-}
+		@include breakpoint(medium only) {
+			& {
+				height: 350px;
+			}
+		}
 
-#cover .entry-meta {
-	color: rgba($white, 0.5);
-	margin-bottom: 0;
-}
-
-@include breakpoint(medium only) {
-	#cover,
-	#cover .column {
-		height: 350px;
-	}
-}
-
-@include breakpoint(small only) {
-	#cover,
-	#cover .column {
-		height: 280px;
+		@include breakpoint(small only) {
+			& {
+				height: 280px;
+			}
+		}
 	}
 
-	#cover .entry-header {
-		margin-top: $base-space;
+	@include breakpoint(small only) {
+		.entry-header {
+			margin-top: $base-space;
+		}
+	}
+
+	.filter {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,0.25);
+	}
+
+	.entry-meta {
+		color: rgba($white, 0.5);
+		margin-bottom: 0;
 	}
 }
 
@@ -1051,18 +1108,18 @@ a.more-link:hover {
 ol.comment-list {
 	margin-left: 64px;
 	margin-bottom: $xlarge-space;
-}
 
-ol.comment-list li {
-	list-style: none;
+	li {
+		list-style: none;
+	}
 }
 
 ol ol.children {
 	margin-left: 48px;
-}
 
-ol ol.children ol.children {
-	margin-left: 0;
+	ol.children {
+		margin-left: 0;
+	}
 }
 
 .comment img.avatar {
@@ -1070,54 +1127,58 @@ ol ol.children ol.children {
 	margin-top: 7px;
 	margin-left: -64px;
 	border-radius: 50%;
+
+	ol ol.children & {
+		width: 32px;
+		height: 32px;
+		margin-left: -48px;
+	}
 }
 
-ol ol.children .comment img.avatar {
-	width: 32px;
-	height: 32px;
-	margin-left: -48px;
-}
+.comment {
 
-.comment .comment-author {
-	display: inline-block;
-	color: $dark-gray;
-}
+	.comment-author {
+		display: inline-block;
+		color: $dark-gray;
 
-.comment .comment-author a.url {
-	color: $body-font-color;
-}
+		a.url {
+			color: $body-font-color;
 
-	.comment .comment-author a.url:hover {
-		color: $primary-color;
+			&:hover {
+				color: $primary-color;
+			}
+		}
 	}
 
-.comment .comment-metadata {
-	display: inline-block;
-	margin-left: $tiny-space;
-	font-size: 0.867em;
-}
+	.comment-metadata {
+		display: inline-block;
+		margin-left: $tiny-space;
+		font-size: 0.867em;
+	}
 
-.comment .comment-metadata a,
-.comment .reply a {
-	color: $dark-gray;
-}
+	.reply {
+		margin-top: -1em;
+		font-size: 0.867em;
+	}
 
-	.comment .comment-metadata a:hover,
-	.comment .reply a:hover { color: $primary-color; }
+	.comment-metadata a,
+	.reply a {
+		color: $dark-gray;
 
-.comment .edit-link {
-	margin-left: $small-space;
-	padding-left: 0.75em;
-	border-left: 1px solid $light-gray;
-}
+		&:hover {
+			color: $primary-color;
+		}
+	}
 
-.comment .reply {
-	margin-top: -1em;
-	font-size: 0.867em;
-}
+	.edit-link {
+		margin-left: $small-space;
+		padding-left: 0.75em;
+		border-left: 1px solid $light-gray;
+	}
 
-.comment .comment-body {
-	margin-bottom: $large-space;
+	.comment-body {
+		margin-bottom: $large-space;
+	}
 }
 
 // 5. Sidebar
@@ -1128,79 +1189,79 @@ ol ol.children .comment img.avatar {
 
 .widget {
 	margin-bottom: $xlarge-space;
-}
 
-.widget.widget_search {
-	margin-bottom: $large-space;
-}
-
-.widget ul {
-	list-style-type: none;
-	margin-left: 0;
-}
-
-.widget ul li {
-	margin-bottom: $small-space;
-	padding-bottom: $small-space;
-	border-bottom: 1px solid $light-gray;
-}
-
-	.inverse .widget ul li {
-		border-color: rgba(255,255,255,0.25);
+	&.widget_search {
+		margin-bottom: $large-space;
 	}
 
-.widget ul ul {
-	margin-top: $small-space;
-	padding-left: $base-space;
-}
+	ul {
+		list-style-type: none;
+		margin-left: 0;
 
-.widget ul li li {
-	padding-top: $small-space;
-	padding-bottom: 0;
-	border-top: 1px solid $light-gray;
-	border-bottom: 0;
-}
+		ul {
+			margin-top: $small-space;
+			padding-left: $base-space;
+		}
 
-.widget ul li li:last-of-type {
-	margin-bottom: 0;
-}
+		li {
+			margin-bottom: $small-space;
+			padding-bottom: $small-space;
+			border-bottom: 1px solid $light-gray;
 
-.widget ul li a {
-	color: $body-font-color;
-}
+			.inverse & {
+				border-color: rgba(255,255,255,0.25);
+			}
 
-	.widget ul li a:hover {
-		color: $anchor-color-hover;
+			li {
+				padding-top: $small-space;
+				padding-bottom: 0;
+				border-top: 1px solid $light-gray;
+				border-bottom: 0;
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+
+			a {
+				color: $body-font-color;
+
+				&:hover {
+					color: $anchor-color-hover;
+				}
+
+				.inverse & {
+					color: $white;
+					text-decoration: none;
+					text-decoration-color: $dark-gray;
+
+					&:hover {
+						color: $medium-gray;
+					}
+				}
+			}
+		}
 	}
 
-.inverse .widget ul li a {
-	color: $white;
-	text-decoration: none;
-	text-decoration-color: $dark-gray;
-}
+	.menu > li {
+		display: list-item;
 
-	.inverse .widget ul li a:hover {
-		color: $medium-gray;
+		> a {
+			padding: 0;
+			line-height: inherit;
+		}
 	}
+}
 
 h2.widget-title {
 	margin-bottom: 1em;
 	font-weight: normal;
-}
 
 	@include breakpoint(medium up) {
-		h2.widget-title {
+		& {
 			font-size: 1.25rem;
 		}
 	}
-
-.widget .menu > li {
-	display: list-item;
-}
-
-.widget .menu > li > a {
-	padding: 0;
-	line-height: inherit;
 }
 
 .rss-widget-icon {
@@ -1232,11 +1293,11 @@ h2.widget-title {
 
 .rss-date {
 	color: $dark-gray;
-}
 
-	.inverse .rss-date {
+	.inverse & {
 		color: $medium-gray;
 	}
+}
 
 .rssSummary {
 	font-size: 0.92857rem;
@@ -1244,17 +1305,17 @@ h2.widget-title {
 
 .tagcloud a {
 	color: inherit;
-}
 
-	.inverse .tagcloud a {
+	.inverse & {
 		text-decoration: none;
 		text-decoration-color: $dark-gray;
-	}
 
-		.inverse .tagcloud a:hover {
+		&:hover {
 			text-decoration: underline;
 			text-decoration-color: $dark-gray;
 		}
+	}
+}
 
 #wp-calendar thead,
 #wp-calendar tbody {
@@ -1285,28 +1346,28 @@ table tfoot td#next {
 // 6. Footer
 // ---------
 
-$footer-color: $black;
+$footer-background: $black;
 
 #footer-wrapper {
-	background: $footer-color;
+	background: $footer-background;
 }
 
 #footer-widgets {
-	background-color: scale-color($footer-color, $lightness: 5%);
-}
+	background-color: scale-color($footer-background, $lightness: 5%);
 
-#footer-widgets .column:last-child:not(:first-child),
-#footer-widgets .columns:last-child:not(:first-child) {
-	float: left;
-}
+	.column:last-child:not(:first-child),
+	.columns:last-child:not(:first-child) {
+		float: left;
+	}
 
-#footer-widgets .menu > li {
-	display: block;
-}
+	.menu > li {
+		display: block;
+	}
 
-#footer-widgets .widget {
-	margin-top: $medium-space;
-	margin-bottom: 0;
+	.widget {
+		margin-top: $medium-space;
+		margin-bottom: 0;
+	}
 }
 
 #colophon .row {
@@ -1322,5 +1383,7 @@ $footer-color: $black;
 }
 
 @include breakpoint(medium up) {
-	#colophon .site-developer { text-align: right; }
+	#colophon .site-developer {
+		text-align: right;
+	}
 }

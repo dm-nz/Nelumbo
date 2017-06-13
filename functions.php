@@ -237,7 +237,6 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 			<span>
 				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
 				<span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'nelumbo' ), WC()->cart->get_cart_contents_count() ) );?></span>
-				<i class="fa fa-caret-down"></i>
 			</span>
 		</a>
 		<?php
@@ -246,10 +245,13 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 
 // Change number of products per row to 3
 if ( is_active_sidebar( 'sidebar-shop' ) ) {
-	add_filter('loop_shop_columns', 'loop_columns');
+	add_filter( 'loop_shop_columns', 'loop_columns' );
 }
-if ( !function_exists('loop_columns') && is_active_sidebar( 'sidebar-shop' ) && function_exists('is_shop') ) {
+if ( !function_exists( 'loop_columns' ) && is_active_sidebar( 'sidebar-shop' ) && function_exists( 'is_shop' ) ) {
 	function loop_columns() {
 		return 3;
 	}
 }
+
+// Remove add to cart button from product within loops
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
