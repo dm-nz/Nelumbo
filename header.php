@@ -41,7 +41,7 @@
 							</li><!-- .cart -->
 							<li class="last">
 								<?php if ( ! is_user_logged_in() ) : ?>
-									<a href="/my-account"><i class="fa fa-sign-in"></i><span><?php echo __( 'Sign in', 'woocommerce' );?></span></a>
+									<a href="/my-account"><i class="fa fa-sign-in"></i><span><?php echo __( 'Log in' ); ?></span></a>
 								<?php else : ?>
 									<a href="/my-account"><i class="fa fa-user-circle"></i><span><?php echo __( 'My account', 'woocommerce' );?></span></a>
 									<ul class="menu dropdown">

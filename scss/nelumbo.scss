@@ -73,7 +73,9 @@ a:hover abbr {
 	}
 }
 
-blockquote { background-color: $light-gray; }
+blockquote {
+	background-color: $light-gray;
+}
 
 pre {
 	padding: $small-space $medium-space !important;
@@ -703,13 +705,13 @@ form input[type="submit"] {
 	}
 
 	@include breakpoint(medium up) {
-		.top-bar-left,
-		.top-bar-right {
+		.top-bar .top-bar-left,
+		.top-bar .top-bar-right {
 			margin-top: 2px !important;
 		}
 
-		.with-logo .top-bar-left,
-		.with-logo .top-bar-right {
+		.top-bar.with-logo .top-bar-left,
+		.top-bar.with-logo .top-bar-right {
 			margin-top: 7px !important;
 		}
 	}

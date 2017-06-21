@@ -599,6 +599,10 @@ table.variations tbody td {
 // 6. My account
 // -------------
 
+.woocommerce-form-login {
+	max-width: 585px;
+}
+
 .woocommerce-MyAccount-navigation ul {
 	@include menu-direction(vertical);
 	margin-left: 0;

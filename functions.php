@@ -236,7 +236,7 @@ if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 			<i class="fa fa-shopping-cart"></i>
 			<span>
 				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>
-				<span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'nelumbo' ), WC()->cart->get_cart_contents_count() ) );?></span>
+				<span class="count"><?php echo wp_kses_data( sprintf( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count(), 'woocommerce' ), WC()->cart->get_cart_contents_count() ) );?></span>
 			</span>
 		</a>
 		<?php

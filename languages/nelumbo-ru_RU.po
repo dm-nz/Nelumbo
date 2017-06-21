@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2016-07-21 11:36+0600\n"
+"POT-Creation-Date: 2017-06-19 14:41+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-05-15 09:03+0000\n"
+"PO-Revision-Date: 2017-06-19 14:42+0000\n"
 "Language-Team: Russian\n"
 "X-Generator: Loco - https://localise.biz/\n"
 "Last-Translator: admin <nazzzim@gmail.com>\n"
@@ -17,25 +17,26 @@ msgstr ""
 # @ _s
 #: footer.php:18
 msgid "https://wordpress.org/"
-msgstr ""
+msgstr "https://wordpress.org/"
+
+#: footer.php:20
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr "Тема: %1$s от %2$s"
 
 #. Theme Name of the plugin/theme
 msgid "_s"
-msgstr ""
+msgstr "_s"
 
 # @ _s
 #. Theme URI of the plugin/theme
 msgid "http://underscores.me/"
-msgstr ""
+msgstr "http://underscores.me/"
 
 # @ _s
-#. Description of the plugin/theme
-msgid ""
-"Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if "
-"you like. I'm a theme meant for hacking so don't use me as a <em>Parent "
-"Theme</em>. Instead try turning me into the next, most awesome, WordPress "
-"theme out there. That's what I'm here for."
-msgstr ""
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Опаньки! Страница не найдена"
 
 # @ _s
 #: 404.php:21
@@ -47,6 +48,11 @@ msgstr ""
 "по ссылкам ниже."
 
 # @ _s
+#: 404.php:33
+msgid "Most Used Categories"
+msgstr "Популярные рубрики"
+
+# @ _s
 #. translators: %1$s: smiley
 #: 404.php:51
 #, php-format
@@ -54,9 +60,34 @@ msgid "Try looking in the monthly archives. %1$s"
 msgstr "Попробуйте поискать в архивах. %1$s"
 
 # @ _s
+#: comments.php:31
+#, php-format
+msgctxt "comments title"
+msgid "One comment"
+msgid_plural "Comments"
+msgstr[0] "Один комментарий"
+msgstr[1] "Обсуждение"
+msgstr[2] "Обсуждение"
+
+# @ _s
 #: comments.php:40 comments.php:61
 msgid "Comment navigation"
 msgstr "Навигация по комментариям"
+
+# @ _s
+#: comments.php:43 comments.php:64
+msgid "Older Comments"
+msgstr "Старые комментарии"
+
+# @ _s
+#: comments.php:44 comments.php:65
+msgid "Newer Comments"
+msgstr "Новые комментарии"
+
+# @ _s
+#: comments.php:78
+msgid "Comments are closed."
+msgstr "Комментарии закрыты"
 
 # @ _s
 #: footer.php:18
@@ -65,20 +96,24 @@ msgid "Proudly powered by %s"
 msgstr "Работает на %s"
 
 # @ _s
-#: footer.php:20
-#, php-format
-msgid "Theme: %1$s by %2$s."
-msgstr "Тема: %1$s от %2$s."
-
-# @ _s
 #: functions.php:47
 msgid "Primary"
 msgstr "Основное"
 
 # @ _s
+#: functions.php:102
+msgid "Sidebar"
+msgstr "Сайдбар"
+
+# @ _s
 #: header.php:25
 msgid "Skip to content"
 msgstr "Перейти к содержимому"
+
+# @ _s
+#: header.php:45
+msgid "Primary Menu"
+msgstr "Главное меню"
 
 # @ _s
 #: inc/template-tags.php:28
@@ -99,90 +134,6 @@ msgstr "автором %s"
 #: inc/template-tags.php:50 inc/template-tags.php:56
 msgid ", "
 msgstr ", "
-
-# @ _s
-#: template-parts/content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Готовы написать свой первый пост? <a href=\"%1$s\">Начните отсюда</a>."
-
-# @ _s
-#: template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-"Извините, но по вашему запросу ничего не найдено. Попробуйте изменить свой "
-"запрос."
-
-# @ _s
-#: template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr ""
-"Мы не можем найти то, что вы ищете. Попробуйте воспользоваться поиском."
-
-# @ _s
-#: functions.php:102
-msgid "Sidebar"
-msgstr "Сайдбар"
-
-# @ _s
-#: template-parts/content-page.php:22 template-parts/content.php:38
-msgid "Pages:"
-msgstr "Страницы:"
-
-# @ _s
-#. Author of the plugin/theme
-msgid "Automattic"
-msgstr "Automattic"
-
-# @ _s
-#. Author URI of the plugin/theme
-msgid "http://automattic.com/"
-msgstr "http://automattic.com/"
-
-# @ _s
-#: 404.php:17
-msgid "Oops! That page can&rsquo;t be found."
-msgstr "Опаньки! Страница не найдена"
-
-# @ _s
-#: 404.php:33
-msgid "Most Used Categories"
-msgstr "Популярные рубрики"
-
-# @ _s
-#: comments.php:31
-#, php-format
-msgctxt "comments title"
-msgid "One comment"
-msgid_plural "Comments"
-msgstr[0] "Один комментарий"
-msgstr[1] "Обсуждение"
-msgstr[2] "Обсуждение"
-
-# @ _s
-#: comments.php:43 comments.php:64
-msgid "Older Comments"
-msgstr "Старые комментарии"
-
-# @ _s
-#: comments.php:44 comments.php:65
-msgid "Newer Comments"
-msgstr "Новые комментарии"
-
-# @ _s
-#: comments.php:78
-msgid "Comments are closed."
-msgstr "Комментарии закрыты"
-
-# @ _s
-#: header.php:45
-msgid "Primary Menu"
-msgstr "Главное меню"
 
 # @ _s
 #: inc/template-tags.php:52
@@ -230,8 +181,47 @@ msgid "Nothing Found"
 msgstr "Ничего не найдено"
 
 # @ _s
+#: template-parts/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Готовы написать свой первый пост? <a href=\"%1$s\">Начните отсюда</a>."
+
+# @ _s
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Извините, но по вашему запросу ничего не найдено. Попробуйте изменить свой "
+"запрос."
+
+# @ _s
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Мы не можем найти то, что вы ищете. Попробуйте воспользоваться поиском."
+
+# @ _s
+#: template-parts/content-page.php:22 template-parts/content.php:38
+msgid "Pages:"
+msgstr "Страницы:"
+
+# @ _s
 #. translators: %s: Name of current post.
 #: template-parts/content.php:33
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Читать полностью %s <span class=\"meta-nav\">&rarr;</span>"
+
+# @ _s
+#. Author of the plugin/theme
+msgid "Automattic"
+msgstr "Automattic"
+
+# @ _s
+#. Author URI of the plugin/theme
+msgid "http://automattic.com/"
+msgstr "http://automattic.com/"

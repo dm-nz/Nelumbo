@@ -26,7 +26,7 @@
 					<i class="fa fa-copyright"></i> <?php echo date('Y') . " "; bloginfo('name'); ?>
 				</div><!-- .site-copyright -->
 				<div class="site-developer medium-6 columns">
-					<i class="fa fa-wordpress"></i> <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'nelumbo' ), 'Nelumbo', '<a href="https://lotus.kg/" rel="designer">Lotus</a>' ); ?>
+					<i class="fa fa-wordpress"></i> <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'nelumbo' ), 'Nelumbo', '<a href="https://lotus.kg/" rel="designer">Lotus</a>' ); ?>
 				</div><!-- .site-developer -->
 			</div><!-- .row -->
 		</footer><!-- #colophon -->
