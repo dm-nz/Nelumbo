@@ -75,6 +75,10 @@ a:hover abbr {
 
 blockquote {
 	background-color: $light-gray;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
 }
 
 pre {
@@ -94,6 +98,11 @@ pre code {
 	background: none;
 	border: 0;
 	padding: 0;
+}
+
+dl dd {
+	margin-left: $medium-space;
+	margin-bottom: $small-space;
 }
 
 ul.fa-ul {
@@ -191,6 +200,16 @@ ul .fa-li {
 	}
 }
 
+.primary-color		{ background: $primary-color; }
+.secondary-color	{ background: $secondary-color; }
+.success-color		{ background: $success-color; }
+.warning-color		{ background: $warning-color; }
+.alert-color		{ background: $alert-color; }
+.black-color		{ background: $black; }
+.dark-gray-color	{ background: $dark-gray; }
+.medium-gray-color	{ background: $medium-gray; }
+.light-gray-color	{ background: $light-gray; }
+
 // 1.2 Posts & comments navigation
 // -------------------------------
 
@@ -269,14 +288,6 @@ ul .fa-li {
 
 // 1.4 Alignments
 // --------------
-
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
 
 .alignleft {
 	display: inline;
@@ -409,6 +420,7 @@ select {
 	padding-top: 0.35rem !important;
 }
 
+form textarea,
 form textarea[rows] {
 	height: 8rem;
 }
@@ -416,7 +428,7 @@ form textarea[rows] {
 .input-wrapper input[type="text"],
 .input-wrapper input[type="tel"],
 .input-wrapper input[type="email"] {
-	padding-left: 40px;
+	padding-left: 35px;
 }
 
 .input-wrapper::before {
@@ -696,29 +708,28 @@ form input[type="submit"] {
 .top-bar-left,
 .top-bar-right {
 	font-size: 0.867rem;
+
+	.menu > li > a {
+		text-transform: uppercase;
+	}
 }
 
-	@include breakpoint(medium up) {
-		.top-bar-left {
-			margin-left: $large-space;
-		}
+@include breakpoint(medium up) {
+	.top-bar-left {
+		margin-left: $large-space;
+	}
+}
+
+@include breakpoint(medium up) {
+	.top-bar .top-bar-left,
+	.top-bar .top-bar-right {
+		margin-top: 2px !important;
 	}
 
-	@include breakpoint(medium up) {
-		.top-bar .top-bar-left,
-		.top-bar .top-bar-right {
-			margin-top: 2px !important;
-		}
-
-		.top-bar.with-logo .top-bar-left,
-		.top-bar.with-logo .top-bar-right {
-			margin-top: 7px !important;
-		}
+	.top-bar.with-logo .top-bar-left,
+	.top-bar.with-logo .top-bar-right {
+		margin-top: 6px !important;
 	}
-
-.top-bar-left .menu > li > a,
-.top-bar-right .menu > li > a {
-	text-transform: uppercase;
 }
 
 .top-bar-right .menu.dropdown > li:last-of-type:not(.is-dropdown-submenu-parent) > a {
@@ -883,20 +894,23 @@ article {
 
 .entry-title {
 	line-height: 1.25;
+
+	a {
+		color: $body-font-color;
+	}
 }
 
-.entry-title a {
-	color: $body-font-color;
-}
+.entry-content {
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+	}
 
-.entry-content h1,
-.entry-content h2,
-.entry-content h3,
-.entry-content h4,
-.entry-content h5,
-.entry-content h6 {
-	margin-top: 2rem;
-	margin-bottom: 0.75rem;
+	.card {
+		h1, h2, h3, h4, h5, h6 {
+			margin-top: 0;
+		}
+	}
 }
 
 @include breakpoint(small only) {
@@ -1073,7 +1087,7 @@ a.more-link {
 
 .comments-title,
 #respond {
-	padding-top: $large-space;
+	padding-top: $medium-space;
 	border-top: 1px solid $light-gray;
 }
 
