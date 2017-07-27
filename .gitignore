@@ -57,3 +57,6 @@ foundation-docs
 vendor
 
 project.json
+
+css/app.css
+js/app.js

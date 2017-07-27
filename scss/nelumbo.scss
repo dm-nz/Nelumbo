@@ -736,7 +736,9 @@ form input[type="submit"] {
 
 .top-bar {
 
-	.button {
+	.menu .button {
+		display: inline-block;
+		margin-bottom: 0;
 		padding: 0 0.5rem;
 		border: 0;
 		background: none;
@@ -749,7 +751,7 @@ form input[type="submit"] {
 
 		a {
 			@include button;
-			padding: $menu-item-padding;
+			padding: $menu-items-padding;
 			margin-bottom: 0;
 			font-size: inherit;
 		}
@@ -1088,7 +1090,7 @@ a.more-link {
 }
 
 #respond {
-	margin-bottom: $xlarge-space;
+	margin-bottom: $large-space;
 }
 
 .comment-form {

@@ -2,6 +2,8 @@
 
 Nelumbo is a clean and simple WordPress theme based on Foundation 6 and Underscores.
 
+Live demo: [http://nelumbo.lotus.kg](http://nelumbo.lotus.kg)
+
 ## Customizing
 
 ### Requirements

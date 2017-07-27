@@ -9,6 +9,7 @@
 @include foundation-global-styles;
 @include foundation-grid;
 // @include foundation-flex-grid;
+// @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -26,13 +27,14 @@
 @include foundation-drilldown-menu;
 @include foundation-dropdown;
 @include foundation-dropdown-menu;
-@include foundation-flex-video;
+@include foundation-responsive-embed;
 // @include foundation-label;
 @include foundation-media-object;
 @include foundation-off-canvas;
 @include foundation-orbit;
 @include foundation-pagination;
 @include foundation-progress-bar;
+// @include foundation-progress-element;
 // @include foundation-progress-element;
 // @include foundation-meter-element;
 @include foundation-slider;
@@ -48,6 +50,8 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 // @include foundation-flex-classes;
+
+// @include foundation-prototype-classes;
 
 @include motion-ui-transitions;
 @include motion-ui-animations;
