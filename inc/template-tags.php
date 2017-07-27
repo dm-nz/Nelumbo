@@ -65,7 +65,7 @@ function nelumbo_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'nelumbo' ) );
-		if ( $categories_list && nelumbo_categorized_blog() ) {
+		if ( $categories_list ) {
 			printf( '<span class="cat-links item">' . esc_html__( 'Posted in %1$s', 'nelumbo' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
@@ -77,36 +77,6 @@ function nelumbo_entry_footer() {
 	}
 }
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function nelumbo_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'nelumbo_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'nelumbo_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so nelumbo_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so nelumbo_categorized_blog should return false.
-		return false;
-	}
-}
 
 /**
  * Flush out the transients used in nelumbo_categorized_blog.

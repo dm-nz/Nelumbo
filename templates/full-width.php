@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();
-				if ( is_page() ) {
+				if ( is_page() ) :
 					get_template_part( 'template-parts/content', 'page' );
 				else :
 					get_template_part( 'template-parts/content', get_post_format() );
@@ -28,7 +28,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 </div><!-- .row -->
 	
-<?php if ( get_the_post_navigation() ) : ?>
+<?php if ( is_single() && get_the_post_navigation() ) : ?>
 <div id="post-nav-wrapper" class="section-padding">
 	<div class="row">
 		<div class="column">

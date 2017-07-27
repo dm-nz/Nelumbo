@@ -29,7 +29,7 @@
 			<div class="top-stripe inverse">
 				<div class="row">
 					<div class="column">
-						<ul class="menu dropdown right text-right" data-dropdown-menu>
+						<ul class="menu dropdown alignright text-right" data-dropdown-menu>
 							<li class="search-toggle first hide-for-small-only">
 								<a><i class="fa fa-search"></i><span><?php echo __( 'Search' );?></span></a>
 							</li><!-- .search-toggle -->
@@ -55,7 +55,7 @@
 						</ul><!-- .menu -->
 					</div><!-- .column -->
 				</div><!-- .row -->
-				<div class="product-search black inverse">
+				<div class="product-search inverse">
 					<div class="row">
 						<div class="large-11 columns">
 							<?php get_product_search_form(); ?>

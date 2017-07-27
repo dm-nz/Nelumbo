@@ -73,6 +73,10 @@ a:hover abbr {
 	}
 }
 
+table th {
+	text-align: left;
+}
+
 blockquote {
 	background-color: $light-gray;
 
@@ -199,16 +203,6 @@ ul .fa-li {
 		color: $white;
 	}
 }
-
-.primary-color		{ background: $primary-color; }
-.secondary-color	{ background: $secondary-color; }
-.success-color		{ background: $success-color; }
-.warning-color		{ background: $warning-color; }
-.alert-color		{ background: $alert-color; }
-.black-color		{ background: $black; }
-.dark-gray-color	{ background: $dark-gray; }
-.medium-gray-color	{ background: $medium-gray; }
-.light-gray-color	{ background: $light-gray; }
 
 // 1.2 Posts & comments navigation
 // -------------------------------
@@ -852,15 +846,12 @@ a {
 }
 
 #primary {
-	margin-top: $large-space;
-
-	&.front-page {
-		margin-top: 0;
-	}
+	margin-top: 2rem;
+	margin-bottom: $base-space;
 }
 
 #secondary {
-	margin-top: 2rem;
+	margin-top: 2.25rem;
 }
 
 @include breakpoint(small only) {
@@ -880,6 +871,7 @@ article {
 }
 
 .entry-featured-img {
+	margin-top: $tiny-space;
 	margin-bottom: $large-space;
 }
 
