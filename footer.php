@@ -14,13 +14,13 @@
 
 	<div id="footer-wrapper" class="inverse">
 	<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-		<div id="footer-widgets" class="section-padding">
+		<div id="footer-widgets">
 			<div class="row" data-equalizer data-options="equalizeOnStack: false">
 				<?php dynamic_sidebar( 'footer-1' ); ?>
 			</div><!-- .row -->
 		</div><!-- #footer-widgets -->
 	<?php endif; ?>
-		<footer id="colophon" class="site-footer section-padding" role="contentinfo">
+		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="row">
 				<div class="site-copyright medium-6 columns">
 					<i class="fa fa-copyright"></i> <?php echo date('Y') . " "; bloginfo('name'); ?>
@@ -32,10 +32,8 @@
 		</footer><!-- #colophon -->
 	</div><!-- #footer-wrapper -->
 	<div id="up">
-		<a>
-			<i class="fa fa-angle-up"></i>
-		</a>
-	</div>
+		<a><i class="fa fa-lg fa-angle-up"></i></a>
+	</div><!-- #up -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

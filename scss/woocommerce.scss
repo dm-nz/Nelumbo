@@ -1,33 +1,29 @@
 // Table of contents
 // -----------------
-// 1. Common
+// 1. General
 // 2. Shopping cart
-	// 2.1 Header cart
-	// 2.2 Widget cart
-	// 2.3 Cart page
+	// 2.1. Header cart
+	// 2.2. Widget cart
+	// 2.3. Cart page
 // 3. Product search
 // 4. Product archive
-	// 4.1 Grid
-	// 4.2 Product item
-	// 4.3 Pagination
+	// 4.1. Grid
+	// 4.2. Product item
+	// 4.3. Pagination
 // 5. Single product
-	// 5.1 Summary
-	// 5.2 Tabs
-	// 5.3 Reviews
-	// 5.4 Misc
+	// 5.1. Summary
+	// 5.2. Tabs
+	// 5.3. Reviews
+	// 5.4. Misc
 // 6. My account
 // 7. Widgets
 
-// 1. Common
-// ---------
+// 1. General
+// ----------
 
 @include breakpoint(medium up) {
 	.single-product #primary,
 	.single-product #secondary { margin-top: $base-space; }
-}
-
-@include breakpoint(medium up) {
-	.woocommerce #masthead { height: 119.7px; }
 }
 
 .woocommerce a.button,
@@ -45,9 +41,9 @@
 	font-weight: normal;
 }
 
-	.inverse .btn {
-		text-decoration: none;
-	}
+.inverse .btn {
+	text-decoration: none;
+}
 
 .woocommerce a.button.alt {
 	background-color: $primary-color;
@@ -97,11 +93,14 @@
 // 2. Shopping cart
 // ----------------
 
-// 2.1 Header cart
-// ---------------
-
+// 2.1. Header cart
+// ----------------
 
 .top-stripe {
+
+	.account-menu {
+		float: right;
+	}
 
 	.widget_shopping_cart {
 		width: 300px;
@@ -111,12 +110,10 @@
 		border-top: 0;
 
 		@include breakpoint(small only) {
-			& {
-				width: 100%;
-				left: 0;
-				margin-left: 0;
-				border: 0 0 1px 0 solid $light-gray;
-			}
+			width: 100%;
+			left: 0;
+			margin-left: 0;
+			border: 0 0 1px 0 solid $light-gray;
 		}
 	}
 
@@ -156,15 +153,18 @@
 	}
 
 	.product-search {
-		background-color: #444;
+		background-color: scale-color($black, $lightness: 5%);
 	}
 }
 
-// 2.2 Widget cart
-// ---------------
+// 2.2. Widget cart
+// ----------------
 
-.woocommerce .widget_shopping_cart,
 .woocommerce.widget_shopping_cart {
+
+	a {
+		padding-left: 0 !important;
+	}
 
 	.total {
 		border-top: 0;
@@ -186,7 +186,13 @@
 	.btn {
 		display: block;
 		width: 100%;
-		color: white;
+		color: $white;
+	}
+
+	a.remove {
+		padding: 0 !important;
+		line-height: 0.9;
+		margin-top: 6px;
 	}
 }
 
@@ -194,23 +200,20 @@
 	text-decoration: none;
 }
 
-.woocommerce ul.cart_list li dl dd,
-.woocommerce ul.cart_list li dl dt,
-.woocommerce ul.product_list_widget li dl dd,
-.woocommerce ul.product_list_widget li dl dt {
-	margin-bottom: 0;
+.woocommerce ul.cart_list,
+.woocommerce ul.product_list_widget {
+
+	li dl dd,
+	li dl dt {
+		margin-bottom: 0;
+	}
 }
 
-// 2.3 Cart page
-// -------------
+// 2.3. Cart page
+// --------------
 
 .woocommerce input#coupon_code {
 	margin-right: $base-space;
-}
-
-.woocommerce .cart input.button,
-.woocommerce .checkout_coupon input.button {
-	height: 2.78571rem;
 }
 
 .woocommerce .checkout_coupon input.button {
@@ -246,18 +249,16 @@
 	height: 85px;
 
 	@include breakpoint(small only) {
-		& {
-			height: 50px;
-		}
+		height: 50px;
 	}
 }
 
 .product-search {
 	position: absolute;
-	z-index: 2;
 	display: none;
-	top: 41px;
 	width: 100%;
+	margin-top: 3px;
+	z-index: 2;
 
 	input[type="search"] {
 		width: 100%;
@@ -270,9 +271,7 @@
 		font-size: 1.25em;
 
 		@include breakpoint(small only) {
-			& {
-				font-size: 1em;
-			}
+			font-size: 1em;
 		}
 
 		&:focus {
@@ -298,17 +297,15 @@
 // 4. Product archive
 // -------------------
 
-// 4.1 Grid
-// --------
+// 4.1. Grid
+// ---------
 
 @media (min-width: 769px) {
 	.woocommerce ul.products li.product,
 	.woocommerce-page ul.products li.product {
 		width: 22.15%;
 	}
-}
 
-@media (min-width: 769px) {
 	.woocommerce .with-sidebar ul.products li.product,
 	.woocommerce-page .with-sidebar ul.products li.product {
 		width: 30.80%;
@@ -322,8 +319,8 @@
 	background-position: center right -6px;
 }
 
-// 4.2 Product item
-// ----------------
+// 4.2. Product item
+// -----------------
 
 .woocommerce ul.products li.product,
 .woocommerce .products .product {
@@ -400,8 +397,8 @@
 // 5. Single product
 // -----------------
 
-// 5.1 Summary
-// -----------
+// 5.1. Summary
+// ------------
 
 .woocommerce div.product {
 
@@ -489,7 +486,6 @@
 		}
 
 		.button {
-			height: 2.78571rem;
 			text-transform: uppercase;
 		}
 	}
@@ -503,15 +499,13 @@
 	margin-bottom: 0;
 }
 
-// 5.2 Tabs
-// --------
+// 5.2. Tabs
+// ---------
 
 .woocommerce div.product .woocommerce-tabs {
 
 	@include breakpoint(medium up) {
-		& {
-			margin-bottom: 4em;
-		}
+		margin-bottom: 4em;
 	}
 
 	ul.tabs {
@@ -550,15 +544,13 @@
 		margin-bottom: $medium-space;
 
 		@include breakpoint(medium up) {
-			& {
 			font-size: 1.5em;
-			}
 		}
 	}
 }
 
-// 5.3 Reviews
-// -----------
+// 5.3. Reviews
+// ------------
 
 .woocommerce #reviews {
 	max-width: 800px;
@@ -596,27 +588,29 @@
 	#review_form_wrapper {
 		border-top: 1px solid $light-gray;
 
-		.comment-form-author,
-		.comment-form-email {
-			width: 49%;
-		}
-
-		#review_form {
-			padding-top: 2rem;
-
-			#respond p.comment-form-author {
-				margin-right: 2%;
+		@include breakpoint(medium up) {
+			.comment-form-author,
+			.comment-form-email {
+				width: 49%;
 			}
 
-			.form-submit {
-				clear: both;
+			#review_form {
+				padding-top: 2rem;
+
+				#respond p.comment-form-author {
+					margin-right: 2%;
+				}
+
+				.form-submit {
+					clear: both;
+				}
 			}
 		}
 	}
 }
 
-// 5.4 Misc
-// --------
+// 5.4. Misc
+// ---------
 
 .woocommerce .products h2 {
 	margin-bottom: 0.75em;
@@ -645,29 +639,12 @@
 			color: $medium-gray;
 		}
 
-		&.woocommerce-MyAccount-navigation-link--dashboard:before {
-			content: '\f0e4';
-		}
-
-		&.woocommerce-MyAccount-navigation-link--orders:before {
-			content: '\f00b';
-		}
-
-		&.woocommerce-MyAccount-navigation-link--downloads:before {
-			content: '\f019';
-		}
-
-		&.woocommerce-MyAccount-navigation-link--edit-address:before {
-			content: '\f2b9';
-		}
-
-		&.woocommerce-MyAccount-navigation-link--edit-account:before {
-			content: '\f085';
-		}
-
-		&.woocommerce-MyAccount-navigation-link--customer-logout:before {
-			content: '\f08b';
-		}
+		&.woocommerce-MyAccount-navigation-link--dashboard:before 		{ content: '\f0e4'; }
+		&.woocommerce-MyAccount-navigation-link--orders:before			{ content: '\f00b'; }
+		&.woocommerce-MyAccount-navigation-link--downloads:before		{ content: '\f019'; }
+		&.woocommerce-MyAccount-navigation-link--edit-address:before	{ content: '\f2b9'; }
+		&.woocommerce-MyAccount-navigation-link--edit-account:before	{ content: '\f085'; }
+		&.woocommerce-MyAccount-navigation-link--customer-logout:before { content: '\f08b'; }
 	}
 }
 
@@ -698,9 +675,7 @@
 		padding: .618em $medium-space;
 
 		@include breakpoint(medium only) {
-			& {
-				float: none;
-			}
+			float: none;
 		}
 	}
 

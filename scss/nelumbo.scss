@@ -1,37 +1,48 @@
 // Table of contents
 // -----------------
-// 1. Global
-	// 1.1 Misc
-	// 1.2 Posts & comments navigation
-	// 1.3 Accessibility
-	// 1.4 Alignments
-	// 1.5 Infinite scroll
-	// 1.6 Media
-	// 1.7 Captions
-	// 1.8 Galleries
-	// 1.9 Forms
-	// 1.10 Buttons
+// 1. General
+	// 1.1. Misc
+	// 1.2. Typography
+	// 1.3. Posts & comments navigation
+	// 1.4. Accessibility
+	// 1.5. Alignments
+	// 1.6. Media
+	// 1.7. Captions
+	// 1.8. Galleries
+	// 1.9. Forms
+	// 1.10. Buttons
 // 2. Header
-	// 2.1 Misc
-	// 2.2 Top stripe
-	// 2.3 Top bar title
-	// 2.4 Top bar right & left
-	// 2.5 Responsive menu
+	// 2.1. Misc
+	// 2.2. Top stripe
+	// 2.3. Top bar title
+	// 2.4. Top bar right & left
+	// 2.5. Responsive menu
 // 3. Content
-	// 3.1 Entry
-	// 3.2 Cover
-	// 3.3 Post formats
+	// 3.1. Entry
+	// 3.2. Cover
+	// 3.3. Post formats
 // 4. Comments
-// 5. Sidebar
-	// 5.1 Widgets
-	// 5.2 Search form
+	// 4.1. Misc
+	// 4.2. Comment list
+	// 4.3. Comment
+	// 4.4. Respond
+// 5. Widgets
+	// 5.1. General
+	// 5.2. Search form
+	// 5.3. RSS & Recent comments
+	// 5.4. Tag cloud
+	// 5.5. Calendar
 // 6. Footer
 
-// 1. Global
+// 1. General
+// ----------
+
+// 1.1. Misc
 // ---------
 
-// 1.1 Misc
-// --------
+a {
+	@include transition;
+}
 
 .inverse {
 	color: $white !important;
@@ -39,12 +50,11 @@
 	a {
 		color: $white;
 		text-decoration: underline;
-		text-decoration-color: rgba(255,255,255,0.5);
+		text-decoration-color: rgba($white, 0.5);
 
 		&:hover {
-			color: $medium-gray;
+			color: rgba($white, 0.75);
 			text-decoration: none;
-			text-decoration-color: rgba(255,255,255,0.5);
 		}
 
 	}
@@ -54,59 +64,21 @@
 	table tfoot {
 		background: none;
 		color: inherit;
-		border-color: rgba(255,255,255,0.1);
+		border-color: rgba($white, 0.1);
 	}
 
-	table tbody tr:nth-child(2n) { background-color: rgba(255,255,255,0.1); }
+	table tbody tr:nth-child(2n) {
+		background-color: rgba($white, 0.1);
+	}
 
 	cite {
 		color: $medium-gray;
 	}
-}
 
-a:hover abbr {
-	color: inherit;
-
-	&.inverse {
-		color: inherit;
-		border-color: $white;
+	abbr,
+	abbr[title] {
+		border-color: rgba($white, 0.5);
 	}
-}
-
-table th {
-	text-align: left;
-}
-
-blockquote {
-	background-color: $light-gray;
-
-	p:last-of-type {
-		margin-bottom: 0;
-	}
-}
-
-pre {
-	padding: $small-space $medium-space !important;
-	background: $light-gray;
-	border-radius: $global-radius;
-	margin-bottom: $base-space !important;
-	overflow: auto;
-}
-
-code {
-	border: 0 !important;
-	border-radius: $global-radius;
-}
-
-pre code {
-	background: none;
-	border: 0;
-	padding: 0;
-}
-
-dl dd {
-	margin-left: $medium-space;
-	margin-bottom: $small-space;
 }
 
 ul.fa-ul {
@@ -115,25 +87,6 @@ ul.fa-ul {
 
 ul .fa-li {
 	top: $small-space;
-}
-
-.section-padding {
-	padding-top: 2.6rem;
-	padding-bottom: 2.5rem;
-
-	@include breakpoint(medium only) {
-		& {
-			padding-top: 1.9rem;
-			padding-bottom: 1.75rem;
-		}
-	}
-	
-	@include breakpoint(small only) {
-		& {
-			padding-top: 1.25rem;
-			padding-bottom: 1rem;
-		}
-	}
 }
 
 .row-absolute {
@@ -146,21 +99,6 @@ ul .fa-li {
 .floor {
 	position: absolute;
 	bottom: 1.25rem;
-}
-
-.vertical-middle {
-	width: 99%;
-	height: auto;
-	overflow: auto;
-	margin: auto;
-	top: 50%;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	display: table;
-	position: relative;
-	transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
 }
 
 .clear:before,
@@ -178,59 +116,152 @@ ul .fa-li {
 }
 
 @include breakpoint(large up) {
-	.large-collapse-right { padding-right: 0 !important; }
-	.large-collapse-left { padding-left: 0 !important; }
+	.large-collapse-right {
+		padding-right: 0 !important;
+	}
+	
+	.large-collapse-left {
+		padding-left: 0 !important;
+	}
 }
 
-#up {
-	display: none;
-	position: fixed;
-	right: 1rem;
-	bottom: 1rem;
-	font-size: 1.5rem;
-	text-align: center;
-	background: rgba($black, 0.5);
-	color: $white;
+// 1.2. Typography
+// ---------------
+
+.h1 {
+	font-size: map-deep-get($header-styles, large, h1, font-size) * 1px;
+
+	@include breakpoint(medium only) {
+		font-size: map-deep-get($header-styles, medium, h1, font-size) * 1px;
+	}
+
+	@include breakpoint(small only) {
+		font-size: map-deep-get($header-styles, small, h1, font-size) * 1px;
+	}
+}
+
+.h2 {
+	font-size: map-deep-get($header-styles, large, h2, font-size) * 1px;
+
+	@include breakpoint(medium only) {
+		font-size: map-deep-get($header-styles, medium, h2, font-size) * 1px;
+	}
+
+	@include breakpoint(small only) {
+		font-size: map-deep-get($header-styles, small, h2, font-size) * 1px;
+	}
+}
+
+.h3 {
+	font-size: map-deep-get($header-styles, large, h3, font-size) * 1px;
+
+	@include breakpoint(medium only) {
+		font-size: map-deep-get($header-styles, medium, h3, font-size) * 1px;
+	}
+
+	@include breakpoint(small only) {
+		font-size: map-deep-get($header-styles, small, h3, font-size) * 1px;
+	}
+}
+
+.h4 {
+	font-size: map-deep-get($header-styles, large, h4, font-size) * 1px;
+
+	@include breakpoint(medium only) {
+		font-size: map-deep-get($header-styles, medium, h4, font-size) * 1px;
+	}
+
+	@include breakpoint(small only) {
+		font-size: map-deep-get($header-styles, small, h4, font-size) * 1px;
+	}
+}
+
+.h5 {
+	font-size: map-deep-get($header-styles, large, h5, font-size) * 1px;
+
+	@include breakpoint(medium only) {
+		font-size: map-deep-get($header-styles, medium, h5, font-size) * 1px;
+	}
+
+	@include breakpoint(small only) {
+		font-size: map-deep-get($header-styles, small, h5, font-size) * 1px;
+	}
+}
+
+.h6 {
+	font-size: map-deep-get($header-styles, large, h6, font-size) * 1px;
+
+	@include breakpoint(medium only) {
+		font-size: map-deep-get($header-styles, medium, h6, font-size) * 1px;
+	}
+
+	@include breakpoint(small only) {
+		font-size: map-deep-get($header-styles, small, h6, font-size) * 1px;
+	}
+}
+
+table th {
+	text-align: left;
+}
+
+blockquote {
+	background-color: $light-gray;
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+code {
+	border: 0 !important;
 	border-radius: $global-radius;
+}
 
-	&:hover {
-		background-color: rgba($black, 0.75);
-	}
+pre {
+	padding: $small-space $medium-space !important;
+	background: $light-gray;
+	border-radius: $global-radius;
+	margin-bottom: $base-space !important;
+	overflow: auto;
 
-	a {
-		display: block;
-		padding: 0rem 0.8rem 0.25rem;
-		color: $white;
+	code {
+		background: none;
+		padding: 0;
 	}
 }
 
-// 1.2 Posts & comments navigation
-// -------------------------------
+dl dd {
+	margin-left: $medium-space;
+	margin-bottom: $small-space;
+}
+
+// 1.3. Posts & comments navigation
+// --------------------------------
 
 #post-nav-wrapper {
 	background-color: $light-gray;
+	@include section-padding;
 }
 
-.comment-navigation a,
-.post-navigation a,
-.posts-navigation a {
-	color: $body-font-color;
-}
+.comment-navigation,
+.post-navigation,
+.posts-navigation {
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	display: inline-block;
-	width: 50%;
-}
+	a {
+		color: $body-font-color;
+	}
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-	display: inline-block;
-	float: right;
-	text-align: right;
-	width: 50%;
+	.nav-previous {
+		display: inline-block;
+		width: 50%;
+	}
+
+	.nav-next {
+		display: inline-block;
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
 }
 
 .nav-previous a:before {
@@ -245,8 +276,8 @@ ul .fa-li {
 	margin-left: $small-space;
 }
 
-// 1.3 Accessibility
-// -----------------
+// 1.4. Accessibility
+// ------------------
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -265,7 +296,7 @@ ul .fa-li {
 	color: #21759b;
 	display: block;
 	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 0.867rem;
 	font-weight: bold;
 	height: auto;
 	left: 5px;
@@ -278,21 +309,23 @@ ul .fa-li {
 }
 
 /* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus { outline: 0; }
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
 
-// 1.4 Alignments
-// --------------
+// 1.5. Alignments
+// ---------------
 
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: $large-space;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: $large-space;
 }
 
 .aligncenter {
@@ -302,20 +335,8 @@ ul .fa-li {
 	margin-right: auto;
 }
 
-// 1.5 Infinite scroll
-// --------------------
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
-.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
-.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
-	display: none;
-}
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-.infinity-end.neverending .site-footer { display: block; }
-
-// 1.6 Media
-// ---------
+// 1.6. Media
+// ----------
 
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -326,7 +347,6 @@ ul .fa-li {
 	padding: 0;
 }
 
-/* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
 object { max-width: 100%; }
@@ -338,11 +358,11 @@ video,
 	margin-bottom: $base-space;
 }
 
-// 1.7 Captions
-// ------------
+// 1.7. Captions
+// -------------
 
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: $large-space;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -360,16 +380,16 @@ video,
 	color: $dark-gray;
 }
 
-// 1.8 Galleries
-// -------------
+// 1.8. Galleries
+// --------------
 
 .gallery {
-	padding-top: 0.5rem;
+	padding-top: $base-space;
 	margin-bottom: $large-space;
 }
 
 .gallery-item {
-	margin-bottom: 0.5rem;
+	margin-bottom: $base-space;
 	display: inline-block;
 	text-align: center;
 	vertical-align: top;
@@ -380,9 +400,8 @@ video,
 	display: block;
 }
 
-.gallery-icon,
-.gallery-caption {
-	margin-bottom: 0.5rem;
+.gallery-icon {
+	margin-bottom: $small-space;
 }
 
 .gallery-columns-2 .gallery-item { max-width: 50%; }
@@ -394,8 +413,8 @@ video,
 .gallery-columns-8 .gallery-item { max-width: 12.5%; }
 .gallery-columns-9 .gallery-item { max-width: 11.11%; }
 
-// 1.9 Forms
-// ---------
+// 1.9. Forms
+// ----------
 
 fieldset {
 	border: $fieldset-border !important;
@@ -414,9 +433,8 @@ select {
 	padding-top: 0.35rem !important;
 }
 
-form textarea,
 form textarea[rows] {
-	height: 8rem;
+	height: 9rem;
 }
 
 .input-wrapper input[type="text"],
@@ -440,17 +458,6 @@ form textarea[rows] {
 .input-wrapper.phone::before 	{ content: "\f095"; }
 .input-wrapper.email::before 	{ content: "\f0e0"; }
 
-.form-wrapper.semi input[type="text"],
-.form-wrapper.semi input[type="tel"],
-.form-wrapper.semi input[type="email"],
-.form-wrapper.semi textarea {
-	background-color: rgba(255,255,255,0.75);
-}
-
-.form-wrapper.semi .input-wrapper::before {
-	color: #888;
-}
-
 .wpcf7-not-valid-tip {
 	margin-top: -1rem;
 	margin-bottom: $small-space;
@@ -466,16 +473,8 @@ div.wpcf7 img.ajax-loader {
 	margin-top: 0.75em;
 }
 
-// 1.10 Buttons
-// -----------
-
-button,
-input,
-optgroup,
-select,
-textarea {
-	font-family: $body-font-family !important;
-}
+// 1.10. Buttons
+// -------------
 
 .submit,
 .search-submit,
@@ -492,8 +491,7 @@ form input[type="submit"] {
 	color: $white;
 
 	&:hover {
-		color: rgba($white, 0.7);
-		border-color: rgba($white, 0.7);
+		opacity: 0.75;
 	}
 }
 
@@ -504,8 +502,8 @@ form input[type="submit"] {
 // 2. Header
 // ---------
 
-// 2.1 Misc
-// --------
+// 2.1. Misc
+// ---------
 
 .fixed {
 	position: fixed;
@@ -513,9 +511,7 @@ form input[type="submit"] {
 	z-index: 2;
 
 	@include breakpoint(small only) {
-		& {
-			position: absolute;
-		}
+		position: absolute;
 	}
 }
 
@@ -525,20 +521,21 @@ form input[type="submit"] {
 
 .top-bar {
 	border-bottom: 1px solid $light-gray;
-	transition: 0.3s;
 
 	&.inverse {
-		border-color: rgba(255,255,255,0.08);
+		border-color: rgba($white, 0.08);
 	}
 
 	@include breakpoint(small only) {
-		& {
-			padding: 0.5rem 0 !important;
-		}
+		padding: 0.5rem 0 !important;
 	}
 
 	&.with-logo {
-		padding: 1.4rem 0;
+		padding: 1.2rem 0;
+
+		.menu > li {
+			vertical-align: middle;
+		}
 	}
 
 	a {
@@ -583,8 +580,8 @@ form input[type="submit"] {
 	}
 }
 
-// 2.2 Top stripe
-// -----------------
+// 2.2. Top stripe
+// ---------------
 
 .top-stripe {
 	padding: 3px 0;
@@ -636,13 +633,13 @@ form input[type="submit"] {
 		top: 55%;
 	}
 
-		&.inverse .is-dropdown-submenu-parent a::after {
-			opacity: 0.8;
-		}
+	&.inverse .is-dropdown-submenu-parent a::after {
+		opacity: 0.75;
+	}
 }
 
-// 2.3 Top bar title
-// -----------------
+// 2.3. Top bar title
+// ------------------
 
 .menu > li.site-logo > a {
 	padding: 0;
@@ -653,13 +650,11 @@ form input[type="submit"] {
 	.site-logo img {
 		width: auto;
 		height: 35px;
-		margin-right: $large-space;
+		margin-right: $base-space;
 
 		@include breakpoint(medium up) {
-			& {
-				width: auto;
-				height: 44px;
-			}
+			width: auto;
+			height: 44px;
 		}
 	}
 
@@ -692,21 +687,12 @@ form input[type="submit"] {
 	}
 
 		.inverse & .site-description span {
-			border-color: rgba(255,255,255,0.1);
+			border-color: rgba($white, 0.1);
 		}
 }
 
-// 2.4 Tob bar right & left
-// ------------------------
-
-.top-bar-left,
-.top-bar-right {
-	font-size: 0.867rem;
-
-	.menu > li > a {
-		text-transform: uppercase;
-	}
-}
+// 2.4. Tob bar right & left
+// -------------------------
 
 @include breakpoint(medium up) {
 	.top-bar-left {
@@ -715,14 +701,9 @@ form input[type="submit"] {
 }
 
 @include breakpoint(medium up) {
-	.top-bar .top-bar-left,
-	.top-bar .top-bar-right {
-		margin-top: 2px !important;
-	}
-
 	.top-bar.with-logo .top-bar-left,
 	.top-bar.with-logo .top-bar-right {
-		margin-top: 6px !important;
+		margin-top: 3px !important;
 	}
 }
 
@@ -794,14 +775,14 @@ form input[type="submit"] {
 
 .top-bar-right .menu.dropdown > li:last-of-type.button {
 	padding-right: 0;
+	
+		& > a {
+		padding-right: 1rem;
+	}
 }
 
-.top-bar-right .menu.dropdown > li:last-of-type.button > a {
-	padding-right: 1rem;
-}
-
-// 2.5 Responsive menu
-// -------------------
+// 2.5. Responsive menu
+// --------------------
 
 .menu-hamburger ul.menu {
 	float: right;
@@ -840,12 +821,8 @@ form input[type="submit"] {
 // 3. Content
 // ----------
 
-// 3.1 Entry
-// ---------
-
-a {
-	transition: 0.4s;
-}
+// 3.1. Entry
+// ----------
 
 #primary {
 	margin-top: 2rem;
@@ -853,7 +830,7 @@ a {
 }
 
 #secondary {
-	margin-top: 2.25rem;
+	margin-top: $xlarge-space;
 }
 
 @include breakpoint(small only) {
@@ -868,8 +845,8 @@ a {
 	}
 }
 
-article {
-	margin-bottom: $large-space;
+#main article {
+	margin-bottom: 2rem;
 }
 
 .entry-featured-img {
@@ -879,19 +856,31 @@ article {
 
 .entry-header {
 	margin-bottom: $base-space;
+
+	.entry-title {
+		line-height: 1.25;
+
+		a {
+			color: $body-font-color;
+		}
+	}
+
+	.entry-meta {
+		font-size: $small-font-size;
+	}
+
+	@include breakpoint(small only) {
+		margin-bottom: $small-space;
+
+		.entry-meta {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .page-title {
 	line-height: 1.25;
 	margin-bottom: $base-space;
-}
-
-.entry-title {
-	line-height: 1.25;
-
-	a {
-		color: $body-font-color;
-	}
 }
 
 .entry-content {
@@ -905,20 +894,6 @@ article {
 			margin-top: 0;
 		}
 	}
-}
-
-@include breakpoint(small only) {
-	.entry-header {
-		margin-bottom: $small-space;
-	}
-
-	.entry-meta {
-		margin-bottom: 0;
-	}
-}
-
-.entry-meta {
-	font-size: 0.867em;
 }
 
 .entry-meta .item:before,
@@ -942,7 +917,7 @@ a.more-link {
 	background-color: $light-gray;
 	border-radius: $global-radius;
 	color: $body-font-color;
-	font-size: 0.867em;
+	font-size: $small-font-size;
 
 	&:hover {
 		color: $body-font-color;
@@ -952,7 +927,7 @@ a.more-link {
 
 .entry-footer {
 	margin-bottom: $medium-space;
-	font-size: 0.867em;
+	font-size: $small-font-size;
 
 	.single & {
 		margin-bottom: 0;
@@ -986,8 +961,8 @@ a.more-link {
 	border-bottom: 1px solid $light-gray;
 }
 
-// 3.2 Cover
-// ---------
+// 3.2. Cover
+// ----------
 
 #cover {
 	position: relative;
@@ -996,27 +971,26 @@ a.more-link {
 	background: $black;
 	background-position: center;
 	background-size: cover;
-	text-shadow: 0 0 1.5em black;
+	text-shadow: 0 0 $large-space black;
 
 	&,
 	.column {
 		height: 450px;
 
 		@include breakpoint(medium only) {
-			& {
-				height: 350px;
-			}
+			height: 350px;
 		}
 
 		@include breakpoint(small only) {
-			& {
-				height: 280px;
-			}
+			height: 280px;
 		}
 	}
 
-	@include breakpoint(small only) {
-		.entry-header {
+	.entry-header {
+		@include vertical-center;
+		width: 100%;
+
+		@include breakpoint(small only) {
 			margin-top: $base-space;
 		}
 	}
@@ -1027,7 +1001,7 @@ a.more-link {
 		height: 100%;
 		top: 0;
 		left: 0;
-		background-color: rgba(0,0,0,0.25);
+		background-color: rgba(0, 0, 0, 0.25);
 	}
 
 	.entry-meta {
@@ -1036,8 +1010,8 @@ a.more-link {
 	}
 }
 
-// 3.3 Post formats
-// ----------------
+// 3.3. Post formats
+// -----------------
 
 @include breakpoint(medium up) {
 	.format-aside h1.entry-title,
@@ -1069,140 +1043,148 @@ a.more-link {
 
 #comments {
 	margin-top: $base-space;
-}
 
-.comment-content a {
-	word-wrap: break-word;
-}
+	// 4.1. Misc
+	// ---------
 
-.bypostauthor {
-	display: block;
-}
-
-.comments-title,
-#respond {
-	padding-top: $medium-space;
-	border-top: 1px solid $light-gray;
-}
-
-.comments-title {
-	margin-bottom: 0.75em;
-}
-
-#respond {
-	margin-bottom: $large-space;
-}
-
-.comment-form {
-	max-width: 800px;
-}
-
-@include breakpoint(medium up) {
-	.comment-form-author,
-	.comment-form-email,
-	.comment-form-url {
-		width: 32.2%;
-		margin-right: 1.5%;
-		float: left;
+	.comments-title,
+	#respond {
+		padding-top: $medium-space;
+		border-top: 1px solid $light-gray;
 	}
-}
 
-.comment-form-url {
-	margin-right: 0;
-}
-
-#comments .form-submit {
-	clear: left;
-}
-
-ol.comment-list {
-	margin-left: 64px;
-	margin-bottom: $xlarge-space;
-
-	li {
-		list-style: none;
+	.comments-title {
+		margin-bottom: 0.75em;
 	}
-}
 
-ol ol.children {
-	margin-left: 48px;
+	// 4.2. Comment list
+	// -----------------
 
-	ol.children {
-		margin-left: 0;
+	ol.comment-list {
+		margin-left: 64px;
+		margin-bottom: $xlarge-space;
+
+		li {
+			list-style: none;
+		}
 	}
-}
 
-.comment img.avatar {
-	position: absolute;
-	margin-top: 7px;
-	margin-left: -64px;
-	border-radius: 50%;
+	ol ol.children {
+		margin-left: 48px;
 
-	ol ol.children & {
-		width: 32px;
-		height: 32px;
-		margin-left: -48px;
+		ol.children {
+			margin-left: 0;
+		}
+
+		img.avatar {
+			width: 32px;
+			height: 32px;
+			margin-left: -48px !important;
+		}
 	}
-}
 
-.comment {
+	// 4.3. Comment
+	// ------------
 
-	.comment-author {
-		display: inline-block;
-		color: $dark-gray;
+	.comment {
 
-		a.url {
-			color: $body-font-color;
+		.bypostauthor {
+			display: block;
+		}
 
-			&:hover {
-				color: $primary-color;
+		.comment-body {
+			margin-bottom: $large-space;
+
+			.comment-author {
+				display: inline-block;
+				color: $dark-gray;
+
+				a.url {
+					color: $body-font-color;
+
+					&:hover {
+						color: $primary-color;
+					}
+				}
+
+				img.avatar {
+					position: absolute;
+					margin-top: 7px;
+					margin-left: -64px;
+					border-radius: 50%;
+				}
+			}
+
+			.comment-metadata {
+				display: inline-block;
+				margin-left: $tiny-space;
+				font-size: $small-font-size;
+			}
+
+			.comment-content a {
+				word-wrap: break-word;
+			}
+
+			.reply {
+				margin-top: -1em;
+				font-size: $small-font-size;
+			}
+
+			.comment-metadata a,
+			.reply a {
+				color: $dark-gray;
+
+				&:hover {
+					color: $primary-color;
+				}
+			}
+
+			.edit-link {
+				margin-left: $small-space;
+				padding-left: 0.75em;
+				border-left: 1px solid $light-gray;
 			}
 		}
 	}
 
-	.comment-metadata {
-		display: inline-block;
-		margin-left: $tiny-space;
-		font-size: 0.867em;
-	}
+	// 4.4. Respond
+	// ------------
 
-	.reply {
-		margin-top: -1em;
-		font-size: 0.867em;
-	}
-
-	.comment-metadata a,
-	.reply a {
-		color: $dark-gray;
-
-		&:hover {
-			color: $primary-color;
-		}
-	}
-
-	.edit-link {
-		margin-left: $small-space;
-		padding-left: 0.75em;
-		border-left: 1px solid $light-gray;
-	}
-
-	.comment-body {
+	#respond {
 		margin-bottom: $large-space;
+
+		.comment-form {
+			max-width: 800px;
+
+			.form-submit {
+				clear: left;
+			}
+		}
+
+		@include breakpoint(medium up) {
+			.comment-form-author,
+			.comment-form-email,
+			.comment-form-url {
+				width: 32.2%;
+				margin-right: 1.5%;
+				float: left;
+			}
+		}
+
+		.comment-form-url {
+			margin-right: 0;
+		}
 	}
 }
 
-// 5. Sidebar
+// 5. Widgets
 // ----------
 
-// 5.1. Widgets
+// 5.1. General
 // ------------
 
 .widget {
-	margin-bottom: $xlarge-space;
-
-	&.widget_search {
-		margin-bottom: $large-space;
-	}
+	margin-bottom: 2rem;
 
 	ul {
 		list-style-type: none;
@@ -1219,7 +1201,7 @@ ol ol.children {
 			border-bottom: 1px solid $light-gray;
 
 			.inverse & {
-				border-color: rgba(255,255,255,0.25);
+				border-color: rgba($white, 0.25);
 			}
 
 			li {
@@ -1246,7 +1228,7 @@ ol ol.children {
 					text-decoration-color: $dark-gray;
 
 					&:hover {
-						color: $medium-gray;
+						color: rgba($white, 0.75);
 					}
 				}
 			}
@@ -1264,80 +1246,16 @@ ol ol.children {
 }
 
 h2.widget-title {
-	margin-bottom: 1em;
+	margin-bottom: $medium-space;
 	font-weight: normal;
 
 	@include breakpoint(medium up) {
-		& {
-			font-size: 1.25rem;
-		}
+		font-size: 1.25rem;
 	}
 }
 
-.rss-widget-icon {
-	margin-right: 0.25rem;
-}
-
-.widget.widget_rss ul li a,
-.widget_recent_comments ul li a {
-	color: $primary-color;
-}
-	
-	.widget.widget_rss ul li a:hover,
-	.widget_recent_comments ul li a:hover {
-		color: scale-color($primary-color, $lightness: -14%);
-	}
-
-	.inverse .widget.widget_rss ul li a,
-	.inverse .widget_recent_comments ul li a {
-		color: $white;
-		text-decoration: underline;
-		text-decoration-color: $dark-gray;
-	}
-
-		.inverse .widget.widget_rss ul li a:hover,
-		.inverse .widget_recent_comments ul li a:hover {
-			text-decoration: none;
-			text-decoration-color: $dark-gray;
-}
-
-.rss-date {
-	color: $dark-gray;
-
-	.inverse & {
-		color: $medium-gray;
-	}
-}
-
-.rssSummary {
-	font-size: 0.92857rem;
-}
-
-.tagcloud a {
-	color: inherit;
-
-	.inverse & {
-		text-decoration: none;
-		text-decoration-color: $dark-gray;
-
-		&:hover {
-			text-decoration: underline;
-			text-decoration-color: $dark-gray;
-		}
-	}
-}
-
-#wp-calendar thead,
-#wp-calendar tbody {
-	text-align: center;
-}
-
-table tfoot td#next {
-	text-align: right;
-}
-
-// 5.2 Search form
-// ---------------
+// 5.2. Search form
+// ----------------
 
 .widget .search-form label,
 .widget .woocommerce-product-search input[type="search"] {
@@ -1350,50 +1268,132 @@ table tfoot td#next {
 .widget .woocommerce-product-search input[type="submit"] {
 	width: 33%;
 	height: 39px;
-	padding: 0;
+}
+
+// 5.3. RSS & Recent comments
+// --------------------------
+
+.rss-widget-icon {
+	margin-right: 0.25rem;
+}
+
+.widget.widget_rss ul li a,
+.widget_recent_comments ul li a {
+	color: $primary-color;
+	
+	&:hover {
+		color: scale-color($primary-color, $lightness: -14%);
+	}
+}
+
+.inverse .widget.widget_rss ul li a,
+.inverse .widget_recent_comments ul li a {
+	color: $white;
+	text-decoration: underline;
+	text-decoration-color: rgba($white, 0.5);
+	
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.rss-date {
+	opacity: 0.75;
+	font-size: 0.867rem;
+}
+
+.rssSummary {
+	font-size: 0.867rem;
+}
+
+// 5.4. Tag cloud
+// --------------
+
+.tagcloud a {
+	color: inherit;
+
+	.inverse & {
+		text-decoration: none;
+		text-decoration-color: rgba($white, 0.5);
+
+		&:hover {
+			text-decoration: underline;
+			text-decoration-color: rgba($white, 0.5);
+		}
+	}
+}
+
+// 5.5. Calendar
+// -------------
+
+#wp-calendar thead,
+#wp-calendar tbody {
+	text-align: center;
+
+	table tfoot td#next {
+		text-align: right;
+	}
 }
 
 // 6. Footer
 // ---------
 
-$footer-background: $black;
-
 #footer-wrapper {
-	background: $footer-background;
+	background: $black;
 }
 
 #footer-widgets {
-	background-color: scale-color($footer-background, $lightness: 5%);
+	padding-top: 3rem;
+	background-color: scale-color($black, $lightness: 5%);
 
 	.column:last-child:not(:first-child),
 	.columns:last-child:not(:first-child) {
 		float: left;
 	}
 
-	.menu > li {
+	.menu li {
 		display: block;
 	}
+}
 
-	.widget {
-		margin-top: $medium-space;
-		margin-bottom: 0;
+#colophon {
+	@include section-padding;
+
+	.row {
+		opacity: 0.6;
+
+		@include breakpoint(small only) {
+			.columns {
+				margin-top: $small-space;
+				margin-bottom: $small-space;
+			}
+		}
+
+		@include breakpoint(medium up) {
+			.site-developer {
+				text-align: right;
+			}
+		}
 	}
 }
 
-#colophon .row {
-	opacity: 0.5;
-}
+#up {
+	display: none;
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	text-align: center;
+	background: rgba($black, 0.5);
+	color: $white;
+	border-radius: $global-radius;
 
-@include breakpoint(small only) {
-	#colophon .columns {
-		text-align: left;
-		margin-top: 0.5rem;
-		margin-bottom: 0.5rem;
+	&:hover {
+		background-color: rgba($black, 0.75);
 	}
-}
 
-@include breakpoint(medium up) {
-	#colophon .site-developer {
-		text-align: right;
+	a {
+		display: block;
+		padding: 0.25rem 0.8rem 0.5rem;
+		color: $white;
 	}
 }

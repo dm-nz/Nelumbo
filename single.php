@@ -31,7 +31,7 @@ get_header(); ?>
 </div><!-- .row -->
 
 <?php if ( get_the_post_navigation() ) : ?>
-	<div id="post-nav-wrapper" class="grey section-padding">
+	<div id="post-nav-wrapper">
 		<div class="row">
 			<div class="column">
 				<?php the_post_navigation(); ?>

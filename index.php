@@ -46,7 +46,7 @@ get_header(); ?>
 	<?php get_sidebar(); ?>
 </div><!-- .row -->
 <?php if ( get_the_posts_navigation() ) : ?>
-<div id="post-nav-wrapper" class="grey section-padding">
+<div id="post-nav-wrapper">
 	<div class="row">
 		<div class="column">
 			<?php the_posts_navigation(); ?>

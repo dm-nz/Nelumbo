@@ -29,7 +29,7 @@
 			<div class="top-stripe inverse">
 				<div class="row">
 					<div class="column">
-						<ul class="menu dropdown alignright text-right" data-dropdown-menu>
+						<ul class="account-menu menu dropdown text-right" data-dropdown-menu>
 							<li class="search-toggle first hide-for-small-only">
 								<a><i class="fa fa-search"></i><span><?php echo __( 'Search' );?></span></a>
 							</li><!-- .search-toggle -->
@@ -46,7 +46,7 @@
 									<a href="/my-account"><i class="fa fa-user-circle"></i><span><?php echo __( 'My account', 'woocommerce' );?></span></a>
 									<ul class="menu dropdown">
 										<li><a href="/my-account/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' );?></span></a></li>
-										<li><a href="/my-account/customer-logout"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' );?></span></a></li>
+										<li><a href="/my-account/customer-address"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' );?></span></a></li>
 										<li><a href="/my-account/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' );?></span></a></li>
 										<li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' );?></span></a></li>
 									</ul>
