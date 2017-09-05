@@ -24,9 +24,9 @@ get_header(); ?>
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) : ?>
-			<header>
+			<header class="entry-header">
 				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-			</header>
+			</header><!-- .entry-header -->
 			<?php endif; ?>
 			<?php /* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -42,7 +42,7 @@ get_header(); ?>
 		endif;
 		?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary.large-7 -->
 	<?php get_sidebar(); ?>
 </div><!-- .row -->
 <?php if ( get_the_posts_navigation() ) : ?>

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 
 var $    = require('gulp-load-plugins')();
 
@@ -20,6 +21,7 @@ gulp.task('sass', function() {
     .pipe($.autoprefixer({
       browsers: ['last 2 versions', 'ie >= 9']
     }))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('css'));
 });
 
@@ -36,6 +38,7 @@ gulp.task('scripts', function() {
         )
       .pipe(concat('app.js'))
       .pipe(uglify())
+      .pipe(rename({ suffix: '.min' }))
       .pipe(gulp.dest('js'));
 });
 

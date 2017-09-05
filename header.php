@@ -51,20 +51,20 @@
 										<li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' );?></span></a></li>
 									</ul>
 								<?php endif; ?>
-							</li>
-						</ul><!-- .menu -->
+							</li><!-- .last -->
+						</ul><!-- .account-menu -->
 					</div><!-- .column -->
 				</div><!-- .row -->
 				<div class="product-search inverse">
 					<div class="row">
 						<div class="large-11 columns">
 							<?php get_product_search_form(); ?>
-						</div><!-- .columns -->
+						</div><!-- .large-11 -->
 						<div class="close large-1 columns inverse text-right">
 							<div class="column">
 								<a><i class="fa fa-times"></i></a>
 							</div><!-- .column -->
-						</div><!-- .close -->
+						</div><!-- .close.large-1 -->
 					</div><!-- .row -->
 				</div><!-- .product-search -->
 			</div><!-- .top-stripe -->
@@ -132,7 +132,7 @@
 					</div><!-- .column -->
 				</div><!-- .row -->
 			</div><!-- .top-bar -->
-		</div><!-- .sticky -->
+		</div><!-- .small-12 -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

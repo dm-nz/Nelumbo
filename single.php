@@ -26,18 +26,17 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary.large-7 -->
 	<?php get_sidebar(); ?>
 </div><!-- .row -->
-
 <?php if ( get_the_post_navigation() ) : ?>
 	<div id="post-nav-wrapper">
 		<div class="row">
 			<div class="column">
 				<?php the_post_navigation(); ?>
-			</div>
-		</div>
-	</div>
+			</div><!-- column -->
+		</div><!-- .row -->
+	</div><!-- #post-nav-wrapper -->
 <?php endif; ?>
 
 <?php get_footer(); ?>

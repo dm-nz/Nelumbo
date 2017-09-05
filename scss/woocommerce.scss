@@ -2,9 +2,10 @@
 // -----------------
 // 1. General
 // 2. Shopping cart
-	// 2.1. Header cart
-	// 2.2. Widget cart
-	// 2.3. Cart page
+	// 2.1. Misc
+	// 2.2. Header cart
+	// 2.3. Widget cart
+	// 2.4. Cart page
 // 3. Product search
 // 4. Product archive
 	// 4.1. Grid
@@ -75,9 +76,9 @@
 	color: $dark-gray;
 }
 
-	.woocommerce .woocommerce-breadcrumb a:hover {
-		color: scale-color($primary-color, $lightness: -14%);
-	}
+.woocommerce .woocommerce-breadcrumb a:hover {
+	color: scale-color($primary-color, $lightness: -14%);
+}
 
 .woocommerce .woocommerce-form-login input.button {
 	margin-bottom: 0;
@@ -93,7 +94,19 @@
 // 2. Shopping cart
 // ----------------
 
-// 2.1. Header cart
+// 2.1. Misc
+// ---------
+
+.woocommerce a.remove {
+	color: $dark-gray !important;
+
+	&:hover {
+		background: none;
+		color: $alert-color !important;
+	}
+}
+
+// 2.2. Header cart
 // ----------------
 
 .top-stripe {
@@ -157,7 +170,7 @@
 	}
 }
 
-// 2.2. Widget cart
+// 2.3. Widget cart
 // ----------------
 
 .woocommerce.widget_shopping_cart {
@@ -209,7 +222,7 @@
 	}
 }
 
-// 2.3. Cart page
+// 2.4. Cart page
 // --------------
 
 .woocommerce input#coupon_code {
@@ -246,7 +259,7 @@
 .product-search,
 .product-search input[type="search"],
 .product-search .close {
-	height: 85px;
+	height: 80px;
 
 	@include breakpoint(small only) {
 		height: 50px;

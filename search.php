@@ -35,7 +35,7 @@ get_header(); ?>
 			endif;
 			?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary.large-7 -->
 	<?php get_sidebar(); ?>
 </div><!-- .row -->
 <?php if ( get_the_posts_navigation() ) : ?>

@@ -1,0 +1,142 @@
+// Table of contents
+// -----------------
+// 1. General
+// 2. Avatars
+// 3. Widgets
+
+// 1. General
+// ----------
+
+#bbpress-forums {
+
+	ul.bbp-lead-topic,
+	ul.bbp-topics,
+	ul.bbp-forums,
+	ul.bbp-replies,
+	ul.bbp-search-results {
+		font-size: 1rem;
+	}
+
+	input#bbp_search_submit {
+		margin-bottom: 0.35rem;
+	}
+
+	li.bbp-body ul.forum,
+	li.bbp-body ul.topic,
+	li.bbp-header,
+	li.bbp-footer,
+	div.bbp-forum-header,
+	div.bbp-topic-header,
+	div.bbp-reply-header,
+	li.bbp-body div.hentry {
+		padding: 1rem;
+	}
+
+	div.bbp-template-notice,
+	div.indicator-hint {
+		padding: 0.4em 1em;
+		margin: 1.1rem 0 1.5rem;
+		border-radius: $global-radius;
+	}
+
+	div.bbp-breadcrumb {
+		float: none;
+	}
+
+	li.bbp-header,
+	li.bbp-footer {
+		background-color: $light-gray;
+		border-top: 0;
+	}
+
+	ul.bbp-lead-topic,
+	ul.bbp-topics,
+	ul.bbp-forums,
+	ul.bbp-replies,
+	ul.bbp-search-results {
+		border-color: $light-gray;
+	}
+
+	div.odd,
+	ul.odd {
+		background-color: rgba($light-gray, 0.25);
+	}
+
+	div.bbp-forum-header,
+	div.bbp-topic-header,
+	div.bbp-reply-header {
+		background-color: rgba($light-gray, 0.5);
+	}
+
+	#subscription-toggle {
+		color: $medium-gray;
+	}
+}
+
+// 2. Avatars
+// ----------
+
+#bbpress-forums {
+
+	p.bbp-topic-meta img.avatar,
+	ul.bbp-reply-revision-log img.avatar,
+	ul.bbp-topic-revision-log img.avatar,
+	div.bbp-template-notice img.avatar,
+	.widget_display_topics img.avatar,
+	.widget_display_replies img.avatar {
+		margin-bottom: 0;
+		border: 0;
+	}
+
+	div.bbp-forum-author img.avatar,
+	div.bbp-topic-author img.avatar,
+	div.bbp-reply-author img.avatar {
+		margin-bottom: $small-space;
+	}
+}
+
+img.avatar {
+	border-radius: 50%;
+}
+
+// 3. Widgets
+// ----------
+
+.bbp-login-form .bbp-submit-wrapper {
+	width: 100%;
+
+	.button {
+		width: 100%;
+		margin-bottom: 0;
+	}
+}
+
+.bbp_widget_login .bbp-logged-in {
+	text-align: right;
+
+	a.submit {
+		float: left;
+		border: 0;
+		padding: 0;
+		background: none;
+	}
+
+	h4 {
+		float: left;
+		margin-top: 4px;
+		margin-right: $base-space;
+		font-weight: normal;
+	}
+}
+
+.widget_display_stats {
+
+	dl dt {
+		float: left;
+		font-weight: normal;
+	}
+
+	dl dd {
+		text-align: right;
+	}
+}

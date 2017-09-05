@@ -1258,14 +1258,16 @@ h2.widget-title {
 // ----------------
 
 .widget .search-form label,
-.widget .woocommerce-product-search input[type="search"] {
+.widget .woocommerce-product-search input[type="search"],
+.widget input#bbp_search {
 	width: 65%;
 	float: left;
 	margin-right: 2%;
 }
 
 .widget .search-form .search-submit,
-.widget .woocommerce-product-search input[type="submit"] {
+.widget .woocommerce-product-search input[type="submit"],
+.widget input#bbp_search_submit {
 	width: 33%;
 	height: 39px;
 }

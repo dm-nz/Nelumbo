@@ -17,17 +17,11 @@ get_header(); ?>
 <div class="row">
 <?php if ( ! is_woocommerce_activated() && ! is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
-<?php elseif ( is_woocommerce_activated() ) :
-	if ( is_cart() || is_checkout() || is_account_page() ) : ?>
+<?php elseif ( is_bbpress() ) : ?>
 	<div id="primary" class="content-area column">
 <?php elseif ( ! is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
 <?php else : ?>
-	<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
-	<?php
-	endif;
-else :
-?>
 	<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 <?php endif; ?>
 		<main id="main" class="site-main" role="main">
@@ -52,6 +46,6 @@ else :
 		get_sidebar();
 	endif;
 	?>
-</div>
+</div><!-- .row -->
 
 <?php get_footer();

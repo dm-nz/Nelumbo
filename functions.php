@@ -129,6 +129,15 @@ function nelumbo_widgets_init() {
 		'after_title'	 => '</h2>',
 	) );
 	register_sidebar( array(
+		'name'			=> esc_html__( 'Forum sidebar', 'nelumbo' ),
+		'id'			=> 'sidebar-forum',
+		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	 => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer', 'nelumbo' ),
 		'id'			=> 'footer-1',
 		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
@@ -145,7 +154,7 @@ add_action( 'widgets_init', 'nelumbo_widgets_init' );
 
 // Enqueue scripts and styles
 function nelumbo_scripts() {
-	wp_register_style( 'foundation-style', get_template_directory_uri() . '/css/app.css', array(), '20160710', 'all' );
+	wp_register_style( 'foundation-style', get_template_directory_uri() . '/css/app.min.css', array(), '20160710', 'all' );
 	wp_register_style( 'icons-style', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css', array(), '20160721', 'all' );
 	wp_register_style( 'font-style', get_template_directory_uri() . '/fonts/lato/lato.css', array(), '20170104', 'all' );
 
@@ -157,7 +166,7 @@ function nelumbo_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '20160726', true );
-	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/js/app.js', array(), '20160720', true );
+	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/js/app.min.js', array(), '20160720', true );
 }
 add_action( 'wp_enqueue_scripts', 'nelumbo_scripts' );
 

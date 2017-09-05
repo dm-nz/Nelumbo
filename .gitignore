@@ -59,4 +59,6 @@ vendor
 project.json
 
 css/app.css
+css/app.min.css
 js/app.js
+js/app.min.js

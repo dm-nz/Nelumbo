@@ -22,18 +22,18 @@ endif;
 			<aside id="secondary" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'sidebar-shop' ); ?>
 			</aside><!-- #secondary -->
-		</div><!-- .columns -->
+		</div><!-- .medium-3 -->
 	<?php else : ?>
 		<div class="medium-4 large-collapse-left columns">
 			<aside id="secondary" class="widget-area" role="complementary">
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</aside><!-- #secondary -->
-		</div><!-- .columns -->
+		</div><!-- .medium-4 -->
 	<?php endif; ?>
 <?php else : ?>
 	<div class="medium-4 large-collapse-left columns">
 		<aside id="secondary" class="widget-area" role="complementary">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>
 		</aside><!-- #secondary -->
-	</div><!-- .columns -->
+	</div><!-- .medium-4 -->
 <?php endif; ?>
