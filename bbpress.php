@@ -27,13 +27,11 @@ get_header(); ?>
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php if ( is_active_sidebar( 'sidebar-forum' ) ) : ?>
-	<div class="medium-3 columns">
-<?php endif; ?>
-		<aside id="secondary" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-forum' ); ?>
-		</aside><!-- #secondary -->
-	</div><!-- .medium-3 -->
+	<?php
+	if ( is_active_sidebar( 'sidebar-forum' ) ) :
+		get_sidebar('forum');
+	endif;
+	?>
 </div><!-- .row -->
 
 <?php get_footer();

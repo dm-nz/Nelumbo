@@ -259,7 +259,7 @@
 .product-search,
 .product-search input[type="search"],
 .product-search .close {
-	height: 80px;
+	height: 78px;
 
 	@include breakpoint(small only) {
 		height: 50px;

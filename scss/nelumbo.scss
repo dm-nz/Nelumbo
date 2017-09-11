@@ -17,6 +17,7 @@
 	// 2.3. Top bar title
 	// 2.4. Top bar right & left
 	// 2.5. Responsive menu
+	// 2.6. Off-canvas
 // 3. Content
 	// 3.1. Entry
 	// 3.2. Cover
@@ -78,6 +79,10 @@ a {
 	abbr,
 	abbr[title] {
 		border-color: rgba($white, 0.5);
+	}
+
+	.close-button:hover {
+		color: scale-color($dark-gray, $lightness: -14%);
 	}
 }
 
@@ -200,10 +205,6 @@ ul .fa-li {
 	}
 }
 
-table th {
-	text-align: left;
-}
-
 blockquote {
 	background-color: $light-gray;
 
@@ -254,6 +255,12 @@ dl dd {
 	.nav-previous {
 		display: inline-block;
 		width: 50%;
+
+		a:before {
+			font-family: FontAwesome;
+			content: '\f104';
+			margin-right: $small-space;
+		}
 	}
 
 	.nav-next {
@@ -261,19 +268,13 @@ dl dd {
 		float: right;
 		text-align: right;
 		width: 50%;
+
+		a:after {
+			font-family: FontAwesome;
+			content: '\f105';
+			margin-left: $small-space;
+		}
 	}
-}
-
-.nav-previous a:before {
-	font-family: FontAwesome;
-	content: '\f104';
-	margin-right: $small-space;
-}
-
-.nav-next a:after {
-	font-family: FontAwesome;
-	content: '\f105';
-	margin-left: $small-space;
 }
 
 // 1.4. Accessibility
@@ -486,7 +487,7 @@ form input[type="submit"] {
 	text-decoration: none;
 }
 
-.inverse .button.hollow {
+.inverse .hollow.button {
 	border: 1px solid $white;
 	color: $white;
 
@@ -497,6 +498,61 @@ form input[type="submit"] {
 
 .reveal p .button {
 	margin-bottom: 0;
+}
+
+.menu li.button {
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 0 0.5rem;
+	border: 0;
+	background: none;
+	font-size: inherit;
+
+	&:hover {
+		background: none;
+		color: inherit;
+	}
+
+	a {
+		@include button;
+		padding: $menu-items-padding;
+		margin-bottom: 0;
+		font-size: inherit;
+	}
+}
+
+.menu.drilldown li.button {
+	padding: 0;
+
+	a {
+		display: block;
+	}
+}
+
+.menu li.hollow.button {
+	border: 0;
+	color: inherit;
+
+	a {
+		background-color: transparent;
+		color: $primary-color;
+		border: 1px solid $primary-color;
+
+		&:hover {
+			color: scale-color($primary-color, $lightness: $button-hollow-hover-lightness);
+			border-color: scale-color($primary-color, $lightness: $button-hollow-hover-lightness);
+		}
+	}
+}
+
+.inverse .menu li.hollow.button a {
+	color: $white;
+	border-color: $white;
+
+	&:hover {
+		color: scale-color($white, $lightness: $button-hollow-hover-lightness);
+		border-color: scale-color($white, $lightness: $button-hollow-hover-lightness);
+	}
 }
 
 // 2. Header
@@ -542,13 +598,13 @@ form input[type="submit"] {
 		color: $body-font-color;
 	}
 
-		&.inverse a {
-			color: $white;
+	&.inverse a {
+		color: $white;
 
-			&:hover {
-				color: $medium-gray;
-			}
+		&:hover {
+			color: $medium-gray;
 		}
+	}
 
 	ul ul {
 		display: none;
@@ -625,9 +681,9 @@ form input[type="submit"] {
 		color: $body-font-color;
 	}
 
-		&.inverse .is-dropdown-submenu.menu > li > a:hover {
-			color: $primary-color;
-		}
+	&.inverse .is-dropdown-submenu.menu > li > a:hover {
+		color: $primary-color;
+	}
 
 	.is-dropdown-submenu-parent a::after {
 		top: 55%;
@@ -686,9 +742,9 @@ form input[type="submit"] {
 		border-left: 1px solid $light-gray;
 	}
 
-		.inverse & .site-description span {
-			border-color: rgba($white, 0.1);
-		}
+	.inverse & .site-description span {
+		border-color: rgba($white, 0.1);
+	}
 }
 
 // 2.4. Tob bar right & left
@@ -713,64 +769,6 @@ form input[type="submit"] {
 
 .inverse .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
 	border-color: $white transparent transparent;
-}
-
-.top-bar {
-
-	.menu .button {
-		display: inline-block;
-		margin-bottom: 0;
-		padding: 0 0.5rem;
-		border: 0;
-		background: none;
-		font-size: inherit;
-
-		&:hover {
-			background: none;
-			color: inherit;
-		}
-
-		a {
-			@include button;
-			padding: $menu-items-padding;
-			margin-bottom: 0;
-			font-size: inherit;
-		}
-	}
-
-	.menu.drilldown .button {
-		padding: 0;
-
-		a {
-			display: block;
-		}
-	}
-
-	.hollow.button {
-		border: 0;
-		color: inherit;
-
-		a {
-			background-color: transparent;
-			color: $primary-color;
-			border: 1px solid $primary-color;
-
-			&:hover {
-				color: scale-color($primary-color, $lightness: -14%);
-				border-color: scale-color($primary-color, $lightness: -14%);
-			}
-		}
-	}
-
-	&.inverse .hollow.button a {
-		color: $white;
-		border-color: $white;
-
-		&:hover {
-			color: $medium-gray;
-			border-color: $medium-gray;
-		}
-	}
 }
 
 .top-bar-right .menu.dropdown > li:last-of-type.button {
@@ -815,6 +813,34 @@ form input[type="submit"] {
 
 	.inverse & {
 		border-color: transparent $white transparent transparent !important;
+	}
+}
+
+// 2.6. Off-canvas
+// ---------------
+
+.off-canvas {
+	padding-top: $base-space;
+
+	.close-button {
+		padding: 0 $tiny-space;
+	}
+
+	.vertical.menu {
+		margin-left: 1rem;
+
+		li a {
+			outline: 0;
+		}
+
+		li.button {
+			display: inline-block;
+			margin: 0.5rem 0;
+
+			a {
+				border-radius: $global-radius;
+			}
+		}
 	}
 }
 
@@ -1016,7 +1042,7 @@ a.more-link {
 @include breakpoint(medium up) {
 	.format-aside h1.entry-title,
 	.format-aside h2.entry-title  {
-		font-size: $large-space;
+		font-size: 1.5em;
 	}
 }
 
@@ -1328,7 +1354,7 @@ h2.widget-title {
 // 5.5. Calendar
 // -------------
 
-#wp-calendar thead,
+#wp-calendar thead th,
 #wp-calendar tbody {
 	text-align: center;
 

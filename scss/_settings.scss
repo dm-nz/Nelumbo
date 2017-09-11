@@ -304,7 +304,7 @@ $button-sizes: (
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
-$button-hollow-hover-lightness: -50%;
+$button-hollow-hover-lightness: -40%;
 $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
 // 12. Button Group
@@ -346,8 +346,8 @@ $card-margin-bottom: $global-margin;
 
 $closebutton-position: right top;
 $closebutton-offset-horizontal: (
-  small: 0.66rem,
-  medium: 1rem,
+  small: 0.25rem,
+  medium: 0.5rem,
 );
 $closebutton-offset-vertical: (
   small: 0.33em,
@@ -505,7 +505,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 250px,
 );
-$offcanvas-background: $light-gray;
+$offcanvas-background: $black;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);

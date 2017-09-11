@@ -21,7 +21,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<?php if ( is_active_sidebar( 'sidebar-shop' ) && ! is_product() ) :
-		get_sidebar();
+		get_sidebar('shop');
 	endif; ?>
 </div><!-- .row -->
 

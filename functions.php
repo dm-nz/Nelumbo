@@ -214,6 +214,13 @@ class Foundation_Top_Bar extends Walker_Nav_Menu {
 	}
 }
 
+class Foundation_Off_Canvas extends Walker_Nav_Menu {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"menu vertical\" data-toggle>\n";
+	}
+}
+
 // 7. WooCommerce
 // --------------
 
