@@ -81,7 +81,7 @@ $dark-gray: #8a8c8e;
 $black: #2f3133;
 $white: #fff;
 $body-background: $white;
-$body-font-color: $black;
+$body-font-color: #444648;
 $body-font-family: Lato, 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -133,7 +133,7 @@ $header-font-family: $body-font-family;
 $header-font-weight: bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: inherit;
+$header-color: $black;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (

@@ -3,7 +3,7 @@
  * Template Name: Narrow
  * Template Post Type: post, page
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 get_header(); ?>

@@ -417,6 +417,11 @@
 
 	div.images .flex-control-thumbs li {
 		margin: $base-space $base-space 0 0;
+		width: 22.98%;
+	}
+
+	.woocommerce-product-gallery--columns-4 .flex-control-thumbs li:nth-child(4n) {
+		margin-right: 0;
 	}
 
 	.product_title {
@@ -449,6 +454,10 @@
 		margin-top: 2rem;
 
 		.group_table {
+
+			tbody {
+				border: 0;
+			}
 
 			tr:nth-child(2n) {
 				background: none;

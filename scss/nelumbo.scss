@@ -45,8 +45,31 @@ a {
 	@include transition;
 }
 
+#page {
+
+	h1, h2, h3, h4, h5, h6 {
+
+		a:hover {
+			color: $anchor-color-hover;
+		}
+	}
+
+	a:hover {
+
+		h1, h2, h3, h4, h5, h6 {
+			color: $anchor-color-hover;
+		}
+	}
+
+	.inverse {
+		&,
+		h1, h2, h3, h4, h5, h6 {
+			color: $white;
+		}
+	}
+}
+
 .inverse {
-	color: $white !important;
 
 	a {
 		color: $white;
@@ -57,7 +80,6 @@ a {
 			color: rgba($white, 0.75);
 			text-decoration: none;
 		}
-
 	}
 
 	table thead,
@@ -124,7 +146,7 @@ ul .fa-li {
 	.large-collapse-right {
 		padding-right: 0 !important;
 	}
-	
+
 	.large-collapse-left {
 		padding-left: 0 !important;
 	}
@@ -373,7 +395,7 @@ video,
 	}
 
 	.wp-caption-text {
-		margin: $base-space 0;
+		margin: $small-space 0;
 	}
 }
 
@@ -727,6 +749,11 @@ form input[type="submit"] {
 		a {
 			padding-left: 0;
 			padding-right: 0;
+			color: $header-color;
+
+			&:hover {
+				color: $anchor-color-hover;
+			}
 		}
 
 		@include breakpoint(small only) {
@@ -773,7 +800,7 @@ form input[type="submit"] {
 
 .top-bar-right .menu.dropdown > li:last-of-type.button {
 	padding-right: 0;
-	
+
 		& > a {
 		padding-right: 1rem;
 	}
@@ -821,6 +848,10 @@ form input[type="submit"] {
 
 .off-canvas {
 	padding-top: $base-space;
+
+	.admin-bar & {
+		padding-top: $xlarge-space;
+	}
 
 	.close-button {
 		padding: 0 $tiny-space;
@@ -887,7 +918,7 @@ form input[type="submit"] {
 		line-height: 1.25;
 
 		a {
-			color: $body-font-color;
+			color: $header-color;
 		}
 	}
 
@@ -933,7 +964,7 @@ form input[type="submit"] {
 .posted-on:before		{ content: '\f073'; }
 .comments-link:before 	{ content: '\f075'; }
 .cat-links:before 		{ content: '\f07c'; }
-.tags-links:before 		{ content: '\f02b'; }
+.tags-links:before 		{ content: '\f292'; }
 .edit-link:before 		{ content: '\f040'; }
 
 a.more-link {
@@ -987,6 +1018,22 @@ a.more-link {
 	border-bottom: 1px solid $light-gray;
 }
 
+.sticky.post {
+	@include callout;
+}
+
+.archive-grid-template {
+
+	.post.column:last-child:not(:first-child),
+	.post.columns:last-child:not(:first-child) {
+		float: left;
+	}
+
+	.entry-featured-img {
+		margin-bottom: $base-space;
+	}
+}
+
 // 3.2. Cover
 // ----------
 
@@ -997,14 +1044,14 @@ a.more-link {
 	background: $black;
 	background-position: center;
 	background-size: cover;
-	text-shadow: 0 0 $large-space black;
+	text-shadow: 0 0 $large-space rgba($black, 0.5);
 
 	&,
 	.column {
-		height: 450px;
+		height: 500px;
 
 		@include breakpoint(medium only) {
-			height: 350px;
+			height: 400px;
 		}
 
 		@include breakpoint(small only) {
@@ -1015,10 +1062,6 @@ a.more-link {
 	.entry-header {
 		@include vertical-center;
 		width: 100%;
-
-		@include breakpoint(small only) {
-			margin-top: $base-space;
-		}
 	}
 
 	.filter {
@@ -1308,7 +1351,7 @@ h2.widget-title {
 .widget.widget_rss ul li a,
 .widget_recent_comments ul li a {
 	color: $primary-color;
-	
+
 	&:hover {
 		color: scale-color($primary-color, $lightness: -14%);
 	}
@@ -1319,7 +1362,7 @@ h2.widget-title {
 	color: $white;
 	text-decoration: underline;
 	text-decoration-color: rgba($white, 0.5);
-	
+
 	&:hover {
 		text-decoration: none;
 	}

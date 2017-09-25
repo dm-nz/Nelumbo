@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 get_header(); ?>
@@ -21,8 +21,6 @@ get_header(); ?>
 					<?php
 					get_search_form();
 					the_widget( 'WP_Widget_Recent_Posts' );
-					// Only show the widget if site has multiple categories.
-					if ( nelumbo_categorized_blog() ) :
 					?>
 					<div class="widget widget_categories">
 						<h2 class="widgettitle"><?php esc_html_e( 'Most Used Categories', 'nelumbo' ); ?></h2>
@@ -39,7 +37,6 @@ get_header(); ?>
 						</ul>
 					</div><!-- .widget -->
 					<?php
-					endif;
 					/* translators: %1$s: smiley */
 					$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'nelumbo' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );

@@ -2,7 +2,7 @@
 /**
  * Nelumbo Theme Customizer.
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 /**

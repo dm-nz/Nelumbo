@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 ?><!DOCTYPE html>
@@ -66,12 +66,12 @@
 									<?php if ( ! is_user_logged_in() ) : ?>
 										<a href="/my-account"><i class="fa fa-sign-in"></i><span><?php echo __( 'Log in' ); ?></span></a>
 									<?php else : ?>
-										<a href="/my-account"><i class="fa fa-user-circle"></i><span><?php echo __( 'My account', 'woocommerce' );?></span></a>
+										<a href="/my-account"><i class="fa fa-user-circle"></i><span><?php echo __( 'My account', 'woocommerce' ); ?></span></a>
 										<ul class="menu dropdown">
-											<li><a href="/my-account/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' );?></span></a></li>
-											<li><a href="/my-account/customer-address"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' );?></span></a></li>
-											<li><a href="/my-account/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' );?></span></a></li>
-											<li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' );?></span></a></li>
+											<li><a href="/my-account/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' ); ?></span></a></li>
+											<li><a href="/my-account/customer-address"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' ); ?></span></a></li>
+											<li><a href="/my-account/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' ); ?></span></a></li>
+											<li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' ); ?></span></a></li>
 										</ul><!-- .menu.dropdown -->
 									<?php endif; ?>
 								</li><!-- .last -->
@@ -101,15 +101,11 @@
 									<li class="site-logo"><?php nelumbo_the_custom_logo(); ?></li>
 								<?php endif; ?>
 									<li class="site-title">
-										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 										<?php if ( is_front_page() && is_home() ) : ?>
-											<h1><?php bloginfo( 'name' ); ?></h1>
-										<?php
-										else :
-											bloginfo( 'name' );
-										endif;
-										?>
-										</a>
+											<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+										<?php else : ?>
+											<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+										<?php	endif; ?>
 									</li><!-- .site-title -->
 									<?php
 									$description = get_bloginfo( 'description', 'display' );
@@ -122,7 +118,7 @@
 							<div class="menu-hamburger hide-for-large">
 								<ul class="menu">
 								<?php if ( is_woocommerce_activated() ) : ?>
-									<li class="search-toggle"><a><i class="fa fa-search"></i></a></li>
+									<li class="search-toggle show-for-small-only"><a><i class="fa fa-search"></i></a></li>
 								<?php endif; ?>
 									<li><a data-toggle="the-off-canvas"><i class="fa fa-bars"></i></a></li>
 								</ul><!-- .menu -->

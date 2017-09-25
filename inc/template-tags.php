@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 if ( ! function_exists( 'nelumbo_posted_on' ) ) :

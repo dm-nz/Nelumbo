@@ -3,7 +3,7 @@
  * Template Name: Full-width
  * Template Post Type: post, page
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 get_header(); ?>

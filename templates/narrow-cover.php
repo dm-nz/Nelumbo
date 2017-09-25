@@ -3,7 +3,7 @@
  * Template Name: Narrow and cover
  * Template Post Type: post, page
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 get_header(); ?>
@@ -11,7 +11,7 @@ get_header(); ?>
 <div id="cover" class="inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
 	<div class="row row-absolute">
 		<div class="column">
-			<header class="entry-header vertical-middle text-center">
+			<header class="entry-header text-center">
 				<?php
 				the_title( '<h1 class="entry-title">', '</h1>' );
 				if ( 'post' === get_post_type() ) :

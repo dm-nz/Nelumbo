@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 // Table of contents
@@ -189,7 +189,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 // 5. Images
-// ------
+// ---------
 
 // Cover thumbnail
 add_image_size( 'cover', 1920, 600, true );

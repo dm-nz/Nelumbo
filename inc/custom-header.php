@@ -12,7 +12,7 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package Nelumbo
+ * @package nelumbo
  */
 
 /**
@@ -23,7 +23,7 @@
 function nelumbo_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'nelumbo_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => '2f3133',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
