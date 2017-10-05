@@ -210,14 +210,14 @@ add_theme_support('custom-logo', array(
 class Foundation_Top_Bar extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class=\"dropdown menu vertical\" data-toggle>\n";
+		$output .= "\n$indent<ul class=\"dropdown menu\" data-toggle>\n";
 	}
 }
 
 class Foundation_Off_Canvas extends Walker_Nav_Menu {
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
-		$output .= "\n$indent<ul class=\"menu vertical\" data-toggle>\n";
+		$output .= "\n$indent<ul class=\"menu\" data-toggle>\n";
 	}
 }
 
@@ -248,7 +248,7 @@ function woocommerce_gallery() {
 if ( ! function_exists( 'nelumbo_cart_link' ) ) {
 	function nelumbo_cart_link() {
 		?>
-		<a class="cart-content" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'nelumbo' ); ?>">
+		<a class="cart-content" title="<?php esc_attr_e( 'View your shopping cart', 'nelumbo' ); ?>">
 			<i class="fa fa-shopping-cart"></i>
 			<span>
 				<span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span>

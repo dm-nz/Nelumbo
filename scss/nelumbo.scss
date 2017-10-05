@@ -13,11 +13,10 @@
 	// 1.10. Buttons
 // 2. Header
 	// 2.1. Misc
-	// 2.2. Top stripe
-	// 2.3. Top bar title
-	// 2.4. Top bar right & left
-	// 2.5. Responsive menu
-	// 2.6. Off-canvas
+	// 2.2. Top bar title
+	// 2.3. Top bar right & left
+	// 2.4. Responsive menu
+	// 2.5. Off-canvas
 // 3. Content
 	// 3.1. Entry
 	// 3.2. Cover
@@ -658,65 +657,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.2. Top stripe
-// ---------------
-
-.top-stripe {
-	padding: 3px 0;
-	background-color: $primary-color;
-
-	&.inverse,
-	&.inverse .menu > li > a {
-		color: rgba($white, 0.8);
-
-		&:hover {
-			color: rgba($white, 0.6);
-		}
-	}
-
-	.menu > li.first > a {
-		padding-left: 0;
-	}
-
-	.menu > li.last > a {
-		padding-right: 0;
-	}
-
-	.menu i.fa {
-		margin-right: 0.75em;
-	}
-
-	.menu.is-dropdown-submenu {
-		margin-top: 2px;
-		text-align: left;
-		z-index: 3;
-
-		i.fa {
-			width: 1.25em;
-			margin-right: 0.5em;
-			color: $medium-gray;
-		}
-	}
-
-	&.inverse .is-dropdown-submenu,
-	&.inverse .is-dropdown-submenu.menu > li > a {
-		color: $body-font-color;
-	}
-
-	&.inverse .is-dropdown-submenu.menu > li > a:hover {
-		color: $primary-color;
-	}
-
-	.is-dropdown-submenu-parent a::after {
-		top: 55%;
-	}
-
-	&.inverse .is-dropdown-submenu-parent a::after {
-		opacity: 0.75;
-	}
-}
-
-// 2.3. Top bar title
+// 2.2. Top bar title
 // ------------------
 
 .menu > li.site-logo > a {
@@ -774,7 +715,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.4. Tob bar right & left
+// 2.3. Tob bar right & left
 // -------------------------
 
 @include breakpoint(medium up) {
@@ -806,7 +747,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.5. Responsive menu
+// 2.4. Responsive menu
 // --------------------
 
 .menu-hamburger ul.menu {
@@ -843,7 +784,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.6. Off-canvas
+// 2.5. Off-canvas
 // ---------------
 
 .off-canvas {
@@ -857,7 +798,7 @@ form input[type="submit"] {
 		padding: 0 $tiny-space;
 	}
 
-	.vertical.menu {
+	.menu {
 		margin-left: 1rem;
 
 		li a {
@@ -891,12 +832,13 @@ form input[type="submit"] {
 }
 
 @include breakpoint(small only) {
-	#primary,
-	#secondary {
+	#primary {
 		margin-top: 0.75rem;
+		margin-bottom: 0;
 	}
 
 	#secondary {
+		margin-top: 0;
 		padding-top: $large-space;
 		border-top: 1px solid $light-gray;
 	}
@@ -989,6 +931,17 @@ a.more-link {
 	.single & {
 		margin-bottom: 0;
 	}
+
+	@include breakpoint(small only) {
+		.divider {
+			display: none !important;
+		}
+
+		.item {
+			display: block;
+			margin-bottom: $small-space;
+		}
+	}
 }
 
 .entry-meta a,
@@ -1034,6 +987,27 @@ a.more-link {
 	}
 }
 
+@include breakpoint(medium up) {
+	.page-template-two-columns .entry-content,
+	.page-template-two-columns-cover .entry-content {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		-webkit-column--gap: 60px;
+		-moz-column-gap: 60px;
+		column-gap: 60px;
+	}
+}
+
+@include breakpoint(medium only) {
+	.page-template-two-columns .entry-content,
+	.page-template-two-columns-cover .entry-content {
+		-webkit-column--gap: 30px;
+		-moz-column-gap: 30px;
+		column-gap: 30px;
+	}
+}
+
 // 3.2. Cover
 // ----------
 
@@ -1061,6 +1035,7 @@ a.more-link {
 
 	.entry-header {
 		@include vertical-center;
+		left: 0;
 		width: 100%;
 	}
 
@@ -1386,11 +1361,6 @@ h2.widget-title {
 	.inverse & {
 		text-decoration: none;
 		text-decoration-color: rgba($white, 0.5);
-
-		&:hover {
-			text-decoration: underline;
-			text-decoration-color: rgba($white, 0.5);
-		}
 	}
 }
 
@@ -1457,6 +1427,7 @@ h2.widget-title {
 	background: rgba($black, 0.5);
 	color: $white;
 	border-radius: $global-radius;
+	z-index: 10;
 
 	&:hover {
 		background-color: rgba($black, 0.75);

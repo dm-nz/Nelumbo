@@ -1,70 +1,36 @@
 // Table of contents
 // -----------------
 // 1. General
-// 2. Shopping cart
-	// 2.1. Misc
-	// 2.2. Header cart
-	// 2.3. Widget cart
-	// 2.4. Cart page
-// 3. Product search
-// 4. Product archive
-	// 4.1. Grid
-	// 4.2. Product item
-	// 4.3. Pagination
-// 5. Single product
-	// 5.1. Summary
-	// 5.2. Tabs
-	// 5.3. Reviews
-	// 5.4. Misc
-// 6. My account
-// 7. Widgets
+	// 1.1. Misc
+	// 1.2. Buttons
+	// 1.3. Messages
+// 2. Top stripe
+// 3. Shopping cart
+	// 3.1. Header cart
+	// 3.2. Widget cart
+	// 3.3. Cart & checkout
+// 4. Product search
+// 5. Product archive
+	// 5.1. Grid
+	// 5.2. Product item
+	// 5.3. Pagination
+// 6. Single product
+	// 6.1. Summary
+	// 6.2. Tabs
+	// 6.3. Reviews
+	// 6.4. Misc
+// 7. My account
+// 8. Widgets
 
 // 1. General
 // ----------
 
-@include breakpoint(medium up) {
-	.single-product #primary,
-	.single-product #secondary { margin-top: $base-space; }
-}
-
-.woocommerce a.button,
-.woocommerce input.button,
-.woocommerce #respond input#submit,
-.woocommerce .cart .button,
-.woocommerce .cart input.button,
-.woocommerce div.product form.cart .button,
-.woocommerce input#place_order.button,
-.woocommerce nav.woocommerce-pagination ul li span,
-.woocommerce nav.woocommerce-pagination ul li a,
-.woocommerce .widget_price_filter .price_slider_amount .button,
-.btn {
-	@include button;
-	font-weight: normal;
-}
-
-.inverse .btn {
-	text-decoration: none;
-}
-
-.woocommerce a.button.alt {
-	background-color: $primary-color;
-
-	&:hover {
-		background-color: scale-color($primary-color, $lightness: -14%);
-	}
-}
+// 1.1. Misc
+// ---------
 
 .star-rating,
 .woocommerce p.stars a {
 	color: $warning-color;
-}
-
-.woocommerce .woocommerce-message a.button.wc-forward {
-	background-color: #8fae1b;
-
-	&:hover {
-		background-color: scale-color(#8fae1b, $lightness: -14%);
-	}
 }
 
 .woocommerce table {
@@ -91,56 +57,233 @@
 	}
 }
 
-// 2. Shopping cart
-// ----------------
+// 1.2. Buttons
+// ------------
 
-// 2.1. Misc
-// ---------
+.woocommerce a.button,
+.woocommerce input.button,
+.woocommerce #respond input#submit,
+.woocommerce .cart .button,
+.woocommerce .cart input.button,
+.woocommerce div.product form.cart .button,
+.woocommerce input#place_order.button,
+.woocommerce nav.woocommerce-pagination ul li span,
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce .widget_price_filter .price_slider_amount .button,
+.btn {
+	@include button;
+	font-weight: normal;
+}
 
-.woocommerce a.remove {
-	color: $dark-gray !important;
+.woocommerce .button.hollow {
+	background: none;
+	color: $primary-color;
+	border-color: $primary-color;
 
 	&:hover {
 		background: none;
-		color: $alert-color !important;
+		color: scale-color($primary-color, $lightness: $button-hollow-hover-lightness);
 	}
 }
 
-// 2.2. Header cart
-// ----------------
+.inverse .btn {
+	text-decoration: none;
+}
+
+.woocommerce a.button.alt {
+	background-color: $primary-color;
+
+	&:hover {
+		background-color: scale-color($primary-color, $lightness: -14%);
+	}
+}
+
+.woocommerce #respond input#submit.disabled,
+.woocommerce #respond input#submit:disabled,
+.woocommerce #respond input#submit[disabled]:disabled,
+.woocommerce a.button.disabled, .woocommerce a.button:disabled,
+.woocommerce a.button[disabled]:disabled,
+.woocommerce button.button.disabled,
+.woocommerce button.button:disabled,
+.woocommerce button.button[disabled]:disabled,
+.woocommerce input.button.disabled,
+.woocommerce input.button:disabled,
+.woocommerce input.button[disabled]:disabled {
+	padding: $button-padding;
+}
+
+// 1.3. Messages
+// -------------
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+	background-color: scale-color($light-gray, $lightness: 50%);
+}
+
+.woocommerce-info {
+	border-top-color: $primary-color;
+
+	&::before {
+		color: $primary-color;
+	}
+}
+
+.woocommerce-error {
+	border-top-color: $alert-color;
+
+	&::before {
+		color: $alert-color;
+	}
+}
+
+.woocommerce .woocommerce-message {
+	border-color: $success-color;
+
+	@include breakpoint(medium up) {
+		line-height: 2.5;
+	}
+
+	&::before {
+		color: $success-color;
+	}
+
+	a.button {
+		background-color: $success-color;
+		margin-bottom: 0;
+
+		&:hover {
+			background-color: scale-color($success-color, $lightness: $button-background-hover-lightness);
+		}
+
+		@include breakpoint(small only) {
+			margin-right: -1rem;
+		}
+
+		.wc-forward {
+			background-color: $success-color;
+
+			&:hover {
+				background-color: scale-color($success-color, $lightness: -14%);
+			}
+		}
+	}
+}
+
+// 2. Top stripe
+// -------------
 
 .top-stripe {
+	padding: 2px 0;
+	background-color: $primary-color;
+
+	@include breakpoint(small only) {
+		font-size: rem-calc(14);
+	}
+
+	& .inverse,
+	& .inverse .menu > li > a {
+		color: rgba($white, 0.8);
+
+		&:hover {
+			color: rgba($white, 0.6);
+		}
+	}
+
+	.menu > li.first > a {
+		padding-left: 0;
+	}
+
+	.menu > li.last > a {
+		padding-right: 0;
+	}
+
+	.menu i.fa {
+		margin-right: 0.75em;
+	}
+
+	.menu.is-dropdown-submenu {
+		margin-top: 2px;
+		text-align: left;
+		z-index: 3;
+
+		i.fa {
+			width: 1.25em;
+			margin-right: 0.5em;
+			color: $medium-gray;
+		}
+	}
+
+	& .inverse .is-dropdown-submenu,
+	& .inverse .is-dropdown-submenu.menu > li > a {
+		color: $body-font-color;
+	}
+
+	& .inverse .is-dropdown-submenu.menu > li > a:hover {
+		color: $primary-color;
+	}
+
+	.is-dropdown-submenu-parent a::after {
+		top: 55%;
+	}
+
+	& .inverse .is-dropdown-submenu-parent a::after {
+		opacity: 0.75;
+	}
+
+	.dropdown-pane {
+		top: 41px !important;
+		padding-left: 0;
+		padding-right: 0;
+		border-radius: 0;
+
+		ul.menu > li > a {
+			color: $body-font-color;
+
+			&:hover {
+				color: $anchor-color-hover;
+			}
+
+			i.fa {
+				width: 1.25em;
+				margin-right: 0.5em;
+				color: $medium-gray;
+			}
+		}
+
+		@include breakpoint(small only) {
+			top: 39px !important;
+			width: 100%;
+			left: 0 !important;
+			border: 0;
+			border-bottom: 1px solid $light-gray;
+		}
+	}
+
+	.menu > li.dropdown-toggle > a {
+		position: relative;
+		padding-right: $dropdownmenu-arrow-padding;
+	}
+
+	.menu > li.dropdown-toggle > a::after {
+		display: block;
+		width: 0;
+		height: 0;
+		border: inset 5px;
+		content: '';
+		border-bottom-width: 0;
+		border-top-style: solid;
+		border-color: $white transparent transparent;
+		right: 5px;
+		left: auto;
+		margin-top: -2.5px;
+		opacity: 0.75;
+		position: absolute;
+    	top: 55%;
+	}
 
 	.account-menu {
 		float: right;
-	}
-
-	.widget_shopping_cart {
-		width: 300px;
-		margin-bottom: 0;
-		padding: $base-space;
-		background: $white;
-		border-top: 0;
-
-		@include breakpoint(small only) {
-			width: 100%;
-			left: 0;
-			margin-left: 0;
-			border: 0 0 1px 0 solid $light-gray;
-		}
-	}
-
-	&.inverse .widget_shopping_cart {
-		color: $body-font-color !important;
-
-		.mini_cart_item a {
-			color: $primary-color;
-			text-decoration: none;
-
-			&:hover {
-				color: scale-color($primary-color, $lightness: -14%);
-			}
-		}
 	}
 
 	.button,
@@ -154,9 +297,35 @@
 		margin-bottom: 0;
 	}
 
+	#account-dropdown {
+		padding-top: $tiny-space;
+		padding-bottom: $tiny-space;
+
+		@include breakpoint(medium up) {
+			width: 180px;
+		}
+	}
+}
+
+// 3. Shopping cart
+// ----------------
+
+// 3.1. Header cart
+// ----------------
+
+.top-stripe {
+
+	.widget_shopping_cart {
+		margin-bottom: 0;
+		padding-left: $base-space;
+		padding-right: $base-space;
+		background: $white;
+		border-top: 0;
+	}
+
 	@include breakpoint(small only) {
 		.menu > li.cart > a {
-			padding-right: 0;
+			padding-left: 0;
 		}
 	}
 
@@ -165,12 +334,18 @@
 		margin-right: $small-space;
 	}
 
-	.product-search {
-		background-color: scale-color($black, $lightness: 5%);
+	@include breakpoint(small only) {
+		.is-dropdown-submenu {
+			position: fixed;
+			width: 100%;
+			top: 36px !important;
+			border: 0;
+			border-bottom: 1px solid $light-gray;
+		}
 	}
 }
 
-// 2.3. Widget cart
+// 3.2. Widget cart
 // ----------------
 
 .woocommerce.widget_shopping_cart {
@@ -203,9 +378,13 @@
 	}
 
 	a.remove {
-		padding: 0 !important;
-		line-height: 0.9;
-		margin-top: 6px;
+		margin-top: 1px;
+		color: $dark-gray !important;
+
+		&:hover {
+			background: none;
+			color: $alert-color !important;
+		}
 	}
 }
 
@@ -222,11 +401,11 @@
 	}
 }
 
-// 2.4. Cart page
-// --------------
+// 3.3. Cart & checkout
+// --------------------
 
 .woocommerce input#coupon_code {
-	margin-right: $base-space;
+	margin-right: $small-space;
 }
 
 .woocommerce .checkout_coupon input.button {
@@ -244,34 +423,133 @@
 }
 
 .woocommerce table.shop_table {
-	border-collapse: collapse;
+	border-spacing: 0;
 
-	td,
-	tbody th {
-		border-top: 0;
-		border-bottom: 0;
+	tbody {
+		border-color: inherit;
+	}
+
+	th,
+	td {
+		padding: 1rem 0.75rem;
 	}
 }
 
-// 3. Product search
+@include breakpoint(small only) {
+	.woocommerce ul.order_details li {
+		float: none;
+		margin-bottom: 1rem;
+		border-right: 0px;
+	}
+}
+
+.woocommerce #content table.cart td.actions .input-text,
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+	width: 106px;
+}
+
+.woocommerce form .form-row {
+
+	&.woocommerce-invalid {
+
+		label {
+			color: $alert-color;
+		}
+
+		.select2-container,
+		input.input-text,
+		select {
+			border-color: $alert-color;
+		}
+	}
+
+	&.woocommerce-validated {
+
+		.select2-container,
+		input.input-text,
+		select {
+			border-color: $success-color;
+		}
+	}
+}
+
+#add_payment_method #payment,
+.woocommerce-cart #payment,
+.woocommerce-checkout #payment {
+	background-color: $light-gray;
+	border-radius: $global-radius;
+
+	div.payment_box {
+		background-color: $medium-gray;
+
+		&::before {
+			border-bottom-color: $medium-gray;
+		}
+	}
+
+	ul.payment_methods {
+		border-color: $medium-gray;
+	}
+}
+
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order {
+	margin-bottom: 0;
+}
+
+.woocommerce table.cart .product-quantity .quantity {
+	display: inline-block;
+}
+
+.select2-container .select2-selection--single {
+	height: 39px;
+	line-height: 20px;
+}
+
+.select2-container--default .select2-selection--single {
+	border-color: $medium-gray;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+	color: $body-font-color;
+	line-height: 34px;
+	box-shadow: $input-shadow;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+	height: 36px;
+}
+
+.select2-search--dropdown .select2-search__field {
+	margin-top: $small-space;
+}
+
+#customer_details {
+	margin-bottom: $base-space;
+}
+
+// 4. Product search
 // -----------------
-
-.product-search,
-.product-search input[type="search"],
-.product-search .close {
-	height: 78px;
-
-	@include breakpoint(small only) {
-		height: 50px;
-	}
-}
 
 .product-search {
 	position: absolute;
 	display: none;
 	width: 100%;
-	margin-top: 3px;
+	margin-top: 1px;
+	background-color: scale-color($black, $lightness: 5%);
 	z-index: 2;
+
+	&,
+	input[type="search"],
+	.close {
+		height: 78px;
+
+		@include breakpoint(small only) {
+			height: 53px;
+		}
+	}
 
 	input[type="search"] {
 		width: 100%;
@@ -307,10 +585,10 @@
 	}
 }
 
-// 4. Product archive
-// -------------------
+// 5. Product archive
+// ------------------
 
-// 4.1. Grid
+// 5.1. Grid
 // ---------
 
 @media (min-width: 769px) {
@@ -332,7 +610,7 @@
 	background-position: center right -6px;
 }
 
-// 4.2. Product item
+// 5.2. Product item
 // -----------------
 
 .woocommerce ul.products li.product,
@@ -385,7 +663,7 @@
 	line-height: 2.4;
 }
 
-// 4.3 Pagination
+// 5.3 Pagination
 // --------------
 
 .woocommerce nav.woocommerce-pagination {
@@ -407,10 +685,10 @@
 	}
 }
 
-// 5. Single product
+// 6. Single product
 // -----------------
 
-// 5.1. Summary
+// 6.1. Summary
 // ------------
 
 .woocommerce div.product {
@@ -425,7 +703,7 @@
 	}
 
 	.product_title {
-		margin-bottom: $small-space;
+		margin-bottom: $tiny-space;
 	}
 
 	.woocommerce-product-rating {
@@ -436,8 +714,10 @@
 	.summary span.price {
 		color: $body-font-color;
 
-		.amount {
-			font-size: 1.5em;
+		@include breakpoint(medium up) {
+			.amount {
+				font-size: 1.5em;
+			}
 		}
 
 		ins {
@@ -512,16 +792,25 @@
 		}
 	}
 
-	.product_meta > span {
-		display: block;
+	.product_meta {
+		color: $dark-gray;
+
+		a {
+			color: $dark-gray;
+
+			&:hover {
+				color: $anchor-color-hover;
+			}
+		}
+
+		& > span {
+			display: block;
+			margin-bottom: $small-space;
+		}
 	}
 }
 
-.woocommerce .woocommerce-message a.button {
-	margin-bottom: 0;
-}
-
-// 5.2. Tabs
+// 6.2. Tabs
 // ---------
 
 .woocommerce div.product .woocommerce-tabs {
@@ -571,7 +860,7 @@
 	}
 }
 
-// 5.3. Reviews
+// 6.3. Reviews
 // ------------
 
 .woocommerce #reviews {
@@ -608,12 +897,13 @@
 	}
 
 	#review_form_wrapper {
-		border-top: 1px solid $light-gray;
+		border-top: 1px dashed $light-gray;
 
 		@include breakpoint(medium up) {
 			.comment-form-author,
 			.comment-form-email {
-				width: 49%;
+				width: 48.7%;
+				display: inline-block;
 			}
 
 			#review_form {
@@ -631,14 +921,19 @@
 	}
 }
 
-// 5.4. Misc
+// 6.4. Misc
 // ---------
+
+@include breakpoint(medium up) {
+	.single-product #primary,
+	.single-product #secondary { margin-top: $base-space; }
+}
 
 .woocommerce .products h2 {
 	margin-bottom: 0.75em;
 }
 
-// 6. My account
+// 7. My account
 // -------------
 
 .woocommerce-form-login {
@@ -674,7 +969,7 @@
 	margin-top: $small-space;
 }
 
-// 7. Widgets
+// 8. Widgets
 // ----------
 
 .woocommerce .widget_price_filter {

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Narrow
+ * Template Name: Two columns
  * Template Post Type: post, page
  *
  * @package nelumbo
@@ -9,7 +9,7 @@
 get_header(); ?>
 
 <div class="row">
-	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
+	<div id="primary" class="content-area column">
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();
@@ -27,6 +27,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .row -->
+
 <?php if ( is_single() && get_the_post_navigation() ) : ?>
 <div id="post-nav-wrapper">
 	<div class="row">
@@ -37,4 +38,4 @@ get_header(); ?>
 </div><!-- #post-nav-wrapper -->
 <?php endif; ?>
 
-<?php get_footer(); ?>
+<?php get_footer();
