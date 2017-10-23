@@ -154,78 +154,6 @@ ul .fa-li {
 // 1.2. Typography
 // ---------------
 
-.h1 {
-	font-size: map-deep-get($header-styles, large, h1, font-size) * 1px;
-
-	@include breakpoint(medium only) {
-		font-size: map-deep-get($header-styles, medium, h1, font-size) * 1px;
-	}
-
-	@include breakpoint(small only) {
-		font-size: map-deep-get($header-styles, small, h1, font-size) * 1px;
-	}
-}
-
-.h2 {
-	font-size: map-deep-get($header-styles, large, h2, font-size) * 1px;
-
-	@include breakpoint(medium only) {
-		font-size: map-deep-get($header-styles, medium, h2, font-size) * 1px;
-	}
-
-	@include breakpoint(small only) {
-		font-size: map-deep-get($header-styles, small, h2, font-size) * 1px;
-	}
-}
-
-.h3 {
-	font-size: map-deep-get($header-styles, large, h3, font-size) * 1px;
-
-	@include breakpoint(medium only) {
-		font-size: map-deep-get($header-styles, medium, h3, font-size) * 1px;
-	}
-
-	@include breakpoint(small only) {
-		font-size: map-deep-get($header-styles, small, h3, font-size) * 1px;
-	}
-}
-
-.h4 {
-	font-size: map-deep-get($header-styles, large, h4, font-size) * 1px;
-
-	@include breakpoint(medium only) {
-		font-size: map-deep-get($header-styles, medium, h4, font-size) * 1px;
-	}
-
-	@include breakpoint(small only) {
-		font-size: map-deep-get($header-styles, small, h4, font-size) * 1px;
-	}
-}
-
-.h5 {
-	font-size: map-deep-get($header-styles, large, h5, font-size) * 1px;
-
-	@include breakpoint(medium only) {
-		font-size: map-deep-get($header-styles, medium, h5, font-size) * 1px;
-	}
-
-	@include breakpoint(small only) {
-		font-size: map-deep-get($header-styles, small, h5, font-size) * 1px;
-	}
-}
-
-.h6 {
-	font-size: map-deep-get($header-styles, large, h6, font-size) * 1px;
-
-	@include breakpoint(medium only) {
-		font-size: map-deep-get($header-styles, medium, h6, font-size) * 1px;
-	}
-
-	@include breakpoint(small only) {
-		font-size: map-deep-get($header-styles, small, h6, font-size) * 1px;
-	}
-}
-
 blockquote {
 	background-color: $light-gray;
 
@@ -695,6 +623,10 @@ form input[type="submit"] {
 			&:hover {
 				color: $anchor-color-hover;
 			}
+
+			.inverse & {
+				color: $white;
+			}
 		}
 
 		@include breakpoint(small only) {
@@ -1011,7 +943,7 @@ a.more-link {
 // 3.2. Cover
 // ----------
 
-#cover {
+.cover {
 	position: relative;
 	margin-bottom: $base-space;
 	overflow: hidden;

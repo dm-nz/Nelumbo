@@ -321,6 +321,10 @@
 		padding-right: $base-space;
 		background: $white;
 		border-top: 0;
+
+		.woocommerce-mini-cart__empty-message {
+			margin-bottom: 0;
+		}
 	}
 
 	@include breakpoint(small only) {
@@ -537,7 +541,7 @@
 	position: absolute;
 	display: none;
 	width: 100%;
-	margin-top: 1px;
+	margin-top: 2px;
 	background-color: scale-color($black, $lightness: 5%);
 	z-index: 2;
 

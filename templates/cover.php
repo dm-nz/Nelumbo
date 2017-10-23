@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<div id="cover" class="inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
+<div class="cover inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
 	<div class="row row-absolute">
 		<div class="column">
 			<header class="entry-header text-center">
