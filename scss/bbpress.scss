@@ -91,7 +91,7 @@
 	div.bbp-forum-author img.avatar,
 	div.bbp-topic-author img.avatar,
 	div.bbp-reply-author img.avatar {
-		margin-bottom: $small-space;
+		margin-bottom: 0.5rem;
 	}
 }
 
@@ -123,7 +123,7 @@ img.avatar {
 	h4 {
 		float: left;
 		margin-top: 4px;
-		margin-right: $base-space;
+		margin-right: 1rem;
 		font-weight: normal;
 	}
 }
