@@ -65,7 +65,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 93.75%;
+$global-font-size: 100.01%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -135,7 +135,7 @@ $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: $black;
 $header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: 0.75rem;
 $header-styles: (
   small: (
     'h1': ('font-size': 26),
@@ -191,8 +191,8 @@ $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
 $blockquote-color: $black;
-$blockquote-padding: rem-calc(15 20 15 19);
-$blockquote-border: 4px solid $primary-color;
+$blockquote-padding: rem-calc(0 0 0 20);
+$blockquote-border: 4px solid $dark-gray;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
 $cite-pseudo-content: '\2014 \0020';
@@ -851,7 +851,7 @@ $tooltip-radius: $global-radius;
 // 55. Top Bar
 // -----------
 
-$topbar-padding: 1.25rem 0;
+$topbar-padding: 1.4rem 0;
 $topbar-background: $body-background;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0;

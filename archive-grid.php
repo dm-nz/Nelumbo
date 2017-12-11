@@ -69,14 +69,10 @@ get_header(); ?>
 		</main><!-- #main.row -->
 	</div><!-- #primary.column -->
 </div><!-- .row -->
-<?php if ( get_the_posts_navigation() ) : ?>
-<div id="post-nav-wrapper">
-	<div class="row">
-		<div class="column">
-			<?php the_posts_navigation(); ?>
-		</div><!-- .column -->
-	</div><!-- .row -->
-</div><!-- #post-nav-wrapper -->
-<?php endif; ?>
+<?php
+if ( get_the_post_navigation() ) :
+	get_template_part( 'template-parts/post-navigation' );
+endif;
+?>
 
 <?php get_footer(); ?>

@@ -21,6 +21,7 @@
 	// 3.1. Entry
 	// 3.2. Cover
 	// 3.3. Post formats
+	// 3.4. Gutenberg
 // 4. Comments
 	// 4.1. Misc
 	// 4.2. Comment list
@@ -155,7 +156,6 @@ ul .fa-li {
 // ---------------
 
 blockquote {
-	background-color: $light-gray;
 
 	p:last-of-type {
 		margin-bottom: 0;
@@ -190,7 +190,13 @@ dl dd {
 
 #post-nav-wrapper {
 	background-color: $light-gray;
-	@include section-padding;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+
+	@include breakpoint(small only) {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
 }
 
 .comment-navigation,
@@ -299,7 +305,10 @@ dl dd {
 
 embed,
 iframe,
-object { max-width: 100%; }
+object,
+video {
+	max-width: 100%;
+}
 
 audio,
 video,
@@ -556,10 +565,6 @@ form input[type="submit"] {
 		}
 	}
 
-	ul ul {
-		display: none;
-	}
-
 	.dropdown.menu > li.is-dropdown-submenu-parent {
 		> a::after {
 			border-color: $body-font-color transparent transparent;
@@ -785,7 +790,7 @@ form input[type="submit"] {
 }
 
 .entry-header {
-	margin-bottom: 1rem;
+	margin-bottom: 0.75rem;
 
 	.entry-title {
 		line-height: 1.25;
@@ -944,7 +949,7 @@ a.more-link {
 
 .cover {
 	position: relative;
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
 	overflow: hidden;
 	background: $black;
 	background-position: center;
@@ -1012,6 +1017,124 @@ a.more-link {
 .format-video .entry-format:before 		{ content: '\f008'; }
 .format-image .entry-format:before 		{ content: '\f03e'; }
 .format-aside .entry-format:before 		{ content: '\f249'; }
+
+// 3.4. Gutenberg
+// --------------
+
+blockquote.wp-block-pullquote {
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+	border-left: 0;
+	background: none;
+
+	& > p {
+		font-family: inherit;
+	}
+}
+
+.wp-block-separator {
+	margin: 2.5em auto;
+}
+
+.post-template-gutenberg {
+
+	.entry-header,
+	.entry-footer,
+	.site-info,
+	.comments-area,
+	.entry-content h1,
+	.entry-content h2,
+	.entry-content h3,
+	.entry-content h4,
+	.entry-content h5,
+	.entry-content h6,
+	.entry-content p,
+	.entry-content table,
+	.wp-block-image,
+	.wp-block-gallery,
+	.wp-block-video,
+	.wp-block-embed,
+	.wp-block-text-columns,
+	.entry-content ul,
+	.entry-content ol,
+	.wp-block-cover-text {
+		max-width: 738px;
+		padding-left: 15px;
+		padding-right: 15px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.entry-content ul,
+	.entry-content ol {
+		padding-left: 2.25em;
+	}
+
+	.wp-block-cover-text.alignwide,
+	.wp-block-image.alignwide,
+	.wp-block-gallery.alignwide,
+	.wp-block-text-columns.alignwide {
+		max-width: 1100px;
+		margin: 2.5em auto;
+	}
+
+	@include breakpoint(small only) {
+		.wp-block-image.alignwide {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	blockquote,
+	.entry-content pre {
+		max-width: 708px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint(small only) {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+	}
+
+	.entry-content blockquote p,
+	.entry-content .wp-block-embed p {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.wp-block-button {
+		max-width: 400px;
+		display: block;
+		margin: 1.5em auto;
+		text-align: center;
+
+		a:hover {
+			color: rgba($white, 0.6);
+		}
+
+		@include breakpoint(small only) {
+			max-width: 100%;
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+	}
+}
+
+.wp-block-image,
+.wp-block-cover-image {
+	margin-bottom: 1.5rem;
+}
+
+.wp-block-quote.blocks-quote-style-2 {
+	padding: $blockquote-padding;
+}
+
+.entry-content .wp-block-cover-image {
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: 0;
+	}
+}
 
 // 4. Comments
 // -----------
@@ -1245,6 +1368,8 @@ h2.widget-title {
 .widget input#bbp_search_submit {
 	width: 33%;
 	height: 39px;
+	padding-top: 0;
+	padding-bottom: 0;
 }
 
 // 5.3. RSS & Recent comments
@@ -1329,7 +1454,13 @@ h2.widget-title {
 }
 
 #colophon {
-	@include section-padding;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+
+	@include breakpoint(small only) {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
 
 	.row {
 		opacity: 0.6;

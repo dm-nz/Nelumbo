@@ -551,10 +551,10 @@
 	&,
 	input[type="search"],
 	.close {
-		height: 78px;
+		height: 86px;
 
 		@include breakpoint(small only) {
-			height: 53px;
+			height: 56px;
 		}
 	}
 
@@ -934,10 +934,6 @@
 @include breakpoint(medium up) {
 	.single-product #primary,
 	.single-product #secondary { margin-top: 1rem; }
-}
-
-.woocommerce .products h2 {
-	margin-bottom: 0.75em;
 }
 
 // 7. My account

@@ -8,23 +8,7 @@
 
 get_header(); ?>
 
-<div class="cover inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
-	<div class="row row-absolute">
-		<div class="column">
-			<header class="entry-header text-center">
-				<?php
-				the_title( '<h1 class="entry-title">', '</h1>' );
-				if ( 'post' === get_post_type() ) :
-				?>
-					<div class="entry-meta">
-						<?php echo get_the_date(); ?>
-					</div><!-- .entry-meta -->
-				<?php endif; ?>
-			</header><!-- .entry-header -->
-		</div><!-- .column -->
-	</div><!-- .row -->
-	<div class="filter"></div>
-</div><!-- #cover -->
+<?php get_template_part( 'template-parts/entry-cover' ); ?>
 <div class="row">
 	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
 		<main id="main" class="site-main" role="main">
@@ -39,15 +23,11 @@ get_header(); ?>
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-</div>
-<?php if ( is_single() && get_the_post_navigation() ) : ?>
-<div id="post-nav-wrapper">
-	<div class="row">
-		<div class="column">
-			<?php the_post_navigation(); ?>
-		</div><!-- .column -->
-	</div><!-- .row -->
-</div><!-- #post-nav-wrapper -->
-<?php endif; ?>
+</div><!-- .row -->
+<?php
+if ( is_single() && get_the_post_navigation() ) :
+	get_template_part( 'template-parts/post-navigation' );
+endif;
+?>
 
 <?php get_footer(); ?>

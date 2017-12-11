@@ -27,14 +27,10 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div><!-- .row -->
-<?php if ( is_single() && get_the_post_navigation() ) : ?>
-<div id="post-nav-wrapper">
-	<div class="row">
-		<div class="column">
-			<?php the_post_navigation(); ?>
-		</div><!-- .column -->
-	</div><!-- .row -->
-</div><!-- #post-nav-wrapper -->
-<?php endif; ?>
+<?php
+if ( is_single() && get_the_post_navigation() ) :
+	get_template_part( 'template-parts/post-navigation' );
+endif;
+?>
 
 <?php get_footer(); ?>

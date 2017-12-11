@@ -108,7 +108,7 @@
 											<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 										<?php else : ?>
 											<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-										<?php	endif; ?>
+										<?php endif; ?>
 									</li><!-- .site-title -->
 									<?php
 									$description = get_bloginfo( 'description', 'display' );
@@ -134,10 +134,8 @@
 											wp_nav_menu( array(
 												'theme_location' => 'primary',
 												'menu_id' => 'primary-menu',
-												'menu_class' => 'dropdown menu',
 												'walker' => new Foundation_Top_Bar,
 												'items_wrap' => '<ul class="menu" data-responsive-menu="drilldown medium-dropdown" data-close-on-click-inside="false" data-back-button="<li class=\'js-drilldown-back\'><a>Back</a></li>">%3$s</ul>',
-												'container' => ''
 											) );
 										else :
 											wp_nav_menu( array(
