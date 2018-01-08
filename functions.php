@@ -21,38 +21,25 @@
 // --------
 
 if ( ! function_exists( 'nelumbo_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
+
+// Sets up theme defaults and registers support for various WordPress features.
+// Note that this function is hooked into the after_setup_theme hook, which runs before the init hook.
+// The init hook is too late for some features, such as indicating support for post thumbnails.
 function nelumbo_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Nelumbo, use a find and replace
-	 * to change 'nelumbo' to the name of your theme in all the template files.
-	 */
+
+	// Make theme available for translation. Translations can be filed in the /languages/ directory.
+	// If you're building a theme based on Nelumbo, use a find and replace to change 'nelumbo' to the name of your theme in all the template files.
 	load_theme_textdomain( 'nelumbo', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
+	// Let WordPress manage the document title. By adding theme support, we declare that this theme
+	// does not use a hard-coded <title> tag in the document head, and expect WordPress to provide it for us.
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
+	// Enable support for Post Thumbnails on posts and pages.
+	// @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -60,10 +47,16 @@ function nelumbo_setup() {
 		'primary' => esc_html__( 'Primary', 'nelumbo' ),
 	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
+	// Add active class to menu
+	function active_menu_item ($classes, $item) {
+	    if (in_array('current-menu-item', $classes) ){
+	        $classes[] = 'active ';
+	    }
+	    return $classes;
+	}
+	add_filter('nav_menu_css_class' , 'active_menu_item' , 10 , 2);
+
+	// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 	add_theme_support( 'html5', array(
 		'search-form',
 		'comment-form',
@@ -72,11 +65,8 @@ function nelumbo_setup() {
 		'caption',
 	) );
 
-	/*
-	 * Enable support for Post Formats.
-	 *
-	 * @link https://codex.wordpress.org/Post_Formats
-	 */
+	// Enable support for Post Formats.
+	// @link https://codex.wordpress.org/Post_Formats
 	add_theme_support( 'post-formats', array(
 		'aside',
 		'image',
@@ -92,13 +82,9 @@ function nelumbo_setup() {
 endif;
 add_action( 'after_setup_theme', 'nelumbo_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
+// Set the content width in pixels, based on the theme's design and stylesheet.
+// Priority 0 to make it available to lower priority callbacks.
+// @global int $content_width
 function nelumbo_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'nelumbo_content_width', 680 );
 }
@@ -120,24 +106,6 @@ function nelumbo_widgets_init() {
 		'after_title'	 => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'			=> esc_html__( 'Shop sidebar', 'nelumbo' ),
-		'id'			=> 'sidebar-shop',
-		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'	=> '</section>',
-		'before_title'	=> '<h2 class="widget-title">',
-		'after_title'	 => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'			=> esc_html__( 'Forum sidebar', 'nelumbo' ),
-		'id'			=> 'sidebar-forum',
-		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'	=> '</section>',
-		'before_title'	=> '<h2 class="widget-title">',
-		'after_title'	 => '</h2>',
-	) );
-	register_sidebar( array(
 		'name'			=> esc_html__( 'Footer', 'nelumbo' ),
 		'id'			=> 'footer-1',
 		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
@@ -148,6 +116,40 @@ function nelumbo_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'nelumbo_widgets_init' );
+
+function nelumbo_woocommerce_widgets_init() {
+	register_sidebar( array(
+		'name'			=> esc_html__( 'Shop sidebar', 'nelumbo' ),
+		'id'			=> 'sidebar-shop',
+		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	 => '</h2>',
+	) );
+}
+
+if ( is_woocommerce_activated() ) {
+	add_action( 'widgets_init', 'nelumbo_woocommerce_widgets_init' );
+}
+
+function nelumbo_bbpress_widgets_init() {
+	register_sidebar( array(
+		'name'			=> esc_html__( 'Forum sidebar', 'nelumbo' ),
+		'id'			=> 'sidebar-forum',
+		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'	=> '</section>',
+		'before_title'	=> '<h2 class="widget-title">',
+		'after_title'	 => '</h2>',
+	) );
+}
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+if ( is_plugin_active('bbpress') ) {
+	add_action( 'widgets_init', 'nelumbo_bbpress_widgets_init' );
+}
 
 // 3. Scripts and styles
 // ---------------------
@@ -199,7 +201,7 @@ add_image_size( 'entry-featured-img', 680, 680, false );
 
 // Logo
 add_theme_support('custom-logo', array(
-	'height'		=> 88,
+	'height'		=> 80,
 	'flex-height'	=> true
 ));
 

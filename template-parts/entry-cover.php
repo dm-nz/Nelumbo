@@ -25,4 +25,4 @@
 		</div><!-- .column -->
 	</div><!-- .row -->
 	<div class="filter"></div>
-</div><!-- #cover -->
+</div><!-- .cover -->

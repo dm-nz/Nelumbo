@@ -25,7 +25,7 @@
 					<div class="site-copyright medium-6 columns">
 						<i class="fa fa-copyright"></i> <?php echo date('Y') . " "; bloginfo('name'); ?>
 					</div><!-- .site-copyright.medium-6 -->
-					<div class="site-developer medium-6 columns">
+					<div class="site-developer medium-6 columns medium-text-right">
 						<i class="fa fa-wordpress"></i> <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'nelumbo' ), 'Nelumbo', '<a href="https://lotus.kg/" rel="designer">Lotus</a>' ); ?>
 					</div><!-- .site-developer.medium-6 -->
 				</div><!-- .row -->

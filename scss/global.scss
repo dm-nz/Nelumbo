@@ -110,10 +110,10 @@ a {
 
 ul.fa-ul {
 	line-height: 1.9;
-}
 
-ul .fa-li {
-	top: 0.5em;
+	.fa-li {
+		top: 0.5em;
+	}
 }
 
 .row-absolute {
@@ -157,7 +157,7 @@ ul .fa-li {
 
 blockquote {
 
-	p:last-of-type {
+	p:last-child {
 		margin-bottom: 0;
 	}
 }
@@ -450,7 +450,7 @@ form input[type="submit"] {
 	color: $white;
 
 	&:hover {
-		opacity: 0.75;
+		border-color: rgba($white, 0.75);
 	}
 }
 
@@ -545,12 +545,8 @@ form input[type="submit"] {
 		padding: 0.5rem 0 !important;
 	}
 
-	&.with-logo {
-		padding: 1.2rem 0;
-
-		.menu > li {
-			vertical-align: middle;
-		}
+	&.with-logo .menu > li {
+		vertical-align: middle;
 	}
 
 	a {
@@ -586,9 +582,13 @@ form input[type="submit"] {
 	color: $white;
 	text-decoration: none;
 
-	&:hover {
+	#page &:hover {
 		color: rgba($white, 0.75);
 	}
+}
+
+.inverse .menu .active > a {
+	color: scale-color($menu-item-color-active, $lightness: 50%);
 }
 
 // 2.2. Top bar title
@@ -607,7 +607,7 @@ form input[type="submit"] {
 
 		@include breakpoint(medium up) {
 			width: auto;
-			height: 44px;
+			height: 40px;
 		}
 	}
 
@@ -663,7 +663,7 @@ form input[type="submit"] {
 @include breakpoint(medium up) {
 	.top-bar.with-logo .top-bar-left,
 	.top-bar.with-logo .top-bar-right {
-		margin-top: 3px !important;
+		margin-top: 2px !important;
 	}
 }
 
@@ -1469,12 +1469,6 @@ h2.widget-title {
 			.columns {
 				margin-top: 0.5rem;
 				margin-bottom: 0.5rem;
-			}
-		}
-
-		@include breakpoint(medium up) {
-			.site-developer {
-				text-align: right;
 			}
 		}
 	}
