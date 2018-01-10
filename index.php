@@ -14,37 +14,40 @@
 
 get_header(); ?>
 
-<div class="row">
+<div class="grid-container">
 <?php if ( ! is_active_sidebar( 'sidebar-1' ) ) : ?>
-	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
+	<div class="grid-x grid-padding-x align-center">
+		<div id="primary" class="content-area large-7 medium-10 align-center cell">
 <?php else : ?>
-	<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
+	<div class="grid-x grid-padding-x">
+		<div id="primary" class="content-area large-7 large-collapse-right medium-8 cell">
 <?php endif; ?>
-		<main id="main" class="site-main" role="main">
-		<?php
-		if ( have_posts() ) :
-			if ( is_home() && ! is_front_page() ) : ?>
-			<header class="entry-header">
-				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-			</header><!-- .entry-header -->
-			<?php endif; ?>
-			<?php /* Start the Loop */
-			while ( have_posts() ) : the_post();
-				/**
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-			endwhile;
-		else :
-			get_template_part( 'template-parts/content', 'none' );
-		endif;
-		?>
-		</main><!-- #main -->
-	</div><!-- #primary.large-7 -->
+			<main id="main" class="site-main" role="main">
+			<?php
+			if ( have_posts() ) :
+				if ( is_home() && ! is_front_page() ) : ?>
+				<header class="entry-header">
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header><!-- .entry-header -->
+				<?php endif; ?>
+				<?php /* Start the Loop */
+				while ( have_posts() ) : the_post();
+					/**
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
+				endwhile;
+			else :
+				get_template_part( 'template-parts/content', 'none' );
+			endif;
+			?>
+			</main><!-- #main -->
+		</div><!-- #primary.large-7 -->
 	<?php get_sidebar(); ?>
-</div><!-- .row -->
+	</div><!-- .grid-x -->
+</div><!-- .grid-container -->
 <?php
 if ( get_the_post_navigation() ) :
 	get_template_part( 'template-parts/post-navigation' );

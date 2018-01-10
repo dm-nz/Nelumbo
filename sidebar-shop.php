@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-shop' ) ) :
 endif;
 ?>
 
-<div class="medium-3 columns">
+<div class="medium-3 cell">
 	<aside id="secondary" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-shop' ); ?>
 	</aside><!-- #secondary -->

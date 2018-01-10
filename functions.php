@@ -109,7 +109,7 @@ function nelumbo_widgets_init() {
 		'name'			=> esc_html__( 'Footer', 'nelumbo' ),
 		'id'			=> 'footer-1',
 		'description'	 => esc_html__( 'Add widgets here.', 'nelumbo' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s large-3 medium-6 columns" data-equalizer-watch>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s large-3 medium-6 cell" data-equalizer-watch>',
 		'after_widget'	=> '</section>',
 		'before_title'	=> '<h2 class="widget-title">',
 		'after_title'	 => '</h2>',

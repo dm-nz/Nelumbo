@@ -10,9 +10,11 @@
 ?>
 
 <div id="post-nav-wrapper">
-    <div class="row">
-        <div class="column">
-            <?php the_post_navigation(); ?>
-        </div><!-- .column -->
-    </div><!-- .row -->
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell">
+                <?php the_post_navigation(); ?>
+            </div><!-- .cell -->
+        </div><!-- .grid-x -->
+    </div><!-- .grid-containter -->
 </div><!-- #post-nav-wrapper -->

@@ -56,5 +56,4 @@
 		);
 		?>
 	</footer><!-- .entry-footer -->
-	<div class="clear"></div>
 </article><!-- #post-## -->
