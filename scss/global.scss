@@ -427,8 +427,8 @@ div.wpcf7 img.ajax-loader {
 // 1.10. Buttons
 // -------------
 
-.submit,
-.search-submit,
+input.submit,
+input.search-submit,
 form input[type="submit"] {
 	@include button;
 }
@@ -1354,7 +1354,8 @@ h2.widget-title {
 
 .widget .search-form label,
 .widget .woocommerce-product-search input[type="search"],
-.widget input#bbp_search {
+.widget input#bbp_search,
+#buddypress input#messages_search {
 	width: 65%;
 	float: left;
 	margin-right: 2%;
@@ -1362,7 +1363,8 @@ h2.widget-title {
 
 .widget .search-form .search-submit,
 .widget .woocommerce-product-search input[type="submit"],
-.widget input#bbp_search_submit {
+.widget input#bbp_search_submit,
+#buddypress input#messages_search_submit {
 	width: 33%;
 	height: 39px;
 	padding-top: 0;

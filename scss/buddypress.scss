@@ -1,0 +1,272 @@
+// Table of contents
+// -----------------
+// 1. Misc
+// 2. Header
+// 3. Navigation
+// 4. Activity
+// 5. Profile
+// 6. Messages
+// 7. Groups
+
+// 1. Misc
+// -------
+
+.bp-user #primary,
+.groups #primary {
+    margin-top: 0;
+}
+
+#buddypress {
+
+    .comment-reply-link,
+    .generic-button a,
+    .standard-form button,
+    a.button,
+    input,
+    ul.button-nav li a,
+    a.bp-title-button {
+        border-radius: $global-radius !important;
+    }
+
+    div#message p {
+        border-radius: $global-radius;
+    }
+
+    .standard-form legend {
+        margin-top: 0;
+    }
+
+    // 2. Header
+    // ---------
+
+    #item-header-cover-image {
+        padding: 0;
+    }
+
+    .entry-content & .user-mentionname {
+        margin-top: 1rem;
+        margin-bottom: 0;
+    }
+
+    div#item-header {
+        margin-bottom: 1rem;
+
+        div#item-meta {
+            margin-top: 5px;
+
+            #latest-update a {
+                margin-left: 5px;
+            }
+        }
+
+        @include breakpoint(medium down) {
+            div#item-header-cover-image .user-nicename {
+                text-shadow: none;
+                color: $header-color;
+            }
+        }
+    }
+
+    // 3. Navigation
+    // -------------
+
+    div.item-list-tabs ul {
+
+        @include breakpoint(small only) {
+            li.last {
+                float: none;
+                clear: both;
+                padding-top: 1.5rem;
+            }
+        }
+
+        li a,
+        li span {
+            padding: 0.65rem 1.15rem;
+            border-radius: $global-radius;
+        }
+    }
+
+    #item-nav {
+        margin-bottom: 2rem;
+
+        div.item-list-tabs ul li {
+            float: none;
+
+            span {
+                float: right;
+                padding: 0;
+                min-width: 22px;
+                height: 22px;
+                margin-top: 3px;
+                border-radius: 50px;
+                font-size: 75%;
+            }
+        }
+    }
+
+    div.item-list-tabs#subnav {
+        margin: 0 0 2rem;
+
+        .last.filter {
+            min-width: 261px;
+        }
+
+        label {
+            display: inline-block;
+            margin-right: 0.75rem;
+        }
+    }
+
+    // 4. Activity
+    // -----------
+
+    #activity-stream .activity-header p {
+        margin-top: 0;
+    }
+
+    div.activity-meta a {
+        padding: 0.5rem 0.75rem;
+    }
+
+    #reply-title small a span,
+    a.bp-primary-action span {
+        margin-left: 5px;
+        padding: 1px 5px;
+        border-radius: 2px;
+        background-color: $medium-gray;
+        @include transition;
+    }
+
+    div.activity-comments > ul {
+        padding-left: 0;
+
+        li {
+            border-top: 0;
+        }
+
+        .acomment-meta a:first-of-type {
+            margin-left: 5px;
+        }
+
+        .acomment-options {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .acomment-options {
+        margin-top: 0;
+    }
+
+    .activity-list {
+
+        .activity-content .activity-header img.avatar {
+            margin: 0 0.5em 0 0.25em !important;
+        }
+
+        li.load-more,
+        li.load-newest {
+            border-radius: $global-radius;
+        }
+    }
+
+    // 5. Profile
+    // ----------
+
+    table.profile-fields tbody {
+        border: 0;
+
+        td.label {
+            border: 0;
+        }
+    }
+
+    ul.button-nav {
+        margin-left: 0;
+    }
+
+    // 6. Messages
+    // -----------
+
+    .pagination a {
+        display: inline-block;
+    }
+
+    div.message-search {
+        margin-right: 0;
+
+        @include breakpoint(small only) {
+            margin-top: 2rem;
+            width: 100%;
+        }
+    }
+
+    input#messages_search_submit,
+    input#members_search_submit {
+        @include button;
+        margin-bottom: 0;
+    }
+
+    // 7. Groups
+    // ---------
+
+    @include breakpoint(large) {
+        .single-item.groups & div#item-header-content .user-nicename {
+            margin-top: -3rem
+        }
+    }
+
+    div#item-header a.button,
+    div#item-header div.generic-button {
+        margin-top: 20px;
+    }
+
+    @include breakpoint(medium down) {
+        div#item-header div#item-actions {
+            width: 100%;
+        }
+    }
+
+    input#members_search_submit {
+        height: 39px;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: -3px;
+    }
+
+    div.dir-search input[type="text"],
+    li.groups-members-search input[type="text"] {
+        font-size: 100%;
+        padding: $input-padding;
+    }
+
+    #member-list {
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+    }
+
+    #members-dir-search {
+        margin-top: -75px;
+
+        @include breakpoint(medium down) {
+            float: none;
+            max-width: 414px;
+            margin-top: 1rem;
+        }
+
+        #search-members-form {
+            min-width: 200px;
+
+            label {
+                width: 66%;
+                display: inline-block;
+            }
+
+            input#members_search_submit {
+                width: 32%;
+            }
+        }
+    }
+}
