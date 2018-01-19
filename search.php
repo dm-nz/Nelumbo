@@ -12,7 +12,7 @@ get_header(); ?>
 <div class="grid-container">
 <?php if ( ! is_active_sidebar( 'sidebar-1' ) ) : ?>
 	<div class="grid-x grid-padding-x align-center">
-		<div id="primary" class="content-area large-7 medium-10 align-center cell">
+		<div id="primary" class="content-area large-8 medium-10 align-center cell">
 <?php else : ?>
 	<div class="grid-x grid-padding-x">
 		<div id="primary" class="content-area large-7 large-collapse-right medium-8 cell">

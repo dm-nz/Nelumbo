@@ -11,7 +11,7 @@ get_header(); ?>
 <?php get_template_part( 'template-parts/entry-cover' ); ?>
 <div class="grid-container">
 	<div class="grid-x grid-padding-x align-center">
-		<div id="primary" class="content-area large-7 medium-10 columns">
+		<div id="primary" class="content-area large-8 medium-10 cell">
 			<main id="main" class="site-main" role="main">
 				<?php
 				while ( have_posts() ) : the_post();

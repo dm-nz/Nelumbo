@@ -783,6 +783,10 @@ form input[type="submit"] {
 .entry-featured-img {
 	margin-top: 0.25rem;
 	margin-bottom: 1.5rem;
+
+	img {
+		width: 100%;
+	}
 }
 
 .entry-header {
