@@ -1039,6 +1039,7 @@ blockquote.wp-block-pullquote {
 
 .post-template-gutenberg {
 
+	figure[class^='wp-block-embed'],
 	.entry-header,
 	.entry-footer,
 	.site-info,
@@ -1058,7 +1059,8 @@ blockquote.wp-block-pullquote {
 	.wp-block-text-columns,
 	.entry-content ul,
 	.entry-content ol,
-	.wp-block-cover-text {
+	.wp-block-cover-text,
+	.wp-block-cover-image {
 		max-width: 738px;
 		padding-left: 15px;
 		padding-right: 15px;
@@ -1066,17 +1068,36 @@ blockquote.wp-block-pullquote {
 		margin-right: auto;
 	}
 
+	.wp-block-cover-image {
+		max-width: 708px;
+	}
+
 	.entry-content ul,
 	.entry-content ol {
 		padding-left: 2.25em;
 	}
 
-	.wp-block-cover-text.alignwide,
-	.wp-block-image.alignwide,
-	.wp-block-gallery.alignwide,
-	.wp-block-text-columns.alignwide {
+	.entry-content .alignwide {
 		max-width: 1100px;
 		margin: 2.5em auto;
+
+		img {
+			width: 100%;
+		}
+
+		&.wp-block-cover-image {
+			max-width: 1070px;
+		}
+	}
+
+	.entry-content .alignfull {
+		max-width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	@include breakpoint(small only) {
@@ -1105,26 +1126,22 @@ blockquote.wp-block-pullquote {
 	}
 
 	.wp-block-button {
-		max-width: 400px;
-		display: block;
 		margin: 1.5em auto;
-		text-align: center;
+	}
 
-		a:hover {
-			color: rgba($white, 0.6);
-		}
-
-		@include breakpoint(small only) {
-			max-width: 100%;
-			margin-left: 15px;
-			margin-right: 15px;
-		}
+	figure[class^='wp-block-embed'] {
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
 	}
 }
 
 .wp-block-image,
 .wp-block-cover-image {
 	margin-bottom: 1.5rem;
+}
+
+.entry-content ul.wp-block-gallery {
+	padding-left: 0;
 }
 
 .wp-block-quote.blocks-quote-style-2 {
@@ -1135,6 +1152,23 @@ blockquote.wp-block-pullquote {
 	h1, h2, h3, h4, h5, h6 {
 		margin-top: 0;
 	}
+}
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 // 4. Comments
