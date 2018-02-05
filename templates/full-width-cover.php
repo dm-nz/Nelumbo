@@ -22,7 +22,7 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary.column -->
 </div><!-- .row -->
 <?php
 if ( is_single() && get_the_post_navigation() ) :
@@ -30,4 +30,4 @@ if ( is_single() && get_the_post_navigation() ) :
 endif;
 ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

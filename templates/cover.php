@@ -11,7 +11,7 @@ get_header(); ?>
 <?php get_template_part( 'template-parts/entry-cover' ); ?>
 <div class="row">
 <?php if ( ! is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
+	<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
 <?php else : ?>
 	<div id="primary" class="content-area large-7 large-collapse-right medium-8 columns">
 <?php endif; ?>
@@ -35,4 +35,4 @@ if ( is_single() && get_the_post_navigation() ) :
 endif;
 ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

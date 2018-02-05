@@ -10,7 +10,7 @@ get_header(); ?>
 
 <?php get_template_part( 'template-parts/entry-cover' ); ?>
 <div class="row">
-	<div id="primary" class="content-area large-7 medium-10 medium-centered columns">
+	<div id="primary" class="content-area large-8 medium-10 medium-centered columns">
 		<main id="main" class="site-main" role="main">
 			<?php
 			while ( have_posts() ) : the_post();
@@ -22,7 +22,7 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 		</main><!-- #main -->
-	</div><!-- #primary -->
+	</div><!-- #primary.large-8.medium-10 -->
 </div><!-- .row -->
 <?php
 if ( is_single() && get_the_post_navigation() ) :
@@ -30,4 +30,4 @@ if ( is_single() && get_the_post_navigation() ) :
 endif;
 ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

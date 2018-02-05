@@ -31,4 +31,4 @@ if ( is_single() && get_the_post_navigation() ) :
 endif;
 ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

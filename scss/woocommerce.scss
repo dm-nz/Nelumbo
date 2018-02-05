@@ -581,13 +581,18 @@
 		display: none;
 	}
 
-	.close i {
-		@include vertical-center;
-		color: $medium-gray;
-		transition: 0.3s;
+	.close {
+		position: relative;
 
-		&:hover {
-			color: $dark-gray;
+		i.fa {
+			@include vertical-center;
+			@include transition;
+			color: $medium-gray;
+			right: 0;
+
+			&:hover {
+				color: $dark-gray;
+			}
 		}
 	}
 }

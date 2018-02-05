@@ -25,4 +25,4 @@ get_header(); ?>
 	endif; ?>
 </div><!-- .row -->
 
-<?php get_footer(); ?>
+<?php get_footer();
