@@ -43,7 +43,7 @@ function nelumbo_woocommerce_widgets_init() {
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if ( is_plugin_active('woocommerce') ) {
+if ( is_plugin_active('woocommerce/woocommerce.php') ) {
 	add_action( 'widgets_init', 'nelumbo_woocommerce_widgets_init' );
 }
 

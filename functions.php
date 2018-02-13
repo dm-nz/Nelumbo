@@ -7,6 +7,9 @@
  * @package nelumbo
  */
 
+// Setup Carbon Fields
+// require_once( get_template_directory() . '/functions/caron-fields-setup.php' );
+
 // Setup theme
 require_once( get_template_directory() . '/functions/theme-setup.php' );
 
@@ -37,8 +40,8 @@ require_once( get_template_directory() . '/functions/images.php' );
 // Register walkers
 require_once( get_template_directory() . '/functions/walkers.php' );
 
-// WooCommerce
+// Setup WooCommerce
 require_once( get_template_directory() . '/functions/woocommerce-setup.php' );
 
-// BuddyPress
+// Setup BuddyPress
 require_once( get_template_directory() . '/functions/buddypress-setup.php' );
