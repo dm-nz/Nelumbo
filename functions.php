@@ -8,7 +8,7 @@
  */
 
 // Setup Carbon Fields
-// require_once( get_template_directory() . '/functions/caron-fields-setup.php' );
+// require_once( get_template_directory() . '/functions/carbon-fields-setup.php' );
 
 // Setup theme
 require_once( get_template_directory() . '/functions/theme-setup.php' );
