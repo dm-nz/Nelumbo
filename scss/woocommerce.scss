@@ -46,12 +46,13 @@
 
 .woocommerce .button.hollow {
 	background: none;
-	color: $primary-color;
-	border-color: $primary-color;
+	color: $button-background;
+	border-color: $button-background;
 
 	&:hover {
 		background: none;
-		color: scale-color($primary-color, $lightness: $button-hollow-hover-lightness);
+		color: $button-background-hover;
+		border-color: $button-background-hover;
 	}
 }
 
@@ -60,10 +61,10 @@
 }
 
 .woocommerce a.button.alt {
-	background-color: $primary-color;
+	background-color: $button-background;
 
 	&:hover {
-		background-color: scale-color($primary-color, $lightness: -14%);
+		background-color: $button-background-hover;
 	}
 }
 
@@ -157,7 +158,7 @@
 }
 
 .woocommerce .woocommerce-breadcrumb a:hover {
-	color: scale-color($primary-color, $lightness: -14%);
+	color: $anchor-color-hover;
 }
 
 .woocommerce .woocommerce-form-login input.button {
@@ -221,7 +222,7 @@
 	}
 
 	& .inverse .is-dropdown-submenu.menu > li > a:hover {
-		color: $primary-color;
+		color: $anchor-color-hover;
 	}
 
 	.is-dropdown-submenu-parent a::after {

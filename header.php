@@ -47,11 +47,11 @@
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'nelumbo' ); ?></a>
 		<header id="masthead" role="banner" data-sticky-container>
 			<div class="small-12" data-sticky data-options="marginTop:0;">
-			<?php
-			if ( is_woocommerce_activated() ) :
-				get_template_part( 'template-parts/top-stripe' );
-			endif;
-			?>
+				<?php
+				if ( is_woocommerce_activated() ) :
+					get_template_part( 'template-parts/top-stripe' );
+				endif;
+				?>
 				<div class="top-bar <?php if ( has_custom_logo() ) : echo 'with-logo'; endif; ?>">
 					<div class="row">
 						<div class="column">

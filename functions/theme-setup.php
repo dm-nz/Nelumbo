@@ -72,3 +72,9 @@ function nelumbo_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'nelumbo_content_width', 680 );
 }
 add_action( 'after_setup_theme', 'nelumbo_content_width', 0 );
+
+
+// Query WooCommerce activation
+function is_woocommerce_activated() {
+	return class_exists( 'woocommerce' ) ? true : false;
+}

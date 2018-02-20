@@ -11,11 +11,6 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-// Query WooCommerce activation
-function is_woocommerce_activated() {
-	return class_exists( 'woocommerce' ) ? true : false;
-}
-
 // Gallery
 add_action( 'after_setup_theme', 'woocommerce_gallery' );
 
