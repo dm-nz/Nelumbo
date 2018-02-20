@@ -486,12 +486,12 @@ form input[type="submit"] {
 
 	a {
 		background-color: transparent;
-		color: $primary-color;
-		border: 1px solid $primary-color;
+		color: $button-background;
+		border: 1px solid $button-background;
 
 		&:hover {
-			color: scale-color($primary-color, $lightness: $button-hollow-hover-lightness);
-			border-color: scale-color($primary-color, $lightness: $button-hollow-hover-lightness);
+			color: $button-background-hover;
+			border-color: $button-background-hover;
 		}
 	}
 }
@@ -598,7 +598,6 @@ form input[type="submit"] {
 		margin-right: 1rem;
 
 		@include breakpoint(medium up) {
-			width: auto;
 			height: 40px;
 		}
 	}
@@ -890,6 +889,11 @@ a.more-link {
 	color: $dark-gray;
 }
 
+.entry-meta a:hover,
+.entry-footer a:hover {
+	color: $anchor-color-hover;
+}
+
 .byline {
 	margin-left: -3px;
 }
@@ -996,7 +1000,7 @@ a.more-link {
 
 @include breakpoint(medium up) {
 	.format-aside h1.entry-title,
-	.format-aside h2.entry-title  {
+	.format-aside h2.entry-title {
 		font-size: 1.5em;
 	}
 }
@@ -1155,20 +1159,20 @@ blockquote.wp-block-pullquote {
 }
 
 .wp-block-embed.type-video > .wp-block-embed__wrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-top: 56.25%;
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;
 }
 
 .wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
 }
 
 // 4. Comments
@@ -1236,7 +1240,7 @@ blockquote.wp-block-pullquote {
 					color: $body-font-color;
 
 					&:hover {
-						color: $primary-color;
+						color: $anchor-color-hover;
 					}
 				}
 
@@ -1268,7 +1272,7 @@ blockquote.wp-block-pullquote {
 				color: $dark-gray;
 
 				&:hover {
-					color: $primary-color;
+					color: $anchor-color-hover;
 				}
 			}
 
@@ -1418,10 +1422,10 @@ h2.widget-title {
 
 .widget.widget_rss ul li a,
 .widget_recent_comments ul li a {
-	color: $primary-color;
+	color: $anchor-color;
 
 	&:hover {
-		color: scale-color($primary-color, $lightness: -14%);
+		color: $anchor-color-hover;
 	}
 }
 
