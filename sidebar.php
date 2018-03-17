@@ -15,5 +15,5 @@ endif;
 <div class="medium-4 large-collapse-left columns">
 	<aside id="secondary" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</aside><!-- #secondary -->
+	</aside><!-- #secondary.widget-area -->
 </div><!-- .medium-4 -->

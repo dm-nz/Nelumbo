@@ -3,10 +3,6 @@
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
-@import 'mixins';
-@import 'global';
-@import 'woocommerce';
-@import 'bbpress';
 
 @include foundation-global-styles;
 @include foundation-grid;
@@ -51,8 +47,11 @@
 @include foundation-visibility-classes;
 @include foundation-float-classes;
 // @include foundation-flex-classes;
-
 // @include foundation-prototype-classes;
-
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@import 'mixins';
+@import 'global';
+@import 'woocommerce';
+@import 'bbpress';

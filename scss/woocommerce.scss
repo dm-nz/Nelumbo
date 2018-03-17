@@ -39,6 +39,7 @@
 .woocommerce nav.woocommerce-pagination ul li span,
 .woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce .widget_price_filter .price_slider_amount .button,
+#page .woocommerce button.button,
 .btn {
 	@include button;
 	font-weight: normal;
@@ -148,8 +149,16 @@
 	color: $warning-color;
 }
 
-.woocommerce table {
-	border-radius: $global-radius !important;
+#page .woocommerce table {
+	border-radius: $global-radius;
+}
+
+.woocommerce #page select {
+	padding-top: 0.35rem;
+}
+
+.woocommerce form .form-row textarea {
+	box-shadow: $input-shadow;
 }
 
 .woocommerce .woocommerce-breadcrumb,
@@ -186,10 +195,10 @@
 	& .inverse,
 	& .inverse .menu > li > a {
 		color: rgba($white, 0.8);
+	}
 
-		&:hover {
-			color: rgba($white, 0.6);
-		}
+	#page & .inverse .menu > li > a:hover {
+		color: rgba($white, 0.6);
 	}
 
 	.menu > li.first > a {
@@ -404,9 +413,13 @@
 	margin-bottom: 0;
 }
 
-.woocommerce input.button:disabled,
-.woocommerce input.button[disabled]:disabled {
+#page .woocommerce .button:disabled,
+#page .woocommerce .button[disabled]:disabled {
 	color: $white;
+
+	&:hover {
+		background-color: $button-background-hover;
+	}
 }
 
 .woocommerce table.cart td.actions {
@@ -578,7 +591,7 @@
 		}
 	}
 
-	input[type="submit"] {
+	button[type="submit"] {
 		display: none;
 	}
 
@@ -589,7 +602,7 @@
 			@include vertical-center;
 			@include transition;
 			color: $medium-gray;
-			right: 0;
+			right: rem-calc(15);
 
 			&:hover {
 				color: $dark-gray;
@@ -947,6 +960,11 @@
 
 .woocommerce-form-login {
 	max-width: 585px;
+}
+
+.woocommerce-account #page .woocommerce button.button {
+	margin-bottom: 0;
+	margin-right: 0.5rem;
 }
 
 .woocommerce-MyAccount-navigation ul {

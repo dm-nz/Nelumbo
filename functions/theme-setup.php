@@ -73,7 +73,6 @@ function nelumbo_content_width() {
 }
 add_action( 'after_setup_theme', 'nelumbo_content_width', 0 );
 
-
 // Query WooCommerce activation
 function is_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;

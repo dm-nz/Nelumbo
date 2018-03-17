@@ -40,8 +40,8 @@
             <li><a href="/my-account/edit-address/"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' ); ?></span></a></li>
             <li><a href="/my-account/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' ); ?></span></a></li>
             <li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' ); ?></span></a></li>
-        </ul><!-- .menu.dropdown -->
-    </div>
+        </ul><!-- .vertical.menu -->
+    </div><!-- #accrount-dropdown.dropdown-pane -->
     <div class="product-search inverse">
         <div class="row">
             <div class="large-11 columns">

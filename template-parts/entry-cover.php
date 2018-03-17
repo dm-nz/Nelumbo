@@ -10,6 +10,7 @@
 ?>
 
 <div class="cover inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
+	<div class="filter"></div>
 	<div class="row row-absolute">
 		<div class="column">
 			<header class="entry-header text-center">
@@ -24,5 +25,4 @@
 			</header><!-- .entry-header -->
 		</div><!-- .column -->
 	</div><!-- .row -->
-	<div class="filter"></div>
 </div><!-- .cover -->

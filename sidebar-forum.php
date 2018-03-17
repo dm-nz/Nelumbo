@@ -15,5 +15,5 @@ endif;
 <div class="medium-3 columns">
 	<aside id="secondary" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-forum' ); ?>
-	</aside><!-- #secondary -->
+	</aside><!-- #secondary.widget-area -->
 </div><!-- .medium-3 -->
