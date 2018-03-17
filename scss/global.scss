@@ -380,10 +380,6 @@ legend {
 	font-weight: bold;
 }
 
-select {
-	padding-top: 0.35rem !important;
-}
-
 form textarea[rows] {
 	height: 9rem;
 }
@@ -419,9 +415,10 @@ div.wpcf7-response-output {
 	border-radius: $global-radius;
 }
 
-div.wpcf7 img.ajax-loader {
-	position: absolute;
+div.wpcf7 .ajax-loader {
+ 	position: absolute;
 	margin-top: 0.75em;
+	margin: 0.5rem 0 0 0.5rem;
 }
 
 // 1.10. Buttons
@@ -543,6 +540,10 @@ form input[type="submit"] {
 
 	a {
 		color: $body-font-color;
+
+		&:hover {
+			color: $anchor-color-hover;
+		}
 	}
 
 	&.inverse a {
@@ -621,12 +622,6 @@ form input[type="submit"] {
 
 			.inverse & {
 				color: $white;
-			}
-		}
-
-		@include breakpoint(small only) {
-			img {
-				height: 24px;
 			}
 		}
 	}
@@ -847,7 +842,7 @@ form input[type="submit"] {
 a.more-link {
 	display: inline-block;
 	margin-bottom: 1.25rem;
-	padding: 0.2em 0.75em 0.35em;
+	padding: 0.3em 0.75em 0.45em;
 	background-color: $light-gray;
 	border-radius: $global-radius;
 	color: $body-font-color;
@@ -1089,9 +1084,15 @@ blockquote.wp-block-pullquote {
 			width: 100%;
 		}
 
-		&.wp-block-cover-image {
+		&.wp-block-cover-image,
+		&.wp-block-embed {
 			max-width: 1070px;
 		}
+	}
+
+	.wp-block-embed.alignwide {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
 	.entry-content .alignfull {
@@ -1144,6 +1145,11 @@ blockquote.wp-block-pullquote {
 	margin-bottom: 1.5rem;
 }
 
+.wp-block-cover-image .wp-block-cover-image-text,
+.wp-block-cover-image h2 {
+	font-weight: bold;
+}
+
 .entry-content ul.wp-block-gallery {
 	padding-left: 0;
 }
@@ -1158,21 +1164,8 @@ blockquote.wp-block-pullquote {
 	}
 }
 
-.wp-block-embed.type-video > .wp-block-embed__wrapper {
-	position: relative;
-	width: 100%;
-	height: 0;
-	padding-top: 56.25%;
-}
-
-.wp-block-embed.type-video > .wp-block-embed__wrapper > iframe {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.wp-block-embed {
+	@include responsive-embed('widescreen');
 }
 
 // 4. Comments
@@ -1408,7 +1401,7 @@ h2.widget-title {
 .widget input#bbp_search_submit,
 #buddypress input#messages_search_submit {
 	width: 33%;
-	height: 39px;
+	height: 41px;
 	padding-top: 0;
 	padding-bottom: 0;
 }

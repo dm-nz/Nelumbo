@@ -2,6 +2,7 @@ $(document).foundation();
 
 $(document).ready(function(){
 
+	// Toggle header shopping cart with click on small screens
 	if ($(window).width() <= 640) {
 		$('.top-stripe .cart').click(function(e){
 			e.preventDefault();
@@ -9,11 +10,13 @@ $(document).ready(function(){
 		})
 	}
 
+	// Toggle product search
 	$('.search-toggle').click(function() {
 		$('.product-search').toggle();
 		$('.product-search input.search-field').focus();
 	})
 
+	// Close product search on close button
 	$('.product-search .close a').click(function() {
 		$('.product-search').hide();
 	})
