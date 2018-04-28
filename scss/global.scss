@@ -197,6 +197,10 @@ dl dd {
 
 	a {
 		color: $body-font-color;
+
+		&:hover {
+			color: $anchor-color-hover;
+		}
 	}
 
 	.nav-previous {
@@ -576,7 +580,7 @@ form input[type="submit"] {
 	text-decoration: none;
 
 	#page &:hover {
-		color: rgba($white, 0.75);
+		color: rgba($white, 0.5);
 	}
 }
 
@@ -1090,12 +1094,15 @@ blockquote.wp-block-pullquote {
 		}
 	}
 
-	.wp-block-embed.alignwide {
-		margin-top: 0;
-		margin-bottom: 0;
+	@include breakpoint(large up) {
+		.wp-block-embed.alignwide {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 	}
 
 	.entry-content .alignfull {
+		width: 100%;
 		max-width: 100%;
 		padding-left: 0;
 		padding-right: 0;

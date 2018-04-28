@@ -33,15 +33,15 @@
             </div><!-- .auto.cell -->
         </div><!-- .grid-x -->
     </div><!-- .grid-container -->
-    <div id="cart-dropdown" class="dropdown-pane" data-dropdown data-dropdown data-hover="true" data-hover-pane="true">
+    <div id="cart-dropdown" class="dropdown-pane" data-dropdown data-hover="true" data-hover-pane="true">
         <?php the_widget( 'WC_Widget_Cart' ); ?>
     </div><!-- #cart-dropdown.dropdown-pane -->
-    <div id="account-dropdown" class="dropdown-pane" data-dropdown data-dropdown data-hover="true" data-hover-pane="true">
+    <div id="account-dropdown" class="dropdown-pane" data-dropdown data-hover="true" data-hover-pane="true">
         <ul class="vertical menu">
-            <li><a href="/my-account/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' ); ?></span></a></li>
-            <li><a href="/my-account/edit-address/"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' ); ?></span></a></li>
-            <li><a href="/my-account/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' ); ?></span></a></li>
-            <li><a href="/my-account/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' ); ?></span></a></li>
+            <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' ); ?></span></a></li>
+            <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/edit-address/"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' ); ?></span></a></li>
+            <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' ); ?></span></a></li>
+            <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' ); ?></span></a></li>
         </ul><!-- .vertical.menu -->
     </div><!-- #account-dropdown.dropdown-pane -->
     <div class="product-search inverse">
