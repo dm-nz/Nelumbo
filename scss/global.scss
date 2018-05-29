@@ -1493,6 +1493,10 @@ table tfoot td#next {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
 
+	i {
+		margin-right: 0.25em;
+	}
+
 	@include breakpoint(small only) {
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
@@ -1527,7 +1531,7 @@ table tfoot td#next {
 
 	a {
 		display: block;
-		padding: 0.25rem 0.8rem 0.5rem;
+		padding: 0.35em 0.75em;
 		color: $white;
 	}
 }

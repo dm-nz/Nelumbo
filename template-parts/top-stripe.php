@@ -22,7 +22,7 @@
                     </li><!-- .cart -->
                 <?php if ( ! is_user_logged_in() ) : ?>
                     <li class="last">
-                        <a href="/my-account"><i class="fa fa-sign-in"></i><span><?php echo __( 'Log in' ); ?></span></a>
+                        <a href="/my-account"><i class="fa fa-sign-in-alt"></i><span><?php echo __( 'Log in' ); ?></span></a>
                     </li><!-- .last -->
                 <?php else : ?>
                     <li class="dropdown-toggle">
@@ -41,7 +41,7 @@
             <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/orders"><i class="fa fa-th-list"></i> <span><?php echo __( 'Orders', 'woocommerce' ); ?></span></a></li>
             <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/edit-address/"><i class="fa fa-address-book"></i> <span><?php echo __( 'Addresses', 'woocommerce' ); ?></span></a></li>
             <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/edit-account"><i class="fa fa-cogs"></i> <span><?php echo __( 'Settings' ); ?></span></a></li>
-            <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/customer-logout"><i class="fa fa-sign-out"></i> <span><?php echo __( 'Log out' ); ?></span></a></li>
+            <li><a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>/customer-logout"><i class="fa fa-sign-out-alt"></i> <span><?php echo __( 'Log out' ); ?></span></a></li>
         </ul><!-- .vertical.menu -->
     </div><!-- #account-dropdown.dropdown-pane -->
     <div class="product-search inverse">

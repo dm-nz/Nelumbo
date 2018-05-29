@@ -26,10 +26,10 @@
 				<div class="grid-container">
 					<div class="grid-x grid-padding-x">
 						<div class="site-copyright medium-6 cell">
-							<i class="fa fa-copyright"></i> <?php echo date('Y') . " "; bloginfo('name'); ?>
+							<i class="far fa-copyright"></i> <?php echo date('Y') . " "; bloginfo('name'); ?>
 						</div><!-- .site-copyright.medium-6 -->
 						<div class="site-developer medium-6 cell medium-text-right">
-							<i class="fa fa-wordpress"></i> <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'nelumbo' ), 'Nelumbo', '<a href="https://lotus.kg/" rel="designer">Lotus</a>' ); ?>
+							<i class="fab fa-wordpress"></i> <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'nelumbo' ), 'Nelumbo', '<a href="https://lotus.kg/" rel="designer">Lotus</a>' ); ?>
 						</div><!-- .site-developer.medium-6 -->
 					</div><!-- .grid-x -->
 				</div><!-- .grid-container -->
