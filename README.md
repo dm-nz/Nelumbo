@@ -28,7 +28,6 @@ Open theme's folder in your command line, and install the needed dependencies:
 ```bash
 npm install
 bower install
-git submodule update --init --recursive
 ```
 
 ### Commands
