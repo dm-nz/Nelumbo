@@ -2,36 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2017-06-19 14:41+0000\n"
+"POT-Creation-Date: 2018-06-07 12:22+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-06-19 14:42+0000\n"
-"Language-Team: Russian\n"
-"X-Generator: Loco - https://localise.biz/\n"
-"Last-Translator: admin <nazzzim@gmail.com>\n"
+"PO-Revision-Date: 2018-06-07 12:30+0000\n"
+"Language-Team: Русский\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Last-Translator: Nazim <nazzzim@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
-"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2)\n"
-"Language: ru-RU"
-
-# @ _s
-#: footer.php:18
-msgid "https://wordpress.org/"
-msgstr "https://wordpress.org/"
-
-#: footer.php:20
-#, php-format
-msgid "Theme: %1$s by %2$s"
-msgstr "Тема: %1$s от %2$s"
-
-#. Theme Name of the plugin/theme
-msgid "_s"
-msgstr "_s"
-
-# @ _s
-#. Theme URI of the plugin/theme
-msgid "http://underscores.me/"
-msgstr "http://underscores.me/"
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"Language: ru_RU"
 
 # @ _s
 #: 404.php:17
@@ -91,9 +72,19 @@ msgstr "Комментарии закрыты"
 
 # @ _s
 #: footer.php:18
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+# @ _s
+#: footer.php:18
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Работает на %s"
+
+#: footer.php:20
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr "Тема: %1$s от %2$s"
 
 # @ _s
 #: functions.php:47
@@ -216,6 +207,15 @@ msgstr "Страницы:"
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Читать полностью %s <span class=\"meta-nav\">&rarr;</span>"
 
+#. Theme Name of the plugin/theme
+msgid "_s"
+msgstr "_s"
+
+# @ _s
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
+msgstr "http://underscores.me/"
+
 # @ _s
 #. Author of the plugin/theme
 msgid "Automattic"
@@ -225,3 +225,99 @@ msgstr "Automattic"
 #. Author URI of the plugin/theme
 msgid "http://automattic.com/"
 msgstr "http://automattic.com/"
+
+msgid "Headline"
+msgstr "Заголовок"
+
+msgid "Subheadline"
+msgstr "Подзаголовок"
+
+msgid "Primary button text"
+msgstr "Текст основной кнопки"
+
+msgid "Primary button URL"
+msgstr "Ссылка основной кнопки"
+
+msgid "Secondary button text"
+msgstr "Текст вспомогательной кнопки"
+
+msgid "Secondary button URL"
+msgstr "Ссылка вспомогательной кнопки"
+
+msgid "Background image"
+msgstr "Фоновое изображение"
+
+msgid "Background video"
+msgstr "Фоновое видео"
+
+msgid "Sections"
+msgstr "Блоки"
+
+msgid "Section options"
+msgstr "Настройка блоков"
+
+msgid "Cover"
+msgstr "Обложка"
+
+msgid "Text section"
+msgstr "Текстовый блок"
+
+msgid "Note"
+msgstr "Примечание"
+
+msgid "Button text"
+msgstr "Текст кнопки"
+
+msgid "Button URL"
+msgstr "Ссылка кнопки"
+
+msgid "Full-width image"
+msgstr "Полноширинное изображение"
+
+msgid "Testimonials"
+msgstr "Отзывы"
+
+msgid "Items"
+msgstr "Пункты"
+
+msgid "Quote"
+msgstr "Цитата"
+
+msgid "Accordion"
+msgstr "Гармошка"
+
+msgid "Tabs"
+msgstr "Вкладки"
+
+msgid "Callout"
+msgstr "Панель"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Cards"
+msgstr "Карточки"
+
+msgid "Secondary"
+msgstr "Вспомогательное"
+
+msgid "Success"
+msgstr "Успех"
+
+msgid "Warning"
+msgstr "Предупреждение"
+
+msgid "Alert"
+msgstr "Тревога"
+
+msgid "Embed object URL"
+msgstr "Ссылка на встраиваемый объект"
+
+msgid "Map"
+msgstr "Карта"
+
+msgid "Location"
+msgstr "Местоположение"
+
+msgid "Features"
+msgstr "Свойства"

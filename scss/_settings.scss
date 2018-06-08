@@ -154,7 +154,7 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
   large: (
-    'h1': ('font-size': 40),
+    'h1': ('font-size': 42),
     'h2': ('font-size': 32),
     'h3': ('font-size': 26),
     'h4': ('font-size': 22),
@@ -231,14 +231,14 @@ $input-error-font-weight: $global-weight-bold;
 
 $accordion-background: $white;
 $accordion-plusminus: true;
-$accordion-title-font-size: rem-calc(12);
-$accordion-item-color: $primary-color;
-$accordion-item-background-hover: $light-gray;
-$accordion-item-padding: 1.25rem 1rem;
+$accordion-title-font-size: rem-calc(20);
+$accordion-item-color: $body-font-color;
+$accordion-item-background-hover: transparent;
+$accordion-item-padding: 1.25rem 0;
 $accordion-content-background: $white;
-$accordion-content-border: 1px solid $light-gray;
+$accordion-content-border: 0;
 $accordion-content-color: $body-font-color;
-$accordion-content-padding: 1rem;
+$accordion-content-padding: 0;
 
 // 8. Accordion Menu
 // -----------------
@@ -524,15 +524,15 @@ $maincontent-class: 'off-canvas-content';
 
 $orbit-bullet-background: $medium-gray;
 $orbit-bullet-background-active: $dark-gray;
-$orbit-bullet-diameter: 1.2rem;
-$orbit-bullet-margin: 0.1rem;
+$orbit-bullet-diameter: 0.5rem;
+$orbit-bullet-margin: 0 0.25rem;
 $orbit-bullet-margin-top: 0.8rem;
 $orbit-bullet-margin-bottom: 0.8rem;
-$orbit-caption-background: rgba($black, 0.5);
+$orbit-caption-background: rgba(0, 0, 0, 0.5);
 $orbit-caption-padding: 1rem;
-$orbit-control-background-hover: rgba($black, 0.5);
+$orbit-control-background-hover: transparent;
 $orbit-control-padding: 1rem;
-$orbit-control-zindex: 10;
+$orbit-control-zindex: 9;
 
 // 27. Pagination
 // --------------
@@ -800,17 +800,17 @@ $table-stack-breakpoint: medium;
 
 $tab-margin: 0;
 $tab-background: $white;
-$tab-color: $primary-color;
-$tab-background-active: $light-gray;
-$tab-active-color: $primary-color;
-$tab-item-font-size: rem-calc(12);
+$tab-color: $body-font-color;
+$tab-background-active: $white;
+$tab-active-color: $body-font-color;
+$tab-item-font-size: rem-calc(16);
 $tab-item-background-hover: $white;
-$tab-item-padding: 1.25rem 1.5rem;
+$tab-item-padding: 0.5rem 1.5rem 1.25rem;
 $tab-expand-max: 6;
 $tab-content-background: $white;
-$tab-content-border: $light-gray;
+$tab-content-border: transparent;
 $tab-content-color: $body-font-color;
-$tab-content-padding: 1rem;
+$tab-content-padding: 1.5rem 0 0;
 
 // 52. Thumbnail
 // -------------

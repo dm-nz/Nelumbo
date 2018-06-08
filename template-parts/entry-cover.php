@@ -9,8 +9,8 @@
 
 ?>
 
-<div class="cover inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
-	<div class="filter"></div>
+<div class="entry-cover inverse" style="background-image: url(<?php echo the_post_thumbnail_url('cover'); ?>)">
+	<div class="dark-filter"></div>
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-middle">
 			<div class="cell">

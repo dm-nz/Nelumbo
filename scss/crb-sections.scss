@@ -1,0 +1,203 @@
+// Table of contents
+// ------------------
+// 1. General
+// 2. Cards
+// 3. Cover
+// 4. Features
+// 5. Full-wdith image
+// 6. Maps
+// 7. Testimonials
+// 8. Text section
+
+// 1. General
+// ----------
+
+.crb-section {
+    @include section-padding;
+
+    h1, h2, h3, h4, h5, h6 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.section-note {
+    font-size: 1.125em;
+    text-transform: uppercase;
+    color: $dark-gray;
+}
+
+.section-content {
+    padding-top: 0.75rem;
+}
+
+// 2. Cards
+// --------
+
+.cards-section {
+
+    .card {
+        position: relative;
+
+        .card-button-wrapper {
+            height: 3rem;
+
+            .button {
+                left: 1rem;
+                margin-bottom: 0;
+                width: calc(100% - 1.95rem);
+            }
+        }
+    }
+}
+
+// 3. Cover
+// --------
+
+.cover-section {
+    position: relative;
+    padding: 12rem 0;
+    background-color: $black;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+    @include breakpoint(medium only) {
+        padding: 8rem 0;
+    }
+
+    @include breakpoint(small only) {
+        padding: 5rem 0;
+    }
+
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+    .grid-x {
+        position: relative;
+
+        .section-headline,
+        .section-subheadline {
+            margin-top: 0;
+            text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+        }
+
+        .button {
+            margin: 1rem 0.25rem;
+
+            @include breakpoint(small only) {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+    }
+}
+
+// 4. Features
+// -----------
+
+.features-section {
+
+    .feature-item {
+        margin-bottom: 1rem;
+
+        .feature-item-headline {
+            text-align: center;
+        }
+
+        img.feature-item-image {
+            display: block;
+            margin: 0 auto;
+            width: auto;
+            height: 64px;
+        }
+    }
+}
+
+// 5. Full-width image
+// -------------------
+
+.full-width-image-section {
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .full-width-image-caption {
+        position: absolute;
+        left: 3rem;
+        bottom: 3rem;
+        max-width: 500px;
+        font-size: $lead-font-size;
+        text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+    }
+}
+
+// 6. Maps
+// -------
+
+.map-section {
+
+    .map-location {
+        overflow: hidden;
+        height: 500px;
+        width: 100%;
+    }
+
+    #gmap_canvas {
+        height: 500px;
+        width: 100%;
+
+        img {
+            max-width: none!important;
+            background: none!important
+        }
+    }
+}
+
+
+// 7. Testimonials
+// ---------------
+
+.testimonials-section {
+
+    .orbit-previous,
+    .orbit-next {
+        color: $dark-gray;
+    }
+
+    .testimonial-item-image {
+        margin: 0.25rem 0 1rem;
+        border-radius: 50%;
+    }
+
+    blockquote {
+        border: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .orbit-bullets {
+        margin-top: 0;
+    }
+}
+
+// 8. Text section
+// ---------------
+
+.text-section {
+
+    .button {
+        margin-top: 0.5rem;
+    }
+
+    .subheader {
+        color: $body-font-color;
+    }
+}

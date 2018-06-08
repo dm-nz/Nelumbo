@@ -144,6 +144,42 @@ ul.fa-ul {
 	}
 }
 
+.orbit-previous,
+.orbit-next {
+	top: 46%;
+	margin: 0 1rem;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.accordion {
+	border-bottom: 1px solid $light-gray;
+
+	.accordion-title {
+		font-weight: bold;
+		border-top: 1px solid $light-gray;
+
+		@include breakpoint(small only) {
+			font-size: 1rem;
+		}
+	}
+}
+
+.tabs {
+	border-bottom: 1px solid $light-gray;
+
+	.tabs-title {
+		font-weight: bold;
+		border-bottom: 3px solid transparent;
+
+		&.is-active {
+			border-color: $primary-color;
+		}
+	}
+}
+
 // 1.2. Typography
 // ---------------
 
@@ -427,6 +463,10 @@ div.wpcf7 .ajax-loader {
 
 // 1.10. Buttons
 // -------------
+
+button {
+	cursor: pointer;
+}
 
 input.submit,
 input.search-submit,
@@ -755,6 +795,12 @@ form input[type="submit"] {
 #primary {
 	margin-top: 2rem;
 	margin-bottom: 1rem;
+
+	.page-template-fluid &,
+	.post-template-fluid & {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 }
 
 #secondary {
@@ -776,6 +822,11 @@ form input[type="submit"] {
 
 #main article {
 	margin-bottom: 2rem;
+
+	.page-template-fluid &,
+	.post-template-fluid & {
+		margin-bottom: 0;
+	}
 }
 
 .entry-featured-img {
@@ -818,8 +869,12 @@ form input[type="submit"] {
 
 .entry-content {
 	h1, h2, h3, h4, h5, h6 {
-		margin-top: 2rem;
+		margin-top: 1.25rem;
 		margin-bottom: 0.75rem;
+
+		&.first-child {
+			margin-top: 0;
+		}
 	}
 
 	.card {
@@ -950,17 +1005,21 @@ a.more-link {
 	}
 }
 
+.fluid-content-wrapper {
+	margin-top: 1rem;
+}
+
 // 3.2. Cover
 // ----------
 
-.cover {
+.entry-cover {
 	position: relative;
 	margin-bottom: 0.5rem;
 	overflow: hidden;
 	background: $black;
 	background-position: center;
 	background-size: cover;
-	text-shadow: 0 0 1.5em rgba($black, 0.5);
+	text-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
 
 	&,
 	.grid-x {
@@ -975,15 +1034,6 @@ a.more-link {
 		}
 	}
 
-	.filter {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.25);
-	}
-
 	.grid-container {
 		position: relative;
 	}
@@ -992,6 +1042,15 @@ a.more-link {
 		color: rgba($white, 0.5);
 		margin-bottom: 0;
 	}
+}
+
+.dark-filter {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.25);
 }
 
 // 3.3. Post formats
