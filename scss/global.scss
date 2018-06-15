@@ -204,6 +204,10 @@ dl dd {
 
 	a {
 		color: $body-font-color;
+
+				&:hover {
+					color: $anchor-color-hover;
+				}
 	}
 
 	.nav-previous {
@@ -582,7 +586,7 @@ form input[type="submit"] {
 	text-decoration: none;
 
 	#page &:hover {
-		color: rgba($white, 0.75);
+		color: rgba($white, 0.5);
 	}
 }
 
@@ -934,7 +938,7 @@ a.more-link {
 
 @include breakpoint(medium up) {
 	.post-template-two-columns .entry-content,
-	.post-template-two-columns .entry-content,
+	.post-template-two-columns-cover .entry-content,
 	.page-template-two-columns .entry-content,
 	.page-template-two-columns-cover .entry-content {
 		-webkit-column-count: 2;
@@ -948,7 +952,7 @@ a.more-link {
 
 @include breakpoint(medium only) {
 	.post-template-two-columns .entry-content,
-	.post-template-two-columns .entry-content,
+	.post-template-two-columns-cover .entry-content,
 	.page-template-two-columns .entry-content,
 	.page-template-two-columns-cover .entry-content {
 		-webkit-column--gap: 30px;
@@ -1049,7 +1053,8 @@ blockquote.wp-block-pullquote {
 	margin: 2.5em auto;
 }
 
-.post-template-gutenberg {
+.post-template-gutenberg,
+.page-template-gutenberg {
 
 	figure[class^='wp-block-embed'],
 	.entry-header,
@@ -1103,12 +1108,15 @@ blockquote.wp-block-pullquote {
 		}
 	}
 
-	.wp-block-embed.alignwide {
-		margin-top: 0;
-		margin-bottom: 0;
+	@include breakpoint(large up) {
+		.wp-block-embed.alignwide {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 	}
 
 	.entry-content .alignfull {
+		width: 100%;
 		max-width: 100%;
 		padding-left: 0;
 		padding-right: 0;
@@ -1501,6 +1509,10 @@ table tfoot td#next {
 #colophon {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
+
+	i.fa {
+		margin-right: 0.25em;
+	}
 
 	@include breakpoint(small only) {
 		padding-top: 1.5rem;

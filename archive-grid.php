@@ -43,7 +43,7 @@ get_header(); ?>
 						</header><!-- .entry-header -->
 						<div class="entry-content">
 							<?php the_excerpt(); ?>
-							<p><a class="more-link"><?php echo __( 'Continue reading' ); ?> <span class="meta-nav">→</span></a></p>
+							<p><a class="more-link" href="<?php the_permalink(); ?>"><?php echo __( 'Continue reading' ); ?> <span class="meta-nav">→</span></a></p>
 						</div><!-- .entry-content -->
 						<footer class="entry-footer">
 							<?php nelumbo_entry_footer();
