@@ -10,7 +10,7 @@
 
 function nelumbo_scripts() {
 	wp_register_style( 'foundation-style', get_template_directory_uri() . '/css/app.min.css', array(), false, 'all' );
-	wp_register_style( 'icons-style', 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', array(), '5.0.13', 'all' );
+	wp_register_style( 'icons-style', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css', array(), '5.2.0', 'all' );
 	wp_register_style( 'font-style', get_template_directory_uri() . '/fonts/lato/lato.css', array(), false, 'all' );
 
 	wp_enqueue_style( 'nelumbo-style', get_stylesheet_uri() );

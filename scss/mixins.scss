@@ -6,8 +6,6 @@
 }
 
 @mixin linear-gradient($deg, $from, $to) {
-	/* Fallback for sad browsers */
-	background-color: $to;
 	/* Mozilla Firefox */
 	background-image: -moz-linear-gradient($deg + deg, $from, $to);
 	/* Opera */
