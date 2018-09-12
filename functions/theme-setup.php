@@ -32,10 +32,10 @@ function nelumbo_setup() {
 
 	// Add active class to menu
 	function active_menu_item ($classes, $item) {
-	    if (in_array('current-menu-item', $classes) ){
-	        $classes[] = 'active ';
-	    }
-	    return $classes;
+		if (in_array('current-menu-item', $classes) ){
+			$classes[] = 'active ';
+		}
+		return $classes;
 	}
 	add_filter('nav_menu_css_class' , 'active_menu_item' , 10 , 2);
 
