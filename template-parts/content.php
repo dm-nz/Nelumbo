@@ -18,7 +18,7 @@
 			if ( has_post_thumbnail() ) : ?>
 				<div class="entry-featured-img">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail('entry-featured-img'); ?>
+						<?php the_post_thumbnail( 'entry-featured-img' ); ?>
 					</a>
 				</div><!-- .entry-featured-img -->
 			<?php
@@ -26,9 +26,6 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
-		<div class="entry-meta">
-			<?php nelumbo_posted_on(); ?>
-		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
