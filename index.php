@@ -49,7 +49,7 @@ get_header(); ?>
 	</div><!-- .grid-x -->
 </div><!-- .grid-container -->
 <?php
-if ( get_the_post_navigation() ) :
+if ( get_the_posts_navigation() ) :
 	get_template_part( 'template-parts/post-navigation' );
 endif;
 ?>
