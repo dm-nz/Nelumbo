@@ -9,7 +9,7 @@
 add_image_size( 'cover', 1920, 600, true );
 
 // Entry featured image
-add_image_size( 'entry-featured-img', 680, 680, false );
+add_image_size( 'entry-featured-img', 680, 425, true );
 
 // Logo
 add_theme_support('custom-logo', array(
