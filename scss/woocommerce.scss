@@ -42,7 +42,7 @@
 #page .woocommerce button.button,
 .btn {
 	@include button;
-	font-weight: normal;
+	font-weight: $global-weight-normal;
 }
 
 .woocommerce .button.hollow {
@@ -345,7 +345,7 @@
 	}
 
 	.cart .amount {
-		font-weight: bold;
+		font-weight: $global-weight-bold;
 
 		@include breakpoint(medium up) {
 			margin-right: 0.5em;
@@ -671,7 +671,7 @@
 	h3 {
 		padding-bottom: 0;
 		color: $body-font-color;
-		font-weight: bold;
+		font-weight: $global-weight-bold;
 	}
 
 	.price {
@@ -1003,6 +1003,7 @@
 	@include menu-direction(vertical);
 	margin-left: 0;
 	padding-left: 2em;
+	list-style: none;
 
 	li.woocommerce-MyAccount-navigation-link {
 		margin-bottom: 1em;

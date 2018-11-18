@@ -17,7 +17,7 @@ function nelumbo_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.2.1', true );
+	wp_enqueue_script( 'foundation-jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '3.3.1', true );
 	wp_enqueue_script( 'foundation-scripts', get_template_directory_uri() . '/js/app.min.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'nelumbo_scripts' );

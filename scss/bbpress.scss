@@ -124,7 +124,7 @@ img.avatar {
 		float: left;
 		margin-top: 4px;
 		margin-right: 1rem;
-		font-weight: normal;
+		font-weight: $global-weight-normal;
 	}
 }
 
@@ -132,7 +132,7 @@ img.avatar {
 
 	dl dt {
 		float: left;
-		font-weight: normal;
+		font-weight: $global-weight-normal;
 	}
 
 	dl dd {

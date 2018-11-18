@@ -137,7 +137,7 @@ a {
 	border-bottom: 1px solid $light-gray;
 
 	.accordion-title {
-		font-weight: bold;
+		font-weight: $global-weight-bold;
 		border-top: 1px solid $light-gray;
 
 		@include breakpoint(small only) {
@@ -150,7 +150,7 @@ a {
 	border-bottom: 1px solid $light-gray;
 
 	.tabs-title {
-		font-weight: bold;
+		font-weight: $global-weight-bold;
 		border-bottom: 3px solid transparent;
 
 		&.is-active {
@@ -399,7 +399,7 @@ fieldset {
 legend {
 	margin-top: 0.5em;
 	padding: 0 0.5em !important;
-	font-weight: bold;
+	font-weight: $global-weight-bold;
 }
 
 form textarea[rows] {
@@ -493,6 +493,10 @@ form input[type="submit"] {
 		padding: $menu-items-padding;
 		margin-bottom: 0;
 		font-size: inherit;
+
+		@include breakpoint(medium down) {
+			width: 92%;
+		}
 	}
 }
 
@@ -536,22 +540,16 @@ form input[type="submit"] {
 // 2.1. Top bar
 // ------------
 
-.fixed {
-	position: fixed;
-	width: 100%;
-	z-index: 2;
-
-	@include breakpoint(small only) {
-		position: absolute;
-	}
-}
-
-#masthead {
+.sticky-header {
 	z-index: 10;
 }
 
-.top-bar {
+#masthead {
+	background: $topbar-background;
 	border-bottom: 1px solid $light-gray;
+}
+
+.top-bar {
 
 	&.inverse {
 		border-color: rgba($white, 0.08);
@@ -559,10 +557,6 @@ form input[type="submit"] {
 
 	@include breakpoint(small only) {
 		padding: 0.5rem 0 !important;
-	}
-
-	&.with-logo .menu > li {
-		vertical-align: middle;
 	}
 
 	a {
@@ -631,7 +625,7 @@ form input[type="submit"] {
 	}
 
 	.site-title {
-		font-weight: bold;
+		font-weight: $global-weight-bold;
 
 		h1 {
 			margin-bottom: 0;
@@ -654,30 +648,31 @@ form input[type="submit"] {
 		}
 	}
 
-	.site-description span {
-		margin-left: 1em;
-		padding-left: 1em;
-		border-left: 1px solid $light-gray;
-	}
+	.site-description {
 
-	.inverse & .site-description span {
-		border-color: rgba($white, 0.1);
+		&.menu-text {
+			font-weight: $global-weight-normal;
+		}
+
+		span {
+			padding-left: 1em;
+			border-left: 1px solid $light-gray;
+
+			.inverse & {
+				border-color: rgba($white, 0.1);
+			}
+		}
 	}
 }
 
 // 2.3. Tob bar right & left
 // -------------------------
 
-@include breakpoint(medium up) {
-	.top-bar-left {
-		margin-left: 1.5rem;
-	}
-}
-
-@include breakpoint(medium up) {
-	.top-bar.with-logo .top-bar-left,
-	.top-bar.with-logo .top-bar-right {
-		margin-top: 2px !important;
+@include breakpoint(small only) {
+	.top-bar .top-bar-left,
+	.top-bar .top-bar-right {
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
 	}
 }
 
@@ -793,7 +788,7 @@ form input[type="submit"] {
 
 @include breakpoint(small only) {
 	#primary {
-		margin-top: 0.75rem;
+		margin-top: 1rem;
 		margin-bottom: 0;
 	}
 
@@ -1199,7 +1194,7 @@ blockquote.wp-block-pullquote {
 
 .wp-block-cover-image .wp-block-cover-image-text,
 .wp-block-cover-image h2 {
-	font-weight: bold;
+	font-weight: $global-weight-bold;
 }
 
 .entry-content ul.wp-block-gallery {
