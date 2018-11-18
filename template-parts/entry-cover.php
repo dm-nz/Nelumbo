@@ -27,4 +27,4 @@
 			</div><!-- .cell -->
 		</div><!-- .grid-x -->
 	</div><!-- .grid-container -->
-</div><!-- .cover -->
+</div><!-- .entry-cover -->
