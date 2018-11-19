@@ -566,7 +566,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.1. Top bar
+// 2.2. Top bar
 // ------------
 
 .top-bar {
@@ -609,7 +609,7 @@ form input[type="submit"] {
 	color: scale-color($menu-item-color-active, $lightness: 50%);
 }
 
-// 2.2. Top bar title
+// 2.3. Top bar title
 // ------------------
 
 .menu > li.site-logo > a {
@@ -669,7 +669,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.3. Tob bar right & left
+// 2.4. Tob bar right & left
 // -------------------------
 
 @include breakpoint(small only) {
@@ -696,7 +696,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.4. Header absolute
+// 2.5. Header absolute
 // --------------------
 
 .header-absolute {
@@ -773,7 +773,7 @@ form input[type="submit"] {
 	}
 }
 
-// 2.5. Off-canvas
+// 2.6. Off-canvas
 // ---------------
 
 .off-canvas {
