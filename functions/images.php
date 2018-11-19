@@ -6,7 +6,7 @@
  */
 
 // Cover thumbnail
-add_image_size( 'cover', 1920, 600, true );
+add_image_size( 'cover', 1920, 1080, true );
 
 // Entry featured image
 add_image_size( 'entry-featured-img', 680, 425, true );

@@ -6,7 +6,7 @@
  * @package nelumbo
  */
 
-get_header(); ?>
+get_header( 'absolute' ); ?>
 
 <?php get_template_part( 'template-parts/entry-cover' ); ?>
 <div class="grid-container">

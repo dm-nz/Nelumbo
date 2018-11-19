@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme.
+ * The header for templates with cover.
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -46,19 +46,21 @@
 	</div><!-- #the-off-canvas.off-canvas -->
 	<div class="off-canvas-content" data-off-canvas-content>
 		<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'nelumbo' ); ?></a>
-		<div class="sticky-header" data-sticky-container>
-			<div data-sticky data-options="marginTop:0;">
-				<header id="masthead" role="banner">
-					<?php
-					if ( is_woocommerce_activated() ) :
-						get_template_part( 'template-parts/top-stripe' );
-					endif;
-					?>
-					<div class="grid-container">
-						<?php get_template_part( 'template-parts/top-bar' ); ?>
-					</div><!-- .grid-container -->
-				</header><!-- #masthead -->
-			</div><!-- data-sticky -->
-		</div><!-- .sticky-header data-sticky-container -->
+		<div class="header-absolute">
+			<div class="sticky-header" data-sticky-container>
+				<div data-sticky data-options="marginTop:0;">
+					<header id="masthead" role="banner">
+						<?php
+						if ( is_woocommerce_activated() ) :
+							get_template_part( 'template-parts/top-stripe' );
+						endif;
+						?>
+						<div class="grid-container">
+							<?php get_template_part( 'template-parts/top-bar' ); ?>
+						</div><!-- .grid-container -->
+					</header><!-- #masthead -->
+				</div><!-- data-sticky -->
+			</div><!-- .sticky-header data-sticky-container -->
+		</div>
 
 		<div id="content" class="site-content">

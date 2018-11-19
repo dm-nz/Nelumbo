@@ -12,11 +12,12 @@
 	// 1.9. Forms
 	// 1.10. Buttons
 // 2. Header
-	// 2.1. Top bar
-	// 2.2. Top bar title
-	// 2.3. Top bar right & left
-	// 2.4. Drilldown menu
-	// 2.5. Off-canvas
+	// 2.1. Misc
+	// 2.2. Top bar
+	// 2.3. Top bar title
+	// 2.4. Top bar right & left
+	// 2.5. Header absolute
+	// 2.6. Off-canvas
 // 3. Content
 	// 3.1. Entry
 	// 3.2. Cover
@@ -536,8 +537,8 @@ form input[type="submit"] {
 // 2. Header
 // ---------
 
-// 2.1. Top bar
-// ------------
+// 2.1. Misc
+// ---------
 
 .sticky-header {
 	z-index: 10;
@@ -548,11 +549,27 @@ form input[type="submit"] {
 	border-bottom: 1px solid $light-gray;
 }
 
-.top-bar {
+.menu-hamburger ul.menu {
+	float: right;
+}
 
-	&.inverse {
-		border-color: rgba($white, 0.08);
+.menu-hamburger a {
+	padding-right: 0 !important;
+}
+
+
+.admin-bar .is-stuck {
+	margin-top: 32px !important;
+
+	@include breakpoint(medium down) {
+		margin-top: 46px !important;
 	}
+}
+
+// 2.1. Top bar
+// ------------
+
+.top-bar {
 
 	@include breakpoint(small only) {
 		padding: 0.5rem 0 !important;
@@ -563,14 +580,6 @@ form input[type="submit"] {
 
 		&:hover {
 			color: $anchor-color-hover;
-		}
-	}
-
-	&.inverse a {
-		color: $white;
-
-		&:hover {
-			color: $medium-gray;
 		}
 	}
 
@@ -585,10 +594,6 @@ form input[type="submit"] {
 			border-color: transparent transparent transparent $body-font-color;
 		}
 	}
-}
-
-.admin-bar .is-stuck {
-	margin-top: 32px !important;
 }
 
 .inverse .menu > li > a {
@@ -691,40 +696,80 @@ form input[type="submit"] {
 	}
 }
 
-// 2.4. Drilldown menu
-// -------------------
+// 2.4. Header absolute
+// --------------------
 
-.menu-hamburger ul.menu {
-	float: right;
-}
+.header-absolute {
+	position: absolute;
+	width: 100%;
 
-.menu-hamburger a {
-	padding-right: 0 !important;
-}
+	.is-anchored {
 
-.is-drilldown {
-	margin-top: 0.5rem;
-	padding-top: 0.25rem;
-	border-top: 1px solid $light-gray;
+		#masthead,
+		.top-bar,
+		.top-bar ul {
+			background: transparent;
+		}
 
-	.menu > li > a {
-		padding: 1rem 0;
+		#masthead {
+			border-bottom: 1px solid rgba($white, 0.1);
+		}
 	}
 }
 
-.is-drilldown-submenu-parent > a::after {
-	border-color: transparent transparent transparent $body-font-color !important;
+.header-absolute .is-anchored,
+.inverse {
 
-	.inverse & {
-		border-color: transparent transparent transparent $white !important;
-	}
-}
+	.top-bar {
+		color: $white;
 
-.js-drilldown-back > a::before {
-	border-color: transparent $body-font-color transparent transparent !important;
+		a {
+		color: $white;
 
-	.inverse & {
-		border-color: transparent $white transparent transparent !important;
+			&:hover {
+				color: rgba($white, 0.75);
+			}
+		}
+
+		ul ul {
+			background: $topbar-background;
+
+			a {
+				color: $body-font-color;
+
+				&:hover {
+					color: $anchor-color-hover;
+				}
+			}
+		}
+
+		.dropdown.menu > li.is-dropdown-submenu-parent {
+			> a::after {
+				border-color: $white transparent transparent;
+			}
+			li.opens-left > a::after {
+				border-color: transparent $white transparent transparent;
+			}
+			li.opens-right > a::after {
+				border-color: transparent transparent transparent $white;
+			}
+		}
+
+		.dropdown.menu .dropdown.menu > li.is-dropdown-submenu-parent {
+			> a::after {
+				border-color: transparent $body-font-color transparent transparent;
+			}
+			li.opens-left > a::after {
+				border-color: transparent $body-font-color transparent transparent;
+			}
+			li.opens-right > a::after {
+				border-color: transparent transparent transparent $body-font-color;
+			}
+		}
+
+		.site-description span {
+			border-color: rgba($white, 0.1);
+		}
 	}
 }
 
@@ -1002,19 +1047,23 @@ a.more-link {
 
 	&,
 	.grid-x {
-		height: 500px;
+		height: 600px;
 
 		@include breakpoint(medium only) {
-			height: 400px;
+			height: 450px;
 		}
 
 		@include breakpoint(small only) {
-			height: 280px;
+			height: 350px;
 		}
 	}
 
 	.grid-container {
 		position: relative;
+	}
+
+	.entry-title {
+		margin-top: 1em;
 	}
 
 	.entry-meta {
@@ -1029,7 +1078,7 @@ a.more-link {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, 0.25);
+	background-color: rgba(0, 0, 0, 0.35);
 }
 
 // 3.3. Post formats
