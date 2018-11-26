@@ -20,6 +20,7 @@ get_header( 'absolute' ); ?>
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
+					get_template_part( 'template-parts/crb-sections/switch-crb-sections' );
 				endwhile; // End of the loop.
 				?>
 			</main><!-- #main -->

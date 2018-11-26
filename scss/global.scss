@@ -476,9 +476,9 @@ form input[type="submit"] {
 
 .menu li.button {
 	display: inline-block;
-	margin-top: -2px;
+	margin-top: -1px;
 	margin-bottom: 0;
-	padding: 0 0.5rem;
+	padding: 0 1.25rem;
 	border: 0;
 	background: none;
 	font-size: inherit;
@@ -680,6 +680,15 @@ form input[type="submit"] {
 	}
 }
 
+.dropdown.menu > li.is-dropdown-submenu-parent > a {
+	padding-right: 2.4rem;
+
+	&:after {
+		right: 23px;
+		margin-top: -1px;
+	}
+}
+
 .top-bar-right .menu.dropdown > li:last-of-type:not(.is-dropdown-submenu-parent) > a {
 	padding-right: 0;
 }
@@ -704,6 +713,7 @@ form input[type="submit"] {
 	width: 100%;
 
 	.is-anchored {
+		@include linear-gradient(0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.25));
 
 		#masthead,
 		.top-bar,
@@ -801,6 +811,7 @@ form input[type="submit"] {
 		li.button {
 			display: inline-block;
 			margin: 0.5rem 0;
+			padding-left: 0.25rem;
 
 			a {
 				border-radius: $global-radius;
@@ -1012,9 +1023,9 @@ a.more-link {
 		-webkit-column-count: 2;
 		-moz-column-count: 2;
 		column-count: 2;
-		-webkit-column--gap: rem-calc(60);
-		-moz-column-gap: rem-calc(60);
-		column-gap: rem-calc(60);
+		-webkit-column--gap: rem-calc(40);
+		-moz-column-gap: rem-calc(40);
+		column-gap: rem-calc(40);
 	}
 }
 
