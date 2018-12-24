@@ -19,20 +19,19 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-<?php if ( get_edit_post_link() ) : ?>
 	<footer class="entry-footer">
-		<?php
-		nelumbo_entry_footer();
-		edit_post_link(
-			sprintf(
-				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'nelumbo' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			),
-			'<span class="divider tags-post-edit"></span><span class="edit-link item">',
-			'</span>'
-		);
+		<?php nelumbo_entry_footer();
+		if ( get_edit_post_link() ) :
+			edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'nelumbo' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+				'<span class="divider tags-post-edit"></span><span class="edit-link item">',
+				'</span>'
+			);
+		endif;
 		?>
 	</footer><!-- .entry-footer -->
-<?php endif; ?>
 </article><!-- #post-## -->
